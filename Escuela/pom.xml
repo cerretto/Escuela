@@ -1,11 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>proyecto.java.electiva</groupId>
-	<artifactId>escuela</artifactId>
+	<groupId>utn.java.proyecto.maven</groupId>
+	<artifactId>escuela-api-rest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Sistema_Escuela</name>
-	<description>Sistema escolar usando Spring Boot - REST + AngularJs</description>
+	<name>REST- ${project.artifactId}</name>
+	<description>Servicio REST para todo el backend</description>
+	<packaging>jar</packaging>
 	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -15,17 +16,25 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
-
-	<!-- Add typical dependencies for a web application -->
+	
+	
+	
+<!-- 	Add typical dependencies for a web application  -->
 	<dependencies>
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
+
+        
 	</dependencies>
 
-	<!-- Package as an executable jar -->
+<!-- 	Package as an executable jar -->
 	<build>
 		<plugins>
 			<plugin>
@@ -34,5 +43,6 @@
 			</plugin>
 		</plugins>
 	</build>
-</project>
+ 
 
+</project>
