@@ -5,7 +5,7 @@
 	<artifactId>escuela-api-rest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>REST- ${project.artifactId}</name>
-	<description>Servicio REST para todo el backend</description>
+	<description>Backend de la aplicacion con API Rest</description>
 	<packaging>jar</packaging>
 	
 	<parent>
@@ -30,8 +30,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		
-
-        
 	</dependencies>
 
 <!-- 	Package as an executable jar -->
