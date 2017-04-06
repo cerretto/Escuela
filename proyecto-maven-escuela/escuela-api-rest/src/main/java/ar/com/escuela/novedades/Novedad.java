@@ -1,7 +1,17 @@
 package ar.com.escuela.novedades;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "novedades")
 public class Novedad {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int Id;
 	private String nombre;
 	private String descripcion;
