@@ -2,8 +2,6 @@ package ar.com.escuela.novedades;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 
 public interface NovedadService {
 
