@@ -1,29 +1,15 @@
 package ar.com.escuela.novedades;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
-public class NovedadService {
 
-	@Autowired
-	private NovedadRepository novedadRepository;
-	
-	public List<Novedad> getAllNovedades(){
-		List<Novedad> novedades = new ArrayList<>();
-		
-		novedadRepository.findAll().forEach(novedades::add);
-		
-		return novedades;
-	}
-	
-	public void addNovedad(Novedad novedad){
-		novedadRepository.save(novedad);
-	}
-	
-	
-	
+public interface NovedadService {
+
+	public List<Novedad> getAllNovedades();
+	public Novedad getNovedadById(Long id);
+	public void addNovedad(Novedad novedad);
+	public void updateNovedad(Novedad novedad, Long id);
+	public void deleteNovedad(Long id);
 }

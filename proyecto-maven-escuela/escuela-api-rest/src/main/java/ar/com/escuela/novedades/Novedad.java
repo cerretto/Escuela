@@ -12,7 +12,7 @@ public class Novedad {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int Id;
+	private int id;
 	private String nombre;
 	private String descripcion;
 	
@@ -22,17 +22,17 @@ public class Novedad {
 	
 	public Novedad(int id, String nombre, String descripcion) {
 		super();
-		Id = id;
+		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 	}
 	
 	
 	public int getId() {
-		return Id;
+		return id;
 	}
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
 	public String getNombre() {
 		return nombre;
