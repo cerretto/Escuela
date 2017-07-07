@@ -1,18 +1,15 @@
 package ar.com.escuela.novedades;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Table;
+
+import ar.com.escuela.base.bean.BaseEntity;
 
 @Entity
 @Table(name = "novedades")
-public class Novedad {
+public class Novedad extends BaseEntity{
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	
 	private String nombre;
 	private String descripcion;
 	
@@ -22,18 +19,12 @@ public class Novedad {
 	
 	public Novedad(int id, String nombre, String descripcion) {
 		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.descripcion = descripcion;
+		this.setId(id);
+		this.setNombre(nombre);
+		this.setDescripcion(descripcion);
 	}
 	
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getNombre() {
 		return nombre;
 	}
