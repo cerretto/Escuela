@@ -16,6 +16,7 @@ public class NovedadServiceImpl implements NovedadService {
 	public List<Novedad> getAllNovedades(){
 		List<Novedad> novedades = new ArrayList<>();
 		
+		//novedadRepository sería el DAO. El add agarra a cada novedad y la mete en la lista de novedades.
 		novedadRepository.findAll().forEach(novedades::add);
 		
 		return novedades;
