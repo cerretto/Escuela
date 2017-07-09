@@ -3,11 +3,11 @@ package ar.com.escuela.novedades;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import ar.com.escuela.base.bean.BaseEntity;
+import ar.com.escuela.base.bean.BaseBO;
 
 @Entity
-@Table(name = "novedades")
-public class Novedad extends BaseEntity{
+@Table(name = "NOVEDADES")
+public class Novedad extends BaseBO{
 	
 	
 	private String nombre;
@@ -17,9 +17,7 @@ public class Novedad extends BaseEntity{
 		
 	}
 	
-	public Novedad(int id, String nombre, String descripcion) {
-		super();
-		this.setId(id);
+	public Novedad(String nombre, String descripcion) {
 		this.setNombre(nombre);
 		this.setDescripcion(descripcion);
 	}

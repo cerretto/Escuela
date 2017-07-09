@@ -1,40 +1,40 @@
 package ar.com.escuela.seg.bean;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import ar.com.escuela.base.bean.BaseEntity;
+import ar.com.escuela.base.bean.BaseBO;
 
 @Entity
 @Table(name = "usuarios")
-public class Usuario extends BaseEntity{
+public class Usuario extends BaseBO{
 	
 	
-	private String nombre;
-	private String apellido;
+	private String usr;
+	private Date fechaInscripcion;
 	
 	public Usuario(){
 		
 	}
 	
-	public Usuario(int id, String nombre, String descripcion) {
-		super();
-		this.setId(id);
-		this.setNombre(nombre);
-		this.setApellido(descripcion);
+	public Usuario(String nombre, Date fechaInscripcion) {
+		this.setUsr(nombre);
+		this.setFechaInscripcion(fechaInscripcion);
 	}
 	
 	
-	public String getNombre() {
-		return nombre;
+	public String getUsr() {
+		return usr;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setUsr(String usr) {
+		this.usr = usr;
 	}
-	public String getApellido() {
-		return apellido;
+	public Date getFechaInscripcion() {
+		return fechaInscripcion;
 	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	public void setFechaInscripcion(Date fechaInscripcion) {
+		this.fechaInscripcion = fechaInscripcion;
 	}
 	
 }
