@@ -12,6 +12,7 @@ public class Usuario extends BaseBO{
 	
 	
 	private String usr;
+	private String password;
 	private Date fechaInscripcion;
 	
 	public Usuario(){
@@ -35,6 +36,14 @@ public class Usuario extends BaseBO{
 	}
 	public void setFechaInscripcion(Date fechaInscripcion) {
 		this.fechaInscripcion = fechaInscripcion;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 }
