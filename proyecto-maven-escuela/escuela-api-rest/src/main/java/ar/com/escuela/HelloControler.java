@@ -1,4 +1,4 @@
-package ar.com.escuela.hello;
+package ar.com.escuela;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
