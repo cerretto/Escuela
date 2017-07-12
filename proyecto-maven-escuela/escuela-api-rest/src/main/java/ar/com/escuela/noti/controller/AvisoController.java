@@ -21,13 +21,11 @@ public class AvisoController {
 	
 	@RequestMapping("/")
 	public List<Aviso> getAllAvisos(){
-		
 		return avisoService.getAllAvisos();
 	}
 	
-	@RequestMapping("/{id}")					// otra forma "/novedad/{foo}" y poner @PathVariable("foo")
+	@RequestMapping("/{id}")	// otra forma "/novedad/{foo}" y poner @PathVariable("foo")
 	public Aviso getAviso(@PathVariable Long id){
-		
 		return avisoService.getAvisoById(id);
 	}
 	

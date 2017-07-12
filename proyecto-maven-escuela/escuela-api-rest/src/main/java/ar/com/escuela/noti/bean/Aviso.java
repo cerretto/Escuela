@@ -24,7 +24,6 @@ public class Aviso extends BaseBO{
 		
 	}
 	
-	
 	public Date getFechaAviso() {
 		return fechaAviso;
 	}
