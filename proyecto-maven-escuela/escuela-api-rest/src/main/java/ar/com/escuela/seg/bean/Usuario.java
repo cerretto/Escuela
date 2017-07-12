@@ -19,12 +19,6 @@ public class Usuario extends BaseBO{
 		
 	}
 	
-	public Usuario(String nombre, Date fechaInscripcion) {
-		this.setUsr(nombre);
-		this.setFechaInscripcion(fechaInscripcion);
-	}
-	
-	
 	public String getUsr() {
 		return usr;
 	}
