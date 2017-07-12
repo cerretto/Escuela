@@ -1,9 +1,9 @@
 package ar.com.escuela.seg.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import ar.com.escuela.seg.bean.UsuarioRol;
 
-public interface UsuarioRolRepository extends CrudRepository<UsuarioRol, Long> {
+public interface UsuarioRolRepository extends JpaRepository<UsuarioRol, Long> {
 
 }

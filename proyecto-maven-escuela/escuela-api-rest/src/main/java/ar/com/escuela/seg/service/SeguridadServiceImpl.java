@@ -23,7 +23,7 @@ public class SeguridadServiceImpl implements SeguridadService {
 	@Autowired
 	private UsuarioRolRepository usuarioRolRepository;
 	
-	//Servicios para Rol
+	//Servicios para Rol------------------------------------------------------------------------------------
 	@Override
 	public List<Rol> getAllRoles(){
 		List<Rol> rols = new ArrayList<>();
@@ -56,7 +56,7 @@ public class SeguridadServiceImpl implements SeguridadService {
 		rolRepository.delete(id);
 	}
 	
-	//Servicios para Usuairio
+	//Servicios para Usuario----------------------------------------------------------------------------
 	@Override
 	public List<Usuario> getAllUsuarios(){
 		List<Usuario> usuarios = new ArrayList<>();
@@ -87,7 +87,7 @@ public class SeguridadServiceImpl implements SeguridadService {
 		usuarioRepository.delete(id);
 	}
 	
-	//Servicios para UsuarioRol
+	//Servicios para UsuarioRol--------------------------------------------------------------------------------
 	@Override
 	public List<UsuarioRol> getAllUsuariosRoles(){
 		List<UsuarioRol> usuariosRoles = new ArrayList<>();

@@ -32,7 +32,7 @@ public class NotificacionServiceImpl implements NotificacionService {
 	public List<Aviso> getAllAvisos(){
 		List<Aviso> avisos = new ArrayList<>();
 		
-		//novedadRepository sería el DAO. El add agarra a cada novedad y la mete en la lista de novedades.
+		//avisoRepository sería el DAO. El add agarra a cada novedad y la mete en la lista de novedades.
 		avisoRepository.findAll().forEach(avisos::add);
 		
 		return avisos;
