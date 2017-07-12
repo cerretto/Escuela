@@ -9,5 +9,27 @@ import ar.com.escuela.base.bean.BaseBO;
 @Table(name = "roles")
 public class Rol extends BaseBO {
 	
+	private String codRol;
+	private String desRol;
+	
+	public Rol(){
+		
+	}
 
+	public String getCodRol() {
+		return codRol;
+	}
+
+	public void setCodRol(String codRol) {
+		this.codRol = codRol;
+	}
+
+	public String getDesRol() {
+		return desRol;
+	}
+
+	public void setDesRol(String desRol) {
+		this.desRol = desRol;
+	}
+	
 }

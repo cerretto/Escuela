@@ -10,41 +10,38 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import ar.com.escuela.seg.bean.Usuario;
-import ar.com.escuela.seg.service.UsuarioService;
+import ar.com.escuela.seg.service.SeguridadService;
 
 @RestController
+@RequestMapping("/usuarios")
 public class UsuarioController {
 		
-		@Autowired
-		private UsuarioService usuarioService;
-		
-		@RequestMapping("/usuarioes")
-		public List<Usuario> getAllUsuarioes(){
-			
-			return usuarioService.getAllUsuarios();
-		}
-		
-		@RequestMapping("/usuarioes/{id}")					// otra forma "/usuario/{foo}" y poner @PathVariable("foo")
-		public Usuario getUsuario(@PathVariable Long id){
-			
-			return usuarioService.getUsuarioById(id);
-		}
-		
-		@RequestMapping(method=RequestMethod.POST , value="/usuarioes")
-		public void addUsuario(@RequestBody Usuario usuario){
-			usuarioService.addUsuario(usuario);
-		}
-		
-		@RequestMapping(method=RequestMethod.PUT, value="/usuarioes/{id}")
-		public void updateUsuario(@RequestBody Usuario usuario, @PathVariable Long id){
-			usuarioService.updateUsuario(usuario, id);
-			
-		}
-		
-		@RequestMapping(method=RequestMethod.DELETE, value="/usuarioes/{id}")
-		public void deleteUsuario(@PathVariable Long id){
-			usuarioService.deleteUsuario(id);
-		}
-		
+	@Autowired
+	private SeguridadService seguridadService;
 	
+	@RequestMapping("/")
+	public List<Usuario> getAllUsuarios(){
+		return seguridadService.getAllUsuarios();
+	}
+	
+	@RequestMapping("/{id}")	// otra forma "/usuario/{foo}" y poner @PathVariable("foo")
+	public Usuario getUsuario(@PathVariable Long id){
+		return seguridadService.getUsuarioById(id);
+	}
+	
+	@RequestMapping(method=RequestMethod.POST , value="/")
+	public void addUsuario(@RequestBody Usuario usuario){
+		seguridadService.addUsuario(usuario);
+	}
+	
+	@RequestMapping(method=RequestMethod.PUT, value="/{id}")
+	public void updateUsuario(@RequestBody Usuario usuario, @PathVariable Long id){
+		seguridadService.updateUsuario(usuario, id);
+		
+	}
+	
+	@RequestMapping(method=RequestMethod.DELETE, value="/{id}")
+	public void deleteUsuario(@PathVariable Long id){
+		seguridadService.deleteUsuario(id);
+	}
 }

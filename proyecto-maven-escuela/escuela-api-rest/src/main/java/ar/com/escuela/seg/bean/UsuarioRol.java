@@ -23,6 +23,7 @@ public class UsuarioRol extends BaseBO {
 	
 	private Date fechaDesde;
 	private Date fechaHasta;
+	
 	public Usuario getUsuario() {
 		return usuario;
 	}
