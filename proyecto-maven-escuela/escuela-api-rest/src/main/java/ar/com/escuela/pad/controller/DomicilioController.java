@@ -9,39 +9,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import ar.com.escuela.pad.bean.Localidad;
+import ar.com.escuela.pad.bean.Domicilio;
 import ar.com.escuela.pad.service.PadronService;
 
 @RestController
-@RequestMapping("/localidades")
-public class LocalidadController {
-	
+@RequestMapping("/domicilios")
+public class DomicilioController {
 	@Autowired
-	private PadronService localidadService;
+	private PadronService domicilioService;
 	
 	@RequestMapping("/")
-	private List<Localidad> getAllLocalidades(){
-		return localidadService.getAllLocalidades();
+	private List<Domicilio> getAllDomicilios(){
+		return domicilioService.getAllDomicilios();
 	}
 	
 	@RequestMapping("/{id}")
-	private Localidad getLocalidadById(@PathVariable Long id){
-		return localidadService.getLocalidadById(id);
+	private Domicilio getDomicilioById(@PathVariable Long id){
+		return domicilioService.getDomicilioById(id);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST,value="/")
-	public void addLocalidad(@RequestBody Localidad localidad){
-		localidadService.addLocalidad(localidad);
+	public void addDomicilio(@RequestBody Domicilio domicilio){
+		domicilioService.addDomicilio(domicilio);
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT,value="/{id}")
-	public void updateLocalidad(@RequestBody Localidad localidad, @PathVariable Long id){
-		localidadService.updateLocalidad(localidad, id);
+	public void updateDomicilio(@RequestBody Domicilio domicilio, @PathVariable Long id){
+		domicilioService.updateDomicilio(domicilio, id);
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE,value="/{id}")
-	public void deleteLocalidad(@PathVariable Long id){
-		localidadService.deleteLocalidad(id);
+	public void deleteDomicilio(@PathVariable Long id){
+		domicilioService.deleteDomicilio(id);
 	}
-
 }

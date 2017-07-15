@@ -14,7 +14,6 @@ public class Persona {
 	private String nroDocumento;
 	private Date fechaNacimiento;
 	
-	
 	public String getNombre() {
 		return nombre;
 	}
@@ -39,6 +38,5 @@ public class Persona {
 	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
-	
-	
+
 }

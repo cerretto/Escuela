@@ -18,9 +18,6 @@ public class Domicilio {
 	@JoinColumn(name="idPersona")
 	private Persona Persona;
 	
-	
-	
-
 	public String getCalle() {
 		return calle;
 	}
@@ -60,5 +57,4 @@ public class Domicilio {
 	public void setPersona(Persona persona) {
 		Persona = persona;
 	}
-
 }
