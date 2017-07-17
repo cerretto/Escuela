@@ -1,5 +1,7 @@
 package ar.com.escuela.base.bean;
 
+import java.util.Date;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,6 +13,9 @@ public class BaseBO {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	private String usuarioUltMod;
+	private Date fechaUltMod;
 
 	
 	
@@ -19,5 +24,17 @@ public class BaseBO {
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public String getUsuarioUltMod() {
+		return usuarioUltMod;
+	}
+	public void setUsuarioUltMod(String usuarioUltMod) {
+		this.usuarioUltMod = usuarioUltMod;
+	}
+	public Date getFechaUltMod() {
+		return fechaUltMod;
+	}
+	public void setFechaUltMod(Date fechaUltMod) {
+		this.fechaUltMod = fechaUltMod;
 	}
 }

@@ -18,6 +18,10 @@ public class Domicilio {
 	@JoinColumn(name="idPersona")
 	private Persona Persona;
 	
+	@ManyToOne
+	@JoinColumn(name = "idLocalidad")
+	private Localidad localidad;
+	
 	public String getCalle() {
 		return calle;
 	}
@@ -56,5 +60,13 @@ public class Domicilio {
 
 	public void setPersona(Persona persona) {
 		Persona = persona;
+	}
+
+	public Localidad getLocalidad() {
+		return localidad;
+	}
+
+	public void setLocalidad(Localidad localidad) {
+		this.localidad = localidad;
 	}
 }
