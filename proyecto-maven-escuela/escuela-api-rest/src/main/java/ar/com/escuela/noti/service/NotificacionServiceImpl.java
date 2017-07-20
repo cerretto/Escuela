@@ -19,12 +19,7 @@ public class NotificacionServiceImpl implements NotificacionService {
 	
 	@Autowired
 	private TipoAvisoRepository tipoAvisoRepository;
-	
-	
-	
-	
-	
-	
+
 	//-----------------------------------------------------------------------------
 	// Servicios para Aviso
 	//------------------------------------------------------------------------------

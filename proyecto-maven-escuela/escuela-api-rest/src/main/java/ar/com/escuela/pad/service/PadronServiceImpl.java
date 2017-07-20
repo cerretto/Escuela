@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import ar.com.escuela.pad.bean.Domicilio;
 import ar.com.escuela.pad.bean.Localidad;
@@ -14,7 +15,7 @@ import ar.com.escuela.pad.repository.LocalidadRepository;
 import ar.com.escuela.pad.repository.PersonaRepository;
 import ar.com.escuela.pad.repository.ProvinciaRepository;
 
-
+@Service
 public class PadronServiceImpl implements PadronService {
 	
 	@Autowired

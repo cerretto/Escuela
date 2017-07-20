@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import ar.com.escuela.seg.bean.Rol;
 import ar.com.escuela.seg.bean.Usuario;
@@ -12,6 +13,7 @@ import ar.com.escuela.seg.repository.RolRepository;
 import ar.com.escuela.seg.repository.UsuarioRepository;
 import ar.com.escuela.seg.repository.UsuarioRolRepository;
 
+@Service
 public class SeguridadServiceImpl implements SeguridadService {
 
 	@Autowired
@@ -26,12 +28,12 @@ public class SeguridadServiceImpl implements SeguridadService {
 	//Servicios para Rol------------------------------------------------------------------------------------
 	@Override
 	public List<Rol> getAllRoles(){
-		List<Rol> rols = new ArrayList<>();
+		List<Rol> roles = new ArrayList<>();
 		
 		//rolRepository sería el DAO. El add agarra a cada rol y la mete en la lista de rols.
-		rolRepository.findAll().forEach(rols::add);
+		rolRepository.findAll().forEach(roles::add);
 		
-		return rols;
+		return roles;
 	}
 	
 	@Override

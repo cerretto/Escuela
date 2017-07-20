@@ -21,7 +21,5 @@ public interface NotificacionService {
 	public void addTipoAviso(TipoAviso novedad);
 	public void updateTipoAviso(TipoAviso novedad, Long id);
 	public void deleteTipoAviso(Long id);
-	
-	
-	
+
 }
