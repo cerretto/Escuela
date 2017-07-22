@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -21,6 +22,14 @@ public class Persona {
 	@OneToMany
 	@JoinColumn(name = "idPersona")
 	private List<Domicilio> listDomicilio;
+	
+	@ManyToOne
+	@JoinColumn(name = "idPariente")
+	private Persona pariente;
+	
+	@OneToMany
+	@JoinColumn(name = "idPariente")
+	private List<Persona> listParientes;
 	
 	
 	
@@ -60,6 +69,18 @@ public class Persona {
 	}
 	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
+	}
+	public Persona getPariente() {
+		return pariente;
+	}
+	public void setPariente(Persona pariente) {
+		this.pariente = pariente;
+	}
+	public List<Persona> getListParientes() {
+		return listParientes;
+	}
+	public void setListParientes(List<Persona> listParientes) {
+		this.listParientes = listParientes;
 	}
 
 }
