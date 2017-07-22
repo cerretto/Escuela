@@ -2,18 +2,18 @@ package ar.com.escuela.def.service;
 
 import java.util.List;
 
-import ar.com.escuela.def.bean.Comision;
+import ar.com.escuela.def.bean.Curso;
 import ar.com.escuela.def.bean.Materia;
 import ar.com.escuela.def.bean.Nivel;
 
 public interface DefinicionService {
 	
-	//Comision
-	public List<Comision> getAllComisiones();
-	public Comision getComisionById(Long id);
-	public void addComision(Comision comision);
-	public void updateComision(Comision comision, Long id);
-	public void deleteComision(Long id);
+	//Curso
+	public List<Curso> getAllCursos();
+	public Curso getCursoById(Long id);
+	public void addCurso(Curso curso);
+	public void updateCurso(Curso curso, Long id);
+	public void deleteCurso(Long id);
 	
 	//Materia
 	public List<Materia> getAllMaterias();
@@ -22,7 +22,7 @@ public interface DefinicionService {
 	public void updateMateria(Materia materia, Long id);
 	public void deleteMateria(Long id);
 	
-	//Comision
+	//Nivel
 	public List<Nivel> getAllNiveles();
 	public Nivel getNivelById(Long id);
 	public void addNivel(Nivel nivel);

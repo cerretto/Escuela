@@ -19,8 +19,8 @@ public class Nivel extends BaseBO{
 	private Date fechaUltMdf;
 	
 	@OneToMany
-	@JoinColumn(name = "idComision")
-	private List<Comision> listComisiones;
+	@JoinColumn(name = "idCurso")
+	private List<Curso> listCursos;
 
 	public Long getNumero() {
 		return numero;
@@ -46,11 +46,11 @@ public class Nivel extends BaseBO{
 		this.fechaUltMdf = fechaUltMdf;
 	}
 
-	public List<Comision> getListComisiones() {
-		return listComisiones;
+	public List<Curso> getListCursos() {
+		return listCursos;
 	}
 
-	public void setListComisiones(List<Comision> listComisiones) {
-		this.listComisiones = listComisiones;
+	public void setListCurso(List<Curso> listCursos) {
+		this.listCursos = listCursos;
 	}
 }

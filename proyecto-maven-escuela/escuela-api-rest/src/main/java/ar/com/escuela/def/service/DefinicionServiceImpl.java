@@ -6,10 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ar.com.escuela.def.bean.Comision;
+import ar.com.escuela.def.bean.Curso;
 import ar.com.escuela.def.bean.Materia;
 import ar.com.escuela.def.bean.Nivel;
-import ar.com.escuela.def.repository.ComisionRepository;
+import ar.com.escuela.def.repository.CursoRepository;
 import ar.com.escuela.def.repository.MateriaRepository;
 import ar.com.escuela.def.repository.NivelRepository;
 
@@ -17,7 +17,7 @@ import ar.com.escuela.def.repository.NivelRepository;
 public class DefinicionServiceImpl implements DefinicionService{
 	
 	@Autowired
-	private ComisionRepository comisionRepository;
+	private CursoRepository cursoRepository;
 	
 	@Autowired
 	private NivelRepository nivelRepository;
@@ -25,35 +25,35 @@ public class DefinicionServiceImpl implements DefinicionService{
 	@Autowired
 	private MateriaRepository materiaRolRepository;
 	
-	//Servicios para Comision------------------------------------------------------------
+	//Servicios para Curso------------------------------------------------------------
 	@Override
-	public List<Comision> getAllComisiones(){
-		List<Comision> comisiones = new ArrayList<>();
+	public List<Curso> getAllCursos(){
+		List<Curso> cursos = new ArrayList<>();
 		
-		//comisionRepository sería el DAO. El add agarra a cada comision y la mete en la lista de comisiones.
-		comisionRepository.findAll().forEach(comisiones::add);
+		//cursoRepository sería el DAO. El add agarra a cada curso y la mete en la lista de cursos.
+		cursoRepository.findAll().forEach(cursos::add);
 		
-		return comisiones;
+		return cursos;
 	}
 	
 	@Override
-	public void addComision(Comision comision){
-		comisionRepository.save(comision);
+	public void addCurso(Curso curso){
+		cursoRepository.save(curso);
 	}
 	
 	@Override
-	public Comision getComisionById(Long id) {
-		return comisionRepository.findOne(id);
+	public Curso getCursoById(Long id) {
+		return cursoRepository.findOne(id);
 	}
 
 	@Override
-	public void updateComision(Comision comision, Long id) {
-		comisionRepository.save(comision);
+	public void updateCurso(Curso curso, Long id) {
+		cursoRepository.save(curso);
 	}
 
 	@Override
-	public void deleteComision(Long id) {
-		comisionRepository.delete(id);
+	public void deleteCurso(Long id) {
+		cursoRepository.delete(id);
 	}
 	
 	

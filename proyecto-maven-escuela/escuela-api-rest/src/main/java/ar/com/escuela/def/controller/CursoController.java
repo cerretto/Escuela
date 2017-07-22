@@ -9,38 +9,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import ar.com.escuela.def.bean.Comision;
+import ar.com.escuela.def.bean.Curso;
 import ar.com.escuela.def.service.DefinicionService;
 
 @RestController
-@RequestMapping("/comisiones")
-public class ComisionController {
+@RequestMapping("/cursos")
+public class CursoController {
 	
 	@Autowired
-	private DefinicionService comisionService;
+	private DefinicionService cursoService;
 	
 	@RequestMapping("/")
-	public List<Comision> getAllComisiones(){
-		return comisionService.getAllComisiones();
+	public List<Curso> getAllCursos(){
+		return cursoService.getAllCursos();
 	}
 	
 	@RequestMapping("/{id}")
-	public Comision getComision(@PathVariable Long id){
-		return comisionService.getComisionById(id);
+	public Curso getCurso(@PathVariable Long id){
+		return cursoService.getCursoById(id);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/")
-	public void addComision(@RequestBody Comision comision){
-		comisionService.addComision(comision);
+	public void addCurso(@RequestBody Curso curso){
+		cursoService.addCurso(curso);
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/{id}")
-	public void updateComision(@RequestBody Comision comision, @PathVariable Long id){
-		comisionService.updateComision(comision, id);
+	public void updateCurso(@RequestBody Curso curso, @PathVariable Long id){
+		cursoService.updateCurso(curso, id);
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/{id}")
-	private void deleteComision(@PathVariable Long id){
-		comisionService.deleteComision(id);
+	private void deleteCurso(@PathVariable Long id){
+		cursoService.deleteCurso(id);
 	}
 }
