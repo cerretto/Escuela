@@ -5,6 +5,7 @@ import java.util.List;
 import ar.com.escuela.def.bean.Curso;
 import ar.com.escuela.def.bean.Materia;
 import ar.com.escuela.def.bean.Nivel;
+import ar.com.escuela.def.bean.Plan;
 
 public interface DefinicionService {
 	
@@ -28,5 +29,12 @@ public interface DefinicionService {
 	public void addNivel(Nivel nivel);
 	public void updateNivel(Nivel nivel, Long id);
 	public void deleteNivel(Long id);
+	
+	//Plan
+	public List<Plan> getAllPlanes();
+	public Plan getPlanById(Long id);
+	public void addPlan(Plan plan);
+	public void updatePlan(Plan plan, Long id);
+	public void deletePlan(Long id);
 	
 }

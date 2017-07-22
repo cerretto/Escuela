@@ -1,6 +1,10 @@
 package ar.com.escuela.def.bean;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import ar.com.escuela.base.bean.BaseBO;
@@ -12,6 +16,14 @@ public class Curso extends BaseBO{
 	private String codCurso;
 	private String desCurso;
 	private Long cupo;
+	private Date anioCalendario;
+	
+	@ManyToOne
+	@JoinColumn(name="idNivel")
+	private Nivel nivel;
+	
+	public Curso(){
+	}
 	
 	public String getCodCurso() {
 		return codCurso;
@@ -30,5 +42,17 @@ public class Curso extends BaseBO{
 	}
 	public void setCupo(Long cupo) {
 		this.cupo = cupo;
+	}
+	public Date getAnioCalendario() {
+		return anioCalendario;
+	}
+	public void setAnioCalendario(Date anioCalendario) {
+		this.anioCalendario = anioCalendario;
+	}
+	public Nivel getNivel() {
+		return nivel;
+	}
+	public void setNivel(Nivel nivel) {
+		this.nivel = nivel;
 	}
 }

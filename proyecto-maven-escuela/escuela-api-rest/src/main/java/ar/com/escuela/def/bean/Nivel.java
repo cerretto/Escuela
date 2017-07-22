@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -19,9 +20,20 @@ public class Nivel extends BaseBO{
 	private Date fechaUltMdf;
 	
 	@OneToMany
-	@JoinColumn(name = "idCurso")
+	@JoinColumn(name="idCurso")
 	private List<Curso> listCursos;
-
+	
+	@OneToMany
+	@JoinColumn(name="idMateria")
+	private List<Materia> listMaterias;
+	
+	@ManyToOne
+	@JoinColumn(name="idPlan")
+	private Plan plan;
+	
+	public Nivel(){
+	}
+	
 	public Long getNumero() {
 		return numero;
 	}
@@ -52,5 +64,25 @@ public class Nivel extends BaseBO{
 
 	public void setListCurso(List<Curso> listCursos) {
 		this.listCursos = listCursos;
+	}
+
+	public List<Materia> getListMaterias() {
+		return listMaterias;
+	}
+
+	public void setListMaterias(List<Materia> listMaterias) {
+		this.listMaterias = listMaterias;
+	}
+
+	public void setListCursos(List<Curso> listCursos) {
+		this.listCursos = listCursos;
+	}
+
+	public Plan getPlan() {
+		return plan;
+	}
+
+	public void setPlan(Plan plan) {
+		this.plan = plan;
 	}
 }

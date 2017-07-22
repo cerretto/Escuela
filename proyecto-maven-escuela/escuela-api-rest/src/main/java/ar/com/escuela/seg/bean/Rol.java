@@ -21,7 +21,6 @@ public class Rol extends BaseBO {
 	private List<UsuarioRol> listUsuarioRol;
 	
 	public Rol(){
-		
 	}
 
 	public String getCodRol() {

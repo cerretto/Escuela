@@ -9,9 +9,11 @@ import org.springframework.stereotype.Service;
 import ar.com.escuela.def.bean.Curso;
 import ar.com.escuela.def.bean.Materia;
 import ar.com.escuela.def.bean.Nivel;
+import ar.com.escuela.def.bean.Plan;
 import ar.com.escuela.def.repository.CursoRepository;
 import ar.com.escuela.def.repository.MateriaRepository;
 import ar.com.escuela.def.repository.NivelRepository;
+import ar.com.escuela.def.repository.PlanRepository;
 
 @Service
 public class DefinicionServiceImpl implements DefinicionService{
@@ -23,16 +25,17 @@ public class DefinicionServiceImpl implements DefinicionService{
 	private NivelRepository nivelRepository;
 	
 	@Autowired
-	private MateriaRepository materiaRolRepository;
+	private MateriaRepository materiaRepository;
+	
+	@Autowired
+	private PlanRepository planRepository;
 	
 	//Servicios para Curso------------------------------------------------------------
 	@Override
 	public List<Curso> getAllCursos(){
 		List<Curso> cursos = new ArrayList<>();
-		
 		//cursoRepository sería el DAO. El add agarra a cada curso y la mete en la lista de cursos.
 		cursoRepository.findAll().forEach(cursos::add);
-		
 		return cursos;
 	}
 	
@@ -61,10 +64,8 @@ public class DefinicionServiceImpl implements DefinicionService{
 	@Override
 	public List<Nivel> getAllNiveles(){
 		List<Nivel> niveles = new ArrayList<>();
-		
 		//nivelRepository sería el DAO. El add agarra a cada nivel y la mete en la lista de niveles.
 		nivelRepository.findAll().forEach(niveles::add);
-		
 		return niveles;
 	}
 	
@@ -92,30 +93,57 @@ public class DefinicionServiceImpl implements DefinicionService{
 	@Override
 	public List<Materia> getAllMaterias(){
 		List<Materia> materias = new ArrayList<>();
-		
 		//materiaRolRepository sería el DAO. El add agarra a cada materia y la mete en la lista de materias.
-		materiaRolRepository.findAll().forEach(materias::add);
-		
+		materiaRepository.findAll().forEach(materias::add);
 		return materias;
 	}
 	
 	@Override
 	public void addMateria(Materia materia){
-		materiaRolRepository.save(materia);
+		materiaRepository.save(materia);
 	}
 	
 	@Override
 	public Materia getMateriaById(Long id) {
-		return materiaRolRepository.findOne(id);
+		return materiaRepository.findOne(id);
 	}
 
 	@Override
 	public void updateMateria(Materia materia, Long id) {
-		materiaRolRepository.save(materia);
+		materiaRepository.save(materia);
 	}
 
 	@Override
 	public void deleteMateria(Long id) {
-		materiaRolRepository.delete(id);
+		materiaRepository.delete(id);
+	}
+	
+	//Servicios para Plan--------------------------------------------------------------------------------
+	@Override
+	public List<Plan> getAllPlanes(){
+		List<Plan> planes = new ArrayList<>();
+		//planRepository sería el DAO. El add agarra a cada plan y la mete en la lista de planes.
+		planRepository.findAll().forEach(planes::add);
+		return planes;
+	}
+	
+	@Override
+	public void addPlan(Plan plan){
+		planRepository.save(plan);
+	}
+	
+	@Override
+	public Plan getPlanById(Long id) {
+		return planRepository.findOne(id);
+	}
+
+	@Override
+	public void updatePlan(Plan plan, Long id) {
+		planRepository.save(plan);
+	}
+
+	@Override
+	public void deletePlan(Long id) {
+		planRepository.delete(id);
 	}
 }

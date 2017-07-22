@@ -48,7 +48,4 @@ public class UsuarioRol extends BaseBO {
 	public void setFechaHasta(Date fechaHasta) {
 		this.fechaHasta = fechaHasta;
 	} 
-	
-	
-	
 }
