@@ -24,12 +24,12 @@ public class Persona {
 	private List<Domicilio> listDomicilio;
 	
 	@ManyToOne
-	@JoinColumn(name = "idPariente")
-	private Persona pariente;
+	@JoinColumn(name = "idPersona")
+	private Persona responsable;
 	
 	@OneToMany
-	@JoinColumn(name = "idPariente")
-	private List<Persona> listParientes;
+	@JoinColumn(name = "idPersona")
+	private List<Persona> listHijos;
 	
 	
 	
@@ -70,17 +70,17 @@ public class Persona {
 	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
-	public Persona getPariente() {
-		return pariente;
+	public Persona getResponsable() {
+		return responsable;
 	}
-	public void setPariente(Persona pariente) {
-		this.pariente = pariente;
+	public void setResponsable(Persona responsable) {
+		this.responsable = responsable;
 	}
-	public List<Persona> getListParientes() {
-		return listParientes;
+	public List<Persona> getListHijos() {
+		return listHijos;
 	}
-	public void setListParientes(List<Persona> listParientes) {
-		this.listParientes = listParientes;
+	public void setListHijos(List<Persona> listHijos) {
+		this.listHijos = listHijos;
 	}
 
 }

@@ -5,12 +5,12 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import ar.com.escuela.base.bean.BaseBO;
-import ar.com.escuela.noti.bean.Aviso;
+import ar.com.escuela.pad.bean.Persona;
 
 @Entity
 @Table(name = "usuarios")
@@ -24,15 +24,9 @@ public class Usuario extends BaseBO{
 	@JoinColumn(name = "idUsuario")
 	private List<UsuarioRol> listUsuarioRol;
 	
-	//En este caso tengo el aviso emitido por el usario. EMISOR
-	@ManyToOne
-	@JoinColumn(name="idAviso")
-	private Aviso aviso; 
-	
-	//En este caso tengo una lista de avisos para un usuario. RECEPTOR
-	@OneToMany
-	@JoinColumn(name="idAviso")
-	private List<Aviso> listAvisos;
+	@OneToOne
+	@JoinColumn(name = "idPersona")
+	private Persona persona;
 	
 	public Usuario(){
 	}
@@ -66,21 +60,15 @@ public class Usuario extends BaseBO{
 		this.listUsuarioRol = listUsuarioRol;
 	}
 
-	public Aviso getAviso() {
-		return aviso;
+	public Persona getPersona() {
+		return persona;
 	}
 
-	public void setAviso(Aviso aviso) {
-		this.aviso = aviso;
+	public void setPersona(Persona persona) {
+		this.persona = persona;
 	}
 
-	public List<Aviso> getListAvisos() {
-		return listAvisos;
-	}
 
-	public void setListAvisos(List<Aviso> listAvisos) {
-		this.listAvisos = listAvisos;
-	}
 }
 
 

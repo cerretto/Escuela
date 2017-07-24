@@ -26,12 +26,12 @@ public class Aviso extends BaseBO{
 	//Tengo al usuario que emite el aviso.
 	@ManyToOne
 	@JoinColumn(name="idUsuario")
-	private Usuario usuario; 
+	private Usuario emisor; 
 	
 	//Tengo una lista de usuarios de un aviso en particular.
 	@OneToMany
 	@JoinColumn(name="idUsuario")
-	private List<Usuario> listUsuarios;
+	private List<Usuario> listReceptores;
 	
 	public Aviso(){
 	}
@@ -60,19 +60,19 @@ public class Aviso extends BaseBO{
 		this.tipoAviso = tipoAviso;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
+	public Usuario getEmisor() {
+		return emisor;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setEmisor(Usuario emisor) {
+		this.emisor = emisor;
 	}
 
-	public List<Usuario> getListUsuarios() {
-		return listUsuarios;
+	public List<Usuario> getListReceptores() {
+		return listReceptores;
 	}
 
-	public void setListUsuarios(List<Usuario> listUsuarios) {
-		this.listUsuarios = listUsuarios;
+	public void setListUsuarios(List<Usuario> listReceptores) {
+		this.listReceptores = listReceptores;
 	}
 }
