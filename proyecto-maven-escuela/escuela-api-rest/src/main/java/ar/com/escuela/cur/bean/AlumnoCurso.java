@@ -9,12 +9,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import ar.com.escuela.base.bean.BaseBO;
 import ar.com.escuela.def.bean.Curso;
 import ar.com.escuela.seg.bean.Usuario;
 
 @Entity
 @Table(name="alumnoCurso")
-public class AlumnoCurso {
+public class AlumnoCurso extends BaseBO{
 
 	private Date fechaIni;
 	private Date fechaFin;

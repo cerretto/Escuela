@@ -7,9 +7,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import ar.com.escuela.base.bean.BaseBO;
+
 @Entity
 @Table(name="notas")
-public class Nota {
+public class Nota extends BaseBO{
 
 	private String calificacion;
 	private Date fecha;

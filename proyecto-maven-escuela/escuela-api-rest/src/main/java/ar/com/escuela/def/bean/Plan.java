@@ -7,9 +7,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import ar.com.escuela.base.bean.BaseBO;
+
 @Entity
 @Table(name="planes")
-public class Plan {
+public class Plan  extends BaseBO{
 	
 	private String codPlan;
 	private String descPlan;

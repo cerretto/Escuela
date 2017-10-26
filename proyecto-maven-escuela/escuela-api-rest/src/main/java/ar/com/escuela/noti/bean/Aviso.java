@@ -3,6 +3,7 @@ package ar.com.escuela.noti.bean;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -16,11 +17,14 @@ import ar.com.escuela.seg.bean.Usuario;
 @Table(name = "avisos")
 public class Aviso extends BaseBO{
 	
+	@Column(name="FECHAAVISO")
 	private Date fechaAviso;
+	
+	@Column(name="DESCAVISO")
 	private String descAviso;
 	
 	@ManyToOne
-	@JoinColumn(name="idTipoAviso")
+	@JoinColumn(name="IDTIPOAVISO")
 	private TipoAviso tipoAviso;
 	
 	//Tengo al usuario que emite el aviso.

@@ -11,11 +11,12 @@ import javax.persistence.OneToMany;
 
 import javax.persistence.Table;
 
+import ar.com.escuela.base.bean.BaseBO;
 import ar.com.escuela.cur.bean.Evaluacion;
 
 @Entity
 @Table(name="materias")
-public class Materia {
+public class Materia  extends BaseBO{
 	
 	private String desMateria;
 	private String horario;

@@ -5,9 +5,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import ar.com.escuela.base.bean.BaseBO;
+
 @Entity
 @Table(name="domicilios")
-public class Domicilio {
+public class Domicilio extends BaseBO{
 	
 	private String calle;
 	private String nroCalle;

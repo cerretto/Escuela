@@ -3,6 +3,7 @@ package ar.com.escuela.noti.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import ar.com.escuela.noti.service.NotificacionService;
 
 @RestController
 @RequestMapping("/avisos")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AvisoController {
 	
 	@Autowired

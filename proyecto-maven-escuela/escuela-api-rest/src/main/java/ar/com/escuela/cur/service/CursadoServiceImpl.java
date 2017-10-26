@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import ar.com.escuela.cur.bean.AlumnoCurso;
 import ar.com.escuela.cur.bean.DocenteMateria;
@@ -14,6 +15,7 @@ import ar.com.escuela.cur.repository.DocenteMateriaRepository;
 import ar.com.escuela.cur.repository.EvaluacionRepository;
 import ar.com.escuela.cur.repository.NotaRepository;
 
+@Service
 public class CursadoServiceImpl implements CursadoService {
 
 	@Autowired

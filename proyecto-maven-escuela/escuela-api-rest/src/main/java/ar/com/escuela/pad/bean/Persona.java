@@ -9,9 +9,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import ar.com.escuela.base.bean.BaseBO;
+
 @Entity
 @Table(name="personas")
-public class Persona {
+public class Persona extends BaseBO{
 
 	private String nombre;
 	private String apellido;

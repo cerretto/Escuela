@@ -1,16 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { AvisoComponent } from "./aviso/aviso.component";
+import { RouterModule }   from '@angular/router';
+import { AvisoService } from "./aviso/aviso.service";
+
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AvisoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      {
+        path: 'aviso',
+        component: AvisoComponent
+      }
+    ])
+   
   ],
-  providers: [],
+  providers: [
+    AvisoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
