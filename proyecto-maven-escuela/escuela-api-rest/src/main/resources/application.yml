@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/escuela
+    username: escuela
+    password: escuela
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # validate, update, create, create-drop
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      format_sql: true
+  application.name: escuela
+    
+server:
+  port: 8081
+  
+  
+logging.level:
+  org.hibernate.SQL: DEBUG
+  org.type.descriptor.sql.BasicBinder: TRACE
+  org.springframework.web: ERROR
