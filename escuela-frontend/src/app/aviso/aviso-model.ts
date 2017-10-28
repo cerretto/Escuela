@@ -1,6 +1,7 @@
 export class Aviso {
-    descAviso: String;
-    tipo: TipoAviso;
+    descripcion: String;
+    tipoAviso: TipoAviso;
+    fecha: Date;
 }
 
 export class TipoAviso {

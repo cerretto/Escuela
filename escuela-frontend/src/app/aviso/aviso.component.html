@@ -2,7 +2,8 @@
 <div class="grid grid-pad">
   <div *ngFor="let aviso of avisos" class="col-1-4">
     <div class="module hero">
-      <h4>{{aviso.descAviso}}</h4>
+      <h4>{{aviso.descripcion}}</h4>
+      <h2>{{aviso.fecha | date: 'dd/MM/yyyy'}}</h2>
     </div>
   </div>
 </div>

@@ -14,17 +14,17 @@ import ar.com.escuela.base.bean.BaseBO;
 import ar.com.escuela.seg.bean.Usuario;
 
 @Entity
-@Table(name = "avisos")
+@Table(name = "aviso")
 public class Aviso extends BaseBO{
 	
-	@Column(name="FECHAAVISO")
-	private Date fechaAviso;
+	@Column
+	private Date fecha;
 	
-	@Column(name="DESCAVISO")
-	private String descAviso;
+	@Column
+	private String descripcion;
 	
 	@ManyToOne
-	@JoinColumn(name="IDTIPOAVISO")
+	@JoinColumn
 	private TipoAviso tipoAviso;
 	
 	//Tengo al usuario que emite el aviso.
@@ -40,20 +40,20 @@ public class Aviso extends BaseBO{
 	public Aviso(){
 	}
 	
-	public Date getFechaAviso() {
-		return fechaAviso;
+	public Date getFecha() {
+		return fecha;
 	}
 	
-	public void setFechaAviso(Date fechaAviso) {
-		this.fechaAviso = fechaAviso;
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 	
-	public String getDescAviso() {
-		return descAviso;
+	public String getDescripcion() {
+		return descripcion;
 	}
 	
-	public void setDescAviso(String descAviso) {
-		this.descAviso = descAviso;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public TipoAviso getTipoAviso() {
