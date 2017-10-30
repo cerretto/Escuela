@@ -3,25 +3,22 @@ package ar.com.escuela.cur.bean;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import ar.com.escuela.base.bean.BaseBO;
 
 @Entity
-@Table(name="notas")
+@Table(name="nota")
 public class Nota extends BaseBO{
 
 	private String calificacion;
 	private Date fecha;
 	
 	@ManyToOne
-	@JoinColumn(name="idEvaluacion")
 	private Evaluacion evaluacion;
 	
 	@ManyToOne
-	@JoinColumn(name = "idAlumnoCurso")
 	private AlumnoCurso alumnoCurso;
 
 	

@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import ar.com.escuela.base.bean.BaseBO;
 
 @Entity
-@Table(name="personas")
+@Table(name="persona")
 public class Persona extends BaseBO{
 
 	private String nombre;
@@ -26,7 +26,6 @@ public class Persona extends BaseBO{
 	private List<Domicilio> listDomicilio;
 	
 	@ManyToOne
-	@JoinColumn(name = "idPersona")
 	private Persona responsable;
 	
 	@OneToMany

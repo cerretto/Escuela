@@ -13,16 +13,15 @@ import ar.com.escuela.base.bean.BaseBO;
 import ar.com.escuela.cur.bean.AlumnoCurso;
 
 @Entity
-@Table(name="cursos")
+@Table(name="curso")
 public class Curso extends BaseBO{
 	
-	private String codCurso;
-	private String desCurso;
+	private String codigo;
+	private String decripcion;
 	private Long cupo;
 	private Date anioCalendario;
 	
 	@ManyToOne
-	@JoinColumn(name="idNivel")
 	private Nivel nivel;
 	
 	public Curso(){
@@ -33,17 +32,17 @@ public class Curso extends BaseBO{
 	private List<AlumnoCurso> listAlumnoCurso;
 	
 	
-	public String getCodCurso() {
-		return codCurso;
+	public String getCodigo() {
+		return codigo;
 	}
-	public void setCodCurso(String codCurso) {
-		this.codCurso = codCurso;
+	public void setCodigo(String codigp) {
+		this.codigo = codigp;
 	}
-	public String getDesCurso() {
-		return desCurso;
+	public String getDescripcion() {
+		return decripcion;
 	}
-	public void setDesCurso(String desCurso) {
-		this.desCurso = desCurso;
+	public void setDescripcion(String descripcion) {
+		this.decripcion = descripcion;
 	}
 	public Long getCupo() {
 		return cupo;

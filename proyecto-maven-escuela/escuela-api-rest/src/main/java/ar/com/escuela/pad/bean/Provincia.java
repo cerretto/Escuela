@@ -13,7 +13,7 @@ import ar.com.escuela.base.bean.BaseBO;
 @Table(name = "provincia")
 public class Provincia extends BaseBO{
 
-	private String descProvincia;
+	private String descripcion;
 	
 	@OneToMany
 	@JoinColumn(name = "idProvincia")
@@ -30,12 +30,12 @@ public class Provincia extends BaseBO{
 	public Provincia(){
 	}
 
-	public String getDescProvincia() {
-		return descProvincia;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setDescProvincia(String descProvincia) {
-		this.descProvincia = descProvincia;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 	
 }

@@ -15,7 +15,6 @@ import ar.com.escuela.base.bean.BaseBO;
 public class Localidad extends BaseBO{
 		
 	@ManyToOne
-	@JoinColumn(name ="idProvincia")
 	private Provincia provincia;
 	
 	@OneToMany
@@ -23,7 +22,7 @@ public class Localidad extends BaseBO{
 	private List<Domicilio> listDomicilio;
 	
 	private String codPostal;
-	private String descLocalidad;
+	private String descripcion;
 	
 	public Localidad(){
 	}
@@ -36,12 +35,12 @@ public class Localidad extends BaseBO{
 		this.codPostal = codPostal;
 	}
 
-	public String getDescLocalidad() {
-		return descLocalidad;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setDescLocalidad(String descLocalidad) {
-		this.descLocalidad = descLocalidad;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public Provincia getProvincia() {

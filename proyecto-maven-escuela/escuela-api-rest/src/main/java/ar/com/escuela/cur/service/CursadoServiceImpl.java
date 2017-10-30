@@ -18,11 +18,12 @@ import ar.com.escuela.cur.repository.NotaRepository;
 @Service
 public class CursadoServiceImpl implements CursadoService {
 
-	@Autowired
-	private AlumnoCursoRepository alumnoCursoRepository;
 	
 	@Autowired
 	private DocenteMateriaRepository docenteMateriaRepository;
+	
+	@Autowired
+	private AlumnoCursoRepository alumnoCursoRepository;
 	
 	@Autowired
 	private EvaluacionRepository evaluacionRepository;

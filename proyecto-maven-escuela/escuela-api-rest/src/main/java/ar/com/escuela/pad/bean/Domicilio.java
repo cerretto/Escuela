@@ -1,14 +1,13 @@
 package ar.com.escuela.pad.bean;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import ar.com.escuela.base.bean.BaseBO;
 
 @Entity
-@Table(name="domicilios")
+@Table(name="domicilio")
 public class Domicilio extends BaseBO{
 	
 	private String calle;
@@ -17,11 +16,9 @@ public class Domicilio extends BaseBO{
 	private String dpto;
 	
 	@ManyToOne
-	@JoinColumn(name="idPersona")
 	private Persona Persona;
 	
 	@ManyToOne
-	@JoinColumn(name = "idLocalidad")
 	private Localidad localidad;
 	
 	public String getCalle() {

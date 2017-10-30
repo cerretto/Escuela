@@ -3,7 +3,6 @@ package ar.com.escuela.seg.bean;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -14,11 +13,9 @@ import ar.com.escuela.base.bean.BaseBO;
 public class UsuarioRol extends BaseBO {
 
 	@ManyToOne
-	@JoinColumn(name ="idUsuario")
 	private Usuario usuario;
 	
 	@ManyToOne
-	@JoinColumn(name ="idRol")
 	private Rol rol;
 	
 	private Date fechaDesde;

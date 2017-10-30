@@ -10,11 +10,11 @@ import javax.persistence.Table;
 import ar.com.escuela.base.bean.BaseBO;
 
 @Entity
-@Table(name="planes")
+@Table(name="plan")
 public class Plan  extends BaseBO{
 	
-	private String codPlan;
-	private String descPlan;
+	private String codigo;
+	private String descripcion;
 	private String anio;
 	
 	@OneToMany
@@ -24,17 +24,17 @@ public class Plan  extends BaseBO{
 	public Plan(){
 	}
 	
-	public String getCodPlan() {
-		return codPlan;
+	public String getCodigo() {
+		return codigo;
 	}
-	public void setCodPlan(String codPlan) {
-		this.codPlan = codPlan;
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
-	public String getDescPlan() {
-		return descPlan;
+	public String getDescripcion() {
+		return descripcion;
 	}
-	public void setDescPlan(String descPlan) {
-		this.descPlan = descPlan;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 	public String getAnio() {
 		return anio;

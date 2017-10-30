@@ -3,7 +3,6 @@ package ar.com.escuela.cur.bean;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -11,23 +10,22 @@ import ar.com.escuela.base.bean.BaseBO;
 import ar.com.escuela.def.bean.Materia;
 
 @Entity
-@Table(name="evaluaciones")
+@Table(name="evaluacion")
 public class Evaluacion extends BaseBO{
 	
-	private String descEvaluacion;
+	private String descripcion;
 	private Date fechaIni;
 	private Date fechaFin;
 	
 	@ManyToOne
-	@JoinColumn(name = "idMateria")
 	private Materia materia;
 
-	public String getDescEvaluacion() {
-		return descEvaluacion;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setDescEvaluacion(String descEvaluacion) {
-		this.descEvaluacion = descEvaluacion;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public Date getFechaIni() {

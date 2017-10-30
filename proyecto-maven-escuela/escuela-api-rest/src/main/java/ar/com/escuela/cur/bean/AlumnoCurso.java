@@ -21,11 +21,9 @@ public class AlumnoCurso extends BaseBO{
 	private Date fechaFin;
 	
 	@ManyToOne
-	@JoinColumn(name="idAlumno")
 	private Usuario alumno;
 	
 	@ManyToOne
-	@JoinColumn(name="idCurso")
 	private Curso curso;
 
 	@OneToMany

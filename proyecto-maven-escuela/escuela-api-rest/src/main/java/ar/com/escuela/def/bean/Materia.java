@@ -15,15 +15,14 @@ import ar.com.escuela.base.bean.BaseBO;
 import ar.com.escuela.cur.bean.Evaluacion;
 
 @Entity
-@Table(name="materias")
+@Table(name="materia")
 public class Materia  extends BaseBO{
 	
-	private String desMateria;
+	private String descripcion;
 	private String horario;
 	private String salon;
 	
 	@ManyToOne
-	@JoinColumn(name="idNivel")
 	private Nivel nivel;
 	
 	public Materia(){
@@ -33,12 +32,12 @@ public class Materia  extends BaseBO{
 	@JoinColumn(name ="idMateria")
 	private List<Evaluacion> listEvaluaciones;
 
-	public String getDesMateria() {
-		return desMateria;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setDesMateria(String desMateria) {
-		this.desMateria = desMateria;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public String getHorario() {

@@ -13,7 +13,7 @@ import ar.com.escuela.base.bean.BaseBO;
 import ar.com.escuela.pad.bean.Persona;
 
 @Entity
-@Table(name = "usuarios")
+@Table(name = "usuario")
 public class Usuario extends BaseBO{
 	
 	private String usr;
@@ -25,7 +25,6 @@ public class Usuario extends BaseBO{
 	private List<UsuarioRol> listUsuarioRol;
 	
 	@OneToOne
-	@JoinColumn(name = "idPersona")
 	private Persona persona;
 	
 	public Usuario(){

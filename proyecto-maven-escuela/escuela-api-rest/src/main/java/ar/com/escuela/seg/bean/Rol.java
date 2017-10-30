@@ -10,11 +10,11 @@ import javax.persistence.Table;
 import ar.com.escuela.base.bean.BaseBO;
 
 @Entity
-@Table(name = "roles")
+@Table(name = "rol")
 public class Rol extends BaseBO {
 	
-	private String codRol;
-	private String desRol;
+	private String codigo;
+	private String descripcion;
 	
 	@OneToMany
 	@JoinColumn(name = "idRol")
@@ -23,20 +23,20 @@ public class Rol extends BaseBO {
 	public Rol(){
 	}
 
-	public String getCodRol() {
-		return codRol;
+	public String getCodigo() {
+		return codigo;
 	}
 
-	public void setCodRol(String codRol) {
-		this.codRol = codRol;
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
-	public String getDesRol() {
-		return desRol;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setDesRol(String desRol) {
-		this.desRol = desRol;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public List<UsuarioRol> getListUsuarioRol() {

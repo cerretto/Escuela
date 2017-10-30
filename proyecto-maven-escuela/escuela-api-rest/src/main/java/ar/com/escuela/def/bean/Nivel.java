@@ -12,11 +12,11 @@ import javax.persistence.Table;
 import ar.com.escuela.base.bean.BaseBO;
 
 @Entity
-@Table(name="niveles")
+@Table(name="nivel")
 public class Nivel extends BaseBO{
 	
 	private Long numero;
-	private String descNivel;
+	private String descripcion;
 	private Date fechaUltMdf;
 	
 	@OneToMany
@@ -28,7 +28,6 @@ public class Nivel extends BaseBO{
 	private List<Materia> listMaterias;
 	
 	@ManyToOne
-	@JoinColumn(name="idPlan")
 	private Plan plan;
 	
 	public Nivel(){
@@ -42,12 +41,12 @@ public class Nivel extends BaseBO{
 		this.numero = numero;
 	}
 
-	public String getDescNivel() {
-		return descNivel;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setDescNivel(String descNivel) {
-		this.descNivel = descNivel;
+	public void setDescripcion(String decripcion) {
+		this.descripcion = decripcion;
 	}
 
 	public Date getFechaUltMdf() {
