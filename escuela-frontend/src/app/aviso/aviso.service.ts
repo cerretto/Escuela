@@ -7,8 +7,12 @@ export class AvisoService {
 
   constructor(private http: HttpClient) { }
 
-getAvisos(){
-  return this.http.get<Aviso[]>("http://localhost:8081/avisos/");
-}
+  getAvisos(){
+    return this.http.get<Aviso[]>("http://localhost:8081/avisos/");
+  }
+
+  getAviso(id: Number){
+    return this.http.get<Aviso>("http://localhost:8081/avisos/" + id);
+  }
 
 }
