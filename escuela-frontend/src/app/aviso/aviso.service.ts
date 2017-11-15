@@ -15,4 +15,16 @@ export class AvisoService {
     return this.http.get<Aviso>("http://localhost:8081/avisos/" + id);
   }
 
+  deleteAviso(id:Number){
+    return this.http.delete("http://localhost:8081/avisos/" + id);
+  }
+
+  saveAviso(aviso: Aviso){
+    return this.http.post<Aviso>("http://localhost:8081/avisos", aviso);
+  }
+
+  updateAviso(aviso:Aviso){
+    return this.http.put<Aviso>("http://localhost:8081/avisos/"+ aviso.id, aviso);
+  }
+
 }

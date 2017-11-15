@@ -10,6 +10,7 @@ const routes: Routes = [
     { path: '', redirectTo: '/menu', pathMatch: 'full' },
     { path: 'menu',     component: MenuComponent },
     { path: 'avisos',  component: AvisoComponent },
+    { path: 'aviso-detail', component: AvisoDetailComponent },
     { path: 'aviso-detail/:id', component: AvisoDetailComponent },
 //   { path: 'heroes',     component: HeroesComponent }
 ];

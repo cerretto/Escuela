@@ -6,7 +6,9 @@
     <span >{{aviso.id}}</span>
     <span>{{aviso.descripcion}}</span>
     <span>{{aviso.fecha | date: 'dd/MM/yyyy'}}</span>
-    <span>{{aviso.tipoAviso.descripcion}}</span>
+    <ng-container *ngIf="aviso.tipoAviso">
+      <span>{{aviso.tipoAviso.descripcion}}</span>
+    </ng-container>
     <button class="delete"
       (click)="delete(aviso); $event.stopPropagation()">x</button>
   </li>

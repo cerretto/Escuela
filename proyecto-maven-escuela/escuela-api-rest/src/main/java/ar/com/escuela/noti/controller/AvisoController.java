@@ -3,6 +3,8 @@ package ar.com.escuela.noti.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,7 +33,7 @@ public class AvisoController {
 		return avisoService.getAvisoById(id);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST , value="/")
+	@RequestMapping(method=RequestMethod.POST)
 	public void addAviso(@RequestBody Aviso aviso){
 		avisoService.addAviso(aviso);
 	}
@@ -43,8 +45,10 @@ public class AvisoController {
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/{id}")
-	public void deleteAviso(@PathVariable Long id){
+	public ResponseEntity<Void> deleteAviso(@PathVariable Long id){
 		avisoService.deleteAviso(id);
+		
+		return  new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	
 	

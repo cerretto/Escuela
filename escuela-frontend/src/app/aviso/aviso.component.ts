@@ -27,4 +27,15 @@ export class AvisoComponent implements OnInit {
     this.router.navigate(['/aviso-detail', aviso.id]);
   }
 
+  delete(aviso: Aviso){
+    this.service.deleteAviso(aviso.id).subscribe(
+      data =>{
+        console.log("exito");
+        this.ngOnInit();
+      },err => {
+        console.log("error");
+      }
+    );
+  }
+
 }
