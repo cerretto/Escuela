@@ -3,6 +3,7 @@ package ar.com.escuela.noti.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,13 +14,14 @@ import ar.com.escuela.noti.bean.TipoAviso;
 import ar.com.escuela.noti.service.NotificacionService;
 
 @RestController
-@RequestMapping("/tipoAviso")
+@RequestMapping("/tipoaviso")
+@CrossOrigin(origins = "http://localhost:4200")
 public class TipoAvisoController {
 	
 	@Autowired
 	private NotificacionService notificacionService;
 	
-	@RequestMapping("/")
+	@RequestMapping("")
 	public List<TipoAviso> getAllTipoAvisos(){
 		
 		return notificacionService.getAllTipoAviso();
@@ -31,7 +33,7 @@ public class TipoAvisoController {
 		return notificacionService.getTipoAvisoById(id);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST , value="/")
+	@RequestMapping(method=RequestMethod.POST)
 	public void addTipoAviso(@RequestBody TipoAviso tipoAviso){
 		notificacionService.addTipoAviso(tipoAviso);
 	}

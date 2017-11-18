@@ -23,7 +23,7 @@ public class AvisoController {
 	@Autowired
 	private NotificacionService avisoService;
 	
-	@RequestMapping("/")
+	@RequestMapping("")
 	public List<Aviso> getAllAvisos(){
 		return avisoService.getAllAvisos();
 	}

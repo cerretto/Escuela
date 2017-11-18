@@ -5,6 +5,13 @@
   <div>
     <label>descripcion: </label>
     <input [(ngModel)]="aviso.descripcion" placeholder="descripcion" />
+    <select class="form-control show-tick" name="tipoAviso" 
+          required 
+          [(ngModel)]="aviso.tipoAviso"
+          #tipoAviso="ngModel">
+      <!-- <option [ngValue]=undefined disabled> Seleccione..</option> -->
+      <option *ngFor="let tipoAviso of tipoAvisoCombo" [ngValue]="tipoAviso">{{tipoAviso.descripcion}}</option>
+    </select>
    </div>
   <button (click)="goBack()">Back</button>
   <ng-container *ngIf="!updateFlag">

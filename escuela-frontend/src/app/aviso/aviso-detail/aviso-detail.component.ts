@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Aviso } from "../aviso-model";
+import { Aviso, TipoAviso } from "../aviso-model";
 import { AvisoService } from "../aviso.service";
 import { ActivatedRoute, ParamMap, Router } from "@angular/router";
 import { Location }                 from '@angular/common';
@@ -14,6 +14,7 @@ export class AvisoDetailComponent implements OnInit {
 
   updateFlag: Boolean = false;
   aviso: Aviso = new Aviso();
+  tipoAvisoCombo: TipoAviso[];
 
   constructor(private service: AvisoService, 
                 private route: ActivatedRoute, 
@@ -24,14 +25,23 @@ export class AvisoDetailComponent implements OnInit {
     // this.route.paramMap
     // .switchMap((params: ParamMap) => this.service.getAviso(+params.get('id')))
     // .subscribe(aviso => this.aviso = aviso);
-
+ 
     this.route.params.subscribe(params => {
       if(+params['id']) {
         console.log(+params['id']);
+        
         this.updateFlag = true;
         this.service.getAviso(+params['id']).subscribe(
-          aviso => this.aviso = aviso
-        );
+          aviso => {
+            this.aviso = aviso;
+
+            this.service.getTipoAviso().subscribe(
+              data => {
+                this.tipoAvisoCombo = data;
+                this.aviso.tipoAviso = this.tipoAvisoCombo.filter(r => r.id === this.aviso.tipoAviso.id)[0];
+              })
+          });
+
       } else {
         console.log("nada");
       }
