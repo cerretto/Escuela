@@ -3,7 +3,6 @@ package ar.com.escuela.seg.bean;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -17,8 +16,7 @@ public class Rol extends BaseBO {
 	private String descripcion;
 	
 	@OneToMany
-	@JoinColumn(name = "idRol")
-	private List<UsuarioRol> listUsuarioRol;
+	private List<UsuarioRol> usuarioRoles;
 	
 	public Rol(){
 	}
@@ -39,12 +37,12 @@ public class Rol extends BaseBO {
 		this.descripcion = descripcion;
 	}
 
-	public List<UsuarioRol> getListUsuarioRol() {
-		return listUsuarioRol;
+	public List<UsuarioRol> getUsuarioRoles() {
+		return usuarioRoles;
 	}
 
-	public void setListUsuarioRol(List<UsuarioRol> listUsuarioRol) {
-		this.listUsuarioRol = listUsuarioRol;
+	public void setUsuarioRoles(List<UsuarioRol> usuarioRoles) {
+		this.usuarioRoles = usuarioRoles;
 	}
 	
 }

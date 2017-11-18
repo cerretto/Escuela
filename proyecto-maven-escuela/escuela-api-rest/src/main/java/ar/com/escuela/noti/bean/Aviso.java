@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -24,18 +23,15 @@ public class Aviso extends BaseBO{
 	private String descripcion;
 	
 	@ManyToOne
-	@JoinColumn
 	private TipoAviso tipoAviso;
 	
 	//Tengo al usuario que emite el aviso.
 	@ManyToOne
-	@JoinColumn(name="idUsuario")
 	private Usuario emisor; 
 	
 	//Tengo una lista de usuarios de un aviso en particular.
 	@OneToMany
-	@JoinColumn(name="idUsuario")
-	private List<Usuario> listReceptores;
+	private List<Usuario> receptores;
 	
 	public Aviso(){
 	}
@@ -72,11 +68,11 @@ public class Aviso extends BaseBO{
 		this.emisor = emisor;
 	}
 
-	public List<Usuario> getListReceptores() {
-		return listReceptores;
+	public List<Usuario> getReceptores() {
+		return receptores;
 	}
 
-	public void setListUsuarios(List<Usuario> listReceptores) {
-		this.listReceptores = listReceptores;
+	public void setReceptores(List<Usuario> receptores) {
+		this.receptores = receptores;
 	}
 }

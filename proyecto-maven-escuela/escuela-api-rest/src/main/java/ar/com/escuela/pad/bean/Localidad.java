@@ -3,7 +3,6 @@ package ar.com.escuela.pad.bean;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -18,8 +17,7 @@ public class Localidad extends BaseBO{
 	private Provincia provincia;
 	
 	@OneToMany
-	@JoinColumn(name = "idLocalidad")
-	private List<Domicilio> listDomicilio;
+	private List<Domicilio> domicilios;
 	
 	private String codPostal;
 	private String descripcion;
@@ -51,12 +49,12 @@ public class Localidad extends BaseBO{
 		this.provincia = provincia;
 	}
 
-	public List<Domicilio> getListDomicilio() {
-		return listDomicilio;
+	public List<Domicilio> getDomicilios() {
+		return domicilios;
 	}
 
-	public void setListDomicilio(List<Domicilio> listDomicilio) {
-		this.listDomicilio = listDomicilio;
+	public void setDomicilios(List<Domicilio> domicilios) {
+		this.domicilios = domicilios;
 	}
 	
 }

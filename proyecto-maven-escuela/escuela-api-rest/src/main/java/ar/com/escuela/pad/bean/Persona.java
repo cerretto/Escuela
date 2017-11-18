@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -22,24 +21,22 @@ public class Persona extends BaseBO{
 	private String telefono;
 	
 	@OneToMany
-	@JoinColumn(name = "idPersona")
-	private List<Domicilio> listDomicilio;
+	private List<Domicilio> domicilios;
 	
 	@ManyToOne
 	private Persona responsable;
 	
 	@OneToMany
-	@JoinColumn(name = "idPersona")
-	private List<Persona> listHijos;
+	private List<Persona> hijos;
 	
 	
 	
 	
-	public List<Domicilio> getListDomicilio() {
-		return listDomicilio;
+	public List<Domicilio> getDomicilios() {
+		return domicilios;
 	}
-	public void setListDomicilio(List<Domicilio> listDomicilio) {
-		this.listDomicilio = listDomicilio;
+	public void setDomicilios(List<Domicilio> domicilios) {
+		this.domicilios = domicilios;
 	}
 	public String getNombre() {
 		return nombre;
@@ -77,11 +74,11 @@ public class Persona extends BaseBO{
 	public void setResponsable(Persona responsable) {
 		this.responsable = responsable;
 	}
-	public List<Persona> getListHijos() {
-		return listHijos;
+	public List<Persona> getHijos() {
+		return hijos;
 	}
-	public void setListHijos(List<Persona> listHijos) {
-		this.listHijos = listHijos;
+	public void setHijos(List<Persona> hijos) {
+		this.hijos = hijos;
 	}
 
 }

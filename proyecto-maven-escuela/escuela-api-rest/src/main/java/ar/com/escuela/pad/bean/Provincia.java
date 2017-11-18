@@ -3,7 +3,6 @@ package ar.com.escuela.pad.bean;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -16,15 +15,14 @@ public class Provincia extends BaseBO{
 	private String descripcion;
 	
 	@OneToMany
-	@JoinColumn(name = "idProvincia")
-	private List<Localidad> listLocalidad;
+	private List<Localidad> localidades;
 	
-	public List<Localidad> getListLocalidad() {
-		return listLocalidad;
+	public List<Localidad> getLocalidades() {
+		return localidades;
 	}
 
-	public void setListLocalidad(List<Localidad> listLocalidad) {
-		this.listLocalidad = listLocalidad;
+	public void setLocalidades(List<Localidad> localidades) {
+		this.localidades = localidades;
 	}
 
 	public Provincia(){

@@ -3,7 +3,6 @@ package ar.com.escuela.def.bean;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -18,8 +17,7 @@ public class Plan  extends BaseBO{
 	private String anio;
 	
 	@OneToMany
-	@JoinColumn(name="idNivel")
-	private List<Nivel> listNiveles;
+	private List<Nivel> niveles;
 	
 	public Plan(){
 	}
@@ -42,10 +40,10 @@ public class Plan  extends BaseBO{
 	public void setAnio(String anio) {
 		this.anio = anio;
 	}
-	public List<Nivel> getListNiveles() {
-		return listNiveles;
+	public List<Nivel> getNiveles() {
+		return niveles;
 	}
-	public void setListNiveles(List<Nivel> listNiveles) {
-		this.listNiveles = listNiveles;
+	public void setNiveles(List<Nivel> niveles) {
+		this.niveles = niveles;
 	}
 }
