@@ -23,8 +23,16 @@ export class AvisoComponent implements OnInit {
   //   this.selectedAviso = aviso;
   // }
 
-  gotoDetail(aviso: Aviso): void {
+  goCreate(): void {
+    this.router.navigate(['/aviso-detail']);
+  }
+
+  goEdit(aviso: Aviso): void {
     this.router.navigate(['/aviso-detail', aviso.id]);
+  }
+
+  goMenu(){
+    this.router.navigate(['/menu']);
   }
 
   delete(aviso: Aviso){

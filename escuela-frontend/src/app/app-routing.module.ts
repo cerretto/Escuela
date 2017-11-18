@@ -12,7 +12,9 @@ const routes: Routes = [
     { path: 'avisos',  component: AvisoComponent },
     { path: 'aviso-detail', component: AvisoDetailComponent },
     { path: 'aviso-detail/:id', component: AvisoDetailComponent },
-//   { path: 'heroes',     component: HeroesComponent }
+    
+    //redireccion (debe quedar al final de los routing)
+    { path: '**', redirectTo: '/menu', pathMatch: 'full' },
 ];
 
 @NgModule({

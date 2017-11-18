@@ -1,6 +1,6 @@
 <h2>Aviso</h2>
 <ul >
-  <li *ngFor="let aviso of avisos" (click)="gotoDetail(aviso)"
+  <li *ngFor="let aviso of avisos" (click)="goEdit(aviso)"
   [class.selected]="aviso === selectedAviso">
     
     <span >{{aviso.id}}</span>
@@ -13,3 +13,7 @@
       (click)="delete(aviso); $event.stopPropagation()">x</button>
   </li>
 </ul>
+<button class="create"
+(click)="goCreate(); $event.stopPropagation()">Create</button>
+<button class="create"
+(click)="goMenu(); $event.stopPropagation()">Menu</button>
