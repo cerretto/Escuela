@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -21,8 +20,7 @@ public class Usuario extends BaseBO{
 	private Date fechaInscripcion;
 	
 	@OneToMany
-	@JoinColumn(name = "idUsuario")
-	private List<UsuarioRol> listUsuarioRol;
+	private List<UsuarioRol> usuarioRoles;
 	
 	@OneToOne
 	private Persona persona;
@@ -51,12 +49,12 @@ public class Usuario extends BaseBO{
 		this.password = password;
 	}
 
-	public List<UsuarioRol> getListUsuarioRol() {
-		return listUsuarioRol;
+	public List<UsuarioRol> getUsuarioRoles() {
+		return usuarioRoles;
 	}
 
-	public void setListUsuarioRol(List<UsuarioRol> listUsuarioRol) {
-		this.listUsuarioRol = listUsuarioRol;
+	public void setUsuarioRoles(List<UsuarioRol> usuarioRoles) {
+		this.usuarioRoles = usuarioRoles;
 	}
 
 	public Persona getPersona() {
