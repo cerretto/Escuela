@@ -19,6 +19,12 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "assets/plugins/bootstrap/css/bootstrap.css",
+        "assets/plugins/node-waves/waves.css",
+        "assets/plugins/animate-css/animate.css",
+        "assets/plugins/sweetalert/sweetalert.css",
+        "assets/css/style.css",
+        "assets/css/themes/all-themes.css",
         "styles.css"
       ],
       "scripts": [],
