@@ -24,31 +24,38 @@ public class AvisoController {
 	private NotificacionService avisoService;
 	
 	@RequestMapping("")
-	public List<Aviso> getAllAvisos(){
-		return avisoService.getAllAvisos();
+	public ResponseEntity<List<Aviso>> getAllAvisos(){
+		List<Aviso> avisos = avisoService.getAllAvisos();
+		
+		return new ResponseEntity<List<Aviso>>(avisos,HttpStatus.OK);
 	}
 	
 	@RequestMapping("/{id}")	// otra forma "/novedad/{foo}" y poner @PathVariable("foo")
-	public Aviso getAviso(@PathVariable Long id){
-		return avisoService.getAvisoById(id);
+	public ResponseEntity<Aviso> getAviso(@PathVariable Long id){
+		Aviso aviso = avisoService.getAvisoById(id);
+		
+		return new ResponseEntity<Aviso>(aviso,HttpStatus.OK);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public void addAviso(@RequestBody Aviso aviso){
+	public ResponseEntity<Void> addAviso(@RequestBody Aviso aviso){
 		avisoService.addAviso(aviso);
+		
+		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/{id}")
-	public void updateAviso(@RequestBody Aviso aviso, @PathVariable Long id){
+	public ResponseEntity<Void> updateAviso(@RequestBody Aviso aviso, @PathVariable Long id){
 		avisoService.updateAviso(aviso, id);
 		
+		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/{id}")
 	public ResponseEntity<Void> deleteAviso(@PathVariable Long id){
 		avisoService.deleteAviso(id);
 		
-		return  new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	
 	

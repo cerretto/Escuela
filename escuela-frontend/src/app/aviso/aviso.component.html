@@ -1,6 +1,6 @@
 <h2>Aviso</h2>
 <ul >
-  <li *ngFor="let aviso of avisos" (click)="gotoDetail(aviso)"
+  <li *ngFor="let aviso of avisos" (click)="goEdit(aviso)"
   [class.selected]="aviso === selectedAviso">
     
     <span >{{aviso.id}}</span>

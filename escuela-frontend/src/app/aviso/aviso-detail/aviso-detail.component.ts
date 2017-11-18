@@ -28,7 +28,7 @@ export class AvisoDetailComponent implements OnInit {
  
     this.route.params.subscribe(params => {
       if(+params['id']) {
-        console.log(+params['id']);
+        // console.log(+params['id']);
         
         this.updateFlag = true;
         this.service.getAviso(+params['id']).subscribe(
@@ -43,7 +43,10 @@ export class AvisoDetailComponent implements OnInit {
           });
 
       } else {
-        console.log("nada");
+        this.service.getTipoAviso().subscribe(
+          data => {
+            this.tipoAvisoCombo = data;
+          })
       }
     });
 
@@ -54,21 +57,26 @@ export class AvisoDetailComponent implements OnInit {
   }
 
   save(){
+    console.log("func::save");
     this.service.saveAviso(this.aviso).subscribe(
       data => {
+        console.log("ok");
         this.router.navigate(['/avisos']);
       }, err => {
-
+        console.log("err");
       }
     );
   }
 
   update(){
+    console.log("func::update");
     this.service.updateAviso(this.aviso).subscribe(
       data => {
+        console.log("ok");
         this.aviso = data;
+        this.router.navigate(['/avisos']);
       }, err => {
-
+        console.log("ok");
       }
     );
   }
