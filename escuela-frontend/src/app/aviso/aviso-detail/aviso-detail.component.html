@@ -5,6 +5,8 @@
   <div>
     <label>descripcion: </label>
     <input [(ngModel)]="aviso.descripcion" placeholder="descripcion" />
+    <label>fecha: </label>
+    <input type="date" [ngModel]="aviso.fecha  | date:'yyyy-MM-dd'" (ngModelChange)="aviso.fecha = $event" name="fecha" placeholder="descripcion" />
     <select class="form-control show-tick" name="tipoAviso" 
           required 
           [(ngModel)]="aviso.tipoAviso"
