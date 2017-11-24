@@ -3,6 +3,7 @@ package ar.com.escuela.pad.bean;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -14,10 +15,19 @@ import ar.com.escuela.base.bean.BaseBO;
 @Table(name="persona")
 public class Persona extends BaseBO{
 
+	@Column
 	private String nombre;
+	
+	@Column
 	private String apellido;
+	
+	@Column
 	private String nroDocumento;
+	
+	@Column
 	private Date fechaNacimiento;
+	
+	@Column
 	private String telefono;
 	
 	@OneToMany

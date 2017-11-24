@@ -1,10 +1,9 @@
 package ar.com.escuela.cur.bean;
 
-import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -17,8 +16,8 @@ import ar.com.escuela.seg.bean.Usuario;
 @Table(name="alumnoCurso")
 public class AlumnoCurso extends BaseBO{
 
-	private Date fechaIni;
-	private Date fechaFin;
+	@Column
+	private Integer anio;
 	
 	@ManyToOne
 	private Usuario alumno;
@@ -27,34 +26,24 @@ public class AlumnoCurso extends BaseBO{
 	private Curso curso;
 
 	@OneToMany
-	@JoinColumn(name = "idAlumnoCurso")
-	private List<Nota> listNotas;
+	private List<Nota> notas;
 	
 	
 	
+	public Integer getAnio() {
+		return anio;
+	}
 	
-	public List<Nota> getListNotas() {
-		return listNotas;
+	public void setAnio(Integer anio) {
+		this.anio = anio;
 	}
 
-	public void setListNotas(List<Nota> listNotas) {
-		this.listNotas = listNotas;
+	public List<Nota> getNotas() {
+		return notas;
 	}
 
-	public Date getFechaIni() {
-		return fechaIni;
-	}
-
-	public void setFechaIni(Date fechaIni) {
-		this.fechaIni = fechaIni;
-	}
-
-	public Date getFechaFin() {
-		return fechaFin;
-	}
-
-	public void setFechaFin(Date fechaFin) {
-		this.fechaFin = fechaFin;
+	public void setNotas(List<Nota> notas) {
+		this.notas = notas;
 	}
 
 	public Usuario getAlumno() {

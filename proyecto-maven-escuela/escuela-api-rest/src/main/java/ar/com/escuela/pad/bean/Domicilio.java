@@ -1,5 +1,6 @@
 package ar.com.escuela.pad.bean;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -10,9 +11,16 @@ import ar.com.escuela.base.bean.BaseBO;
 @Table(name="domicilio")
 public class Domicilio extends BaseBO{
 	
+	@Column
 	private String calle;
+	
+	@Column
 	private String nroCalle;
+	
+	@Column
 	private String piso;
+	
+	@Column
 	private String dpto;
 	
 	@ManyToOne

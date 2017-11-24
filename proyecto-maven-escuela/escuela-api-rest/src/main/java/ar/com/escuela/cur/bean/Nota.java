@@ -2,6 +2,7 @@ package ar.com.escuela.cur.bean;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -12,7 +13,10 @@ import ar.com.escuela.base.bean.BaseBO;
 @Table(name="nota")
 public class Nota extends BaseBO{
 
+	@Column
 	private String calificacion;
+	
+	@Column
 	private Date fecha;
 	
 	@ManyToOne

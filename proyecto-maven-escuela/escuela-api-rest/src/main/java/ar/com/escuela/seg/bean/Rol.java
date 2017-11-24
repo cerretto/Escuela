@@ -2,6 +2,7 @@ package ar.com.escuela.seg.bean;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -12,7 +13,10 @@ import ar.com.escuela.base.bean.BaseBO;
 @Table(name = "rol")
 public class Rol extends BaseBO {
 	
+	@Column
 	private String codigo;
+	
+	@Column
 	private String descripcion;
 	
 	@OneToMany

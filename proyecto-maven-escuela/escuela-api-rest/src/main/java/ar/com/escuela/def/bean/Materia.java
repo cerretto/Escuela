@@ -2,13 +2,10 @@ package ar.com.escuela.def.bean;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-
 import javax.persistence.ManyToOne;
-
 import javax.persistence.OneToMany;
-
 import javax.persistence.Table;
 
 import ar.com.escuela.base.bean.BaseBO;
@@ -18,19 +15,20 @@ import ar.com.escuela.cur.bean.Evaluacion;
 @Table(name="materia")
 public class Materia  extends BaseBO{
 	
+	@Column
 	private String descripcion;
+	
+	@Column
 	private String horario;
+	
+	@Column
 	private String salon;
 	
 	@ManyToOne
 	private Nivel nivel;
 	
-	public Materia(){
-	}
-	
 	@OneToMany
-	@JoinColumn(name ="idMateria")
-	private List<Evaluacion> listEvaluaciones;
+	private List<Evaluacion> evaluciones;
 
 	public String getDescripcion() {
 		return descripcion;
@@ -64,11 +62,11 @@ public class Materia  extends BaseBO{
 		this.nivel = nivel;
 	}
 
-	public List<Evaluacion> getListEvaluaciones() {
-		return listEvaluaciones;
+	public List<Evaluacion> getEvaluaciones() {
+		return evaluciones;
 	}
 
-	public void setListEvaluaciones(List<Evaluacion> listEvaluaciones) {
-		this.listEvaluaciones = listEvaluaciones;
+	public void setEvaluaciones(List<Evaluacion> evaluaciones) {
+		this.evaluciones = evaluaciones;
 	}
 }

@@ -1,10 +1,9 @@
 package ar.com.escuela.def.bean;
 
-import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -15,17 +14,17 @@ import ar.com.escuela.base.bean.BaseBO;
 @Table(name="nivel")
 public class Nivel extends BaseBO{
 	
+	@Column
 	private Long numero;
+	
+	@Column
 	private String descripcion;
-	private Date fechaUltMdf;
 	
 	@OneToMany
-	@JoinColumn(name="idCurso")
-	private List<Curso> listCursos;
+	private List<Curso> cursos;
 	
 	@OneToMany
-	@JoinColumn(name="idMateria")
-	private List<Materia> listMaterias;
+	private List<Materia> materias;
 	
 	@ManyToOne
 	private Plan plan;
@@ -49,32 +48,20 @@ public class Nivel extends BaseBO{
 		this.descripcion = decripcion;
 	}
 
-	public Date getFechaUltMdf() {
-		return fechaUltMdf;
+	public List<Curso> getCursos() {
+		return cursos;
 	}
 
-	public void setFechaUltMdf(Date fechaUltMdf) {
-		this.fechaUltMdf = fechaUltMdf;
+	public void setCursos(List<Curso> cursos) {
+		this.cursos = cursos;
 	}
 
-	public List<Curso> getListCursos() {
-		return listCursos;
+	public List<Materia> getMaterias() {
+		return materias;
 	}
 
-	public void setListCurso(List<Curso> listCursos) {
-		this.listCursos = listCursos;
-	}
-
-	public List<Materia> getListMaterias() {
-		return listMaterias;
-	}
-
-	public void setListMaterias(List<Materia> listMaterias) {
-		this.listMaterias = listMaterias;
-	}
-
-	public void setListCursos(List<Curso> listCursos) {
-		this.listCursos = listCursos;
+	public void setMaterias(List<Materia> materias) {
+		this.materias = materias;
 	}
 
 	public Plan getPlan() {

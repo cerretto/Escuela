@@ -3,6 +3,7 @@ package ar.com.escuela.seg.bean;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -15,8 +16,13 @@ import ar.com.escuela.pad.bean.Persona;
 @Table(name = "usuario")
 public class Usuario extends BaseBO{
 	
+	@Column
 	private String usr;
+	
+	@Column
 	private String password;
+	
+	@Column
 	private Date fechaInscripcion;
 	
 	@OneToMany

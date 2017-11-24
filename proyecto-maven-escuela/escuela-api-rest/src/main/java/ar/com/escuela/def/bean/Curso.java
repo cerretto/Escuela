@@ -3,6 +3,7 @@ package ar.com.escuela.def.bean;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -16,9 +17,16 @@ import ar.com.escuela.cur.bean.AlumnoCurso;
 @Table(name="curso")
 public class Curso extends BaseBO{
 	
+	@Column
 	private String codigo;
+	
+	@Column
 	private String decripcion;
+	
+	@Column
 	private Long cupo;
+	
+	@Column
 	private Date anioCalendario;
 	
 	@ManyToOne
