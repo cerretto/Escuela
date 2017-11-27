@@ -1,19 +1,149 @@
-<body>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="card">
-            <div class="header">
-                <h2>MENU</h2>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Welcome To | Bootstrap Based Admin Template - Material Design</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+</head>
+
+<body class="theme-red">
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" [routerLink]="['/menu']" routerLinkActive="active">ESCUELA VILLA AMELIA</a>
+            </div>  
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right" style="margin-top:15px;">
+                    <li style="margin-left: 7px;">
+                        <img src="../assets/images/facebook.png" width="32" height="32"/>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" style="margin-top:15px;">
+                    <li style="margin-left: 7px;">
+                        <img src="../assets/images/linkedin.png" width="32" height="32"/>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" style="margin-top:15px;">
+                    <li>
+                        <img src="../assets/images/instagram.png" width="32" height="32"/>
+                    </li>
+                </ul>
             </div>
-            <div class="body">
-                <div class="list-group">
-                    <button type="button" class="list-group-item" [routerLink]="['/avisos']" routerLinkActive="active">Avisos</button>
-                    <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
-                    <button type="button" class="list-group-item">Morbi leo risus</button>
-                    <button type="button" class="list-group-item">Porta ac consectetur ac</button>
-                    <button type="button" class="list-group-item">Vestibulum at eros</button>
+        </div>
+
+
+
+
+        
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+        <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="../assets/images/user.png" width="48" height="48" alt="User" />
+                </div>
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
+                    <div class="email">john.doe@example.com</div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+                            <li><i class="material-icons">person</i>Profile</li>
+                            <li role="seperator" class="divider"></li>
+                            <li><i class="material-icons">group</i>Followers</li>
+                            <li><i class="material-icons">shopping_cart</i>Sales</li>
+                            <li><i class="material-icons">favorite</i>Likes</li>
+                            <li role="seperator" class="divider"></li>
+                            <li><i class="material-icons">input</i>Sign Out</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MENU</li>
+                    <li class="active">
+                        <a href="index.html">
+                            <i class="material-icons">home</i>
+                            <span>INICIO</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/avisos']" routerLinkActive="active">
+                            <i class="material-icons">notifications</i>
+                            <span>AVISOS</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/helper-classes.html">
+                            <i class="material-icons">school</i>
+                            <span>CURSADO</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/helper-classes.html">
+                            <i class="material-icons">security</i>
+                            <span>ADMINISTRACIÓN</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/helper-classes.html">
+                            <i class="material-icons">settings</i>
+                            <span>DEFINICIÓN</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; 2017 <a>CICELU - Material Design</a>.
+                </div>
+                <div class="version">
+                    <b>Version: </b> 1.0.5
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Right Sidebar -->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>MENU</h2>
+                        </div>
+                        <div class="body">
+                            <div class="list-group">
+                                <button type="button" class="list-group-item" [routerLink]="['/avisos']" routerLinkActive="active">Avisos</button>
+                                <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
+                                <button type="button" class="list-group-item">Morbi leo risus</button>
+                                <button type="button" class="list-group-item">Porta ac consectetur ac</button>
+                                <button type="button" class="list-group-item">Vestibulum at eros</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- #END# Button Items -->
+    </section>
 </body>
+
+</html>
