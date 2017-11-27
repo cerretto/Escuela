@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Aviso, TipoAviso } from "../aviso-model";
-import { AvisoService } from "../aviso.service";
-import { ActivatedRoute, ParamMap, Router } from "@angular/router";
-import { Location }                 from '@angular/common';
+import { Aviso, TipoAviso } from '../aviso-model';
+import { AvisoService } from '../aviso.service';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -16,8 +16,8 @@ export class AvisoDetailComponent implements OnInit {
   aviso: Aviso = new Aviso();
   tipoAvisoCombo: TipoAviso[];
 
-  constructor(private service: AvisoService, 
-                private route: ActivatedRoute, 
+  constructor(private service: AvisoService,
+                private route: ActivatedRoute,
                 private router: Router) { }
 
   ngOnInit() {
@@ -25,11 +25,9 @@ export class AvisoDetailComponent implements OnInit {
     // this.route.paramMap
     // .switchMap((params: ParamMap) => this.service.getAviso(+params.get('id')))
     // .subscribe(aviso => this.aviso = aviso);
- 
     this.route.params.subscribe(params => {
-      if(+params['id']) {
+      if (+params['id']) {
         // console.log(+params['id']);
-        
         this.updateFlag = true;
         this.service.getAviso(+params['id']).subscribe(
           aviso => {
@@ -39,44 +37,44 @@ export class AvisoDetailComponent implements OnInit {
               data => {
                 this.tipoAvisoCombo = data;
                 this.aviso.tipoAviso = this.tipoAvisoCombo.filter(r => r.id === this.aviso.tipoAviso.id)[0];
-              })
+              });
           });
 
       } else {
         this.service.getTipoAviso().subscribe(
           data => {
             this.tipoAvisoCombo = data;
-          })
+          });
       }
     });
 
   }
 
-  goBack(){
+  goBack() {
     this.router.navigate(['/avisos']);
   }
 
-  save(){
-    console.log("func::save");
+  save() {
+    console.log('func::save');
     this.service.saveAviso(this.aviso).subscribe(
       data => {
-        console.log("ok");
+        console.log('ok');
         this.router.navigate(['/avisos']);
       }, err => {
-        console.log("err");
+        console.log('err');
       }
     );
   }
 
-  update(){
-    console.log("func::update");
+  update() {
+    console.log('func::update');
     this.service.updateAviso(this.aviso).subscribe(
       data => {
-        console.log("ok");
+        console.log('ok');
         this.aviso = data;
         this.router.navigate(['/avisos']);
       }, err => {
-        console.log("ok");
+        console.log('ok');
       }
     );
   }

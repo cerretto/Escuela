@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Aviso } from "./aviso-model";
-import { AvisoService } from "./aviso.service";
-import { Router } from "@angular/router";
+import { Aviso } from './aviso-model';
+import { AvisoService } from './aviso.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-aviso',
@@ -16,7 +16,7 @@ export class AvisoComponent implements OnInit {
   constructor(private service: AvisoService,  private router: Router) { }
 
   ngOnInit() {
-    this.service.getAvisos().subscribe(data => this.avisos=data);
+    this.service.getAvisos().subscribe(data => this.avisos = data);
   }
 
   // onSelect(aviso: Aviso): void {
@@ -31,17 +31,17 @@ export class AvisoComponent implements OnInit {
     this.router.navigate(['/aviso-detail', aviso.id]);
   }
 
-  goMenu(){
+  goMenu() {
     this.router.navigate(['/menu']);
   }
 
-  delete(aviso: Aviso){
+  delete(aviso: Aviso) {
     this.service.deleteAviso(aviso.id).subscribe(
-      data =>{
-        console.log("exito");
+      data => {
+        console.log('exito');
         this.ngOnInit();
-      },err => {
-        console.log("error");
+      }, err => {
+        console.log('error');
       }
     );
   }

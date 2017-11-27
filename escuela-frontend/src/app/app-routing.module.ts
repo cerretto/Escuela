@@ -1,9 +1,11 @@
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AvisoComponent }   from './aviso/aviso.component';
-import { MenuComponent } from "./menu/menu.component";
-import { AvisoDetailComponent } from "./aviso/aviso-detail/aviso-detail.component";
+import { AvisoComponent } from './aviso/aviso.component';
+import { MenuComponent } from './menu/menu.component';
+import { AvisoDetailComponent } from './aviso/aviso-detail/aviso-detail.component';
+import { PlanComponent } from './plan/plan.component';
+import { NivelComponent } from './nivel/nivel.component';
 
 
 const routes: Routes = [
@@ -12,8 +14,14 @@ const routes: Routes = [
     { path: 'avisos',  component: AvisoComponent },
     { path: 'aviso-detail', component: AvisoDetailComponent },
     { path: 'aviso-detail/:id', component: AvisoDetailComponent },
+    { path: 'planes',  component: PlanComponent },
+    { path: 'plan-detail', component: PlanComponent },
+    { path: 'plan-detail/:id', component: PlanComponent },
+    { path: 'niveles',  component: NivelComponent },
+    { path: 'nivel-detail', component: NivelComponent },
+    { path: 'nivel-detail/:id', component: NivelComponent },
     
-    //redireccion (debe quedar al final de los routing)
+    // redireccion (debe quedar al final de los routing)
     { path: '**', redirectTo: '/menu', pathMatch: 'full' },
 ];
 

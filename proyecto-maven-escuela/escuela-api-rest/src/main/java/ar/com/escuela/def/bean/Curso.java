@@ -1,6 +1,5 @@
 package ar.com.escuela.def.bean;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -27,7 +26,7 @@ public class Curso extends BaseBO{
 	private Long cupo;
 	
 	@Column
-	private Date anioCalendario;
+	private Long anioCalendario;
 	
 	@ManyToOne
 	private Nivel nivel;
@@ -58,10 +57,10 @@ public class Curso extends BaseBO{
 	public void setCupo(Long cupo) {
 		this.cupo = cupo;
 	}
-	public Date getAnioCalendario() {
+	public Long getAnioCalendario() {
 		return anioCalendario;
 	}
-	public void setAnioCalendario(Date anioCalendario) {
+	public void setAnioCalendario(Long anioCalendario) {
 		this.anioCalendario = anioCalendario;
 	}
 	public Nivel getNivel() {
