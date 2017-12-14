@@ -38,12 +38,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
-
-
-
-
-        
+        </div>      
     </nav>
     <!-- #Top Bar -->
     <section>
@@ -76,14 +71,12 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">MENU</li>
-                    <li class="active">
-                        <a href="index.html">
+                        <a [routerLink]="['menu']" routerLinkActive="active">
                             <i class="material-icons">home</i>
                             <span>INICIO</span>
                         </a>
-                    </li>
                     <li>
-                        <a [routerLink]="['/avisos']" routerLinkActive="active">
+                        <a [routerLink]="['avisos']" routerLinkActive="active">
                             <i class="material-icons">notifications</i>
                             <span>AVISOS</span>
                         </a>
@@ -123,26 +116,7 @@
         <!-- #END# Right Sidebar -->
     </section>
     <section class="content">
-        <div class="container-fluid">
-            <div>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>MENU</h2>
-                        </div>
-                        <div class="body">
-                            <div class="list-group">
-                                <button type="button" class="list-group-item" [routerLink]="['/avisos']" routerLinkActive="active">Avisos</button>
-                                <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
-                                <button type="button" class="list-group-item">Morbi leo risus</button>
-                                <button type="button" class="list-group-item">Porta ac consectetur ac</button>
-                                <button type="button" class="list-group-item">Vestibulum at eros</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <router-outlet></router-outlet>
     </section>
 </body>
 

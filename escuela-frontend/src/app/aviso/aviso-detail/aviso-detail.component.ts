@@ -51,7 +51,7 @@ export class AvisoDetailComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/avisos']);
+    this.router.navigate(['menu/avisos']);
   }
 
   save() {
@@ -59,7 +59,7 @@ export class AvisoDetailComponent implements OnInit {
     this.service.saveAviso(this.aviso).subscribe(
       data => {
         console.log('ok');
-        this.router.navigate(['/avisos']);
+        this.router.navigate(['menu/avisos']);
       }, err => {
         console.log('err');
       }
@@ -72,7 +72,7 @@ export class AvisoDetailComponent implements OnInit {
       data => {
         console.log('ok');
         this.aviso = data;
-        this.router.navigate(['/avisos']);
+        this.router.navigate(['menu/avisos']);
       }, err => {
         console.log('ok');
       }

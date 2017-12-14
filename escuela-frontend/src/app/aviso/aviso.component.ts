@@ -24,11 +24,11 @@ export class AvisoComponent implements OnInit {
   // }
 
   goCreate(): void {
-    this.router.navigate(['/aviso-detail']);
+    this.router.navigate(['/menu/aviso-detail']);
   }
 
   goEdit(aviso: Aviso): void {
-    this.router.navigate(['/aviso-detail', aviso.id]);
+    this.router.navigate(['/menu/aviso-detail', aviso.id]);
   }
 
   goMenu() {

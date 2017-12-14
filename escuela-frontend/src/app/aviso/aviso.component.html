@@ -12,50 +12,49 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
 </head>
 
-<section class="content">
-  <div class="container-fluid">
-    <div class="block-header">
-        <h2>AVISOS</h2>
-    </div>
-    <div class="row clearfix">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="card">
-          <div class="body table-responsive">
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>AVISO</th>
-                  <th>FECHA AVISO</th>
-                  <th>TIPO AVISO</th>
-                  <th>ACCIONES</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let aviso of avisos">
-                    <td>{{aviso.id}}</td>
-                    <td>{{aviso.descripcion}}</td>
-                    <td>{{aviso.fecha | date: 'dd/MM/yyyy'}}</td>
-                    <td *ngIf="aviso.tipoAviso">{{aviso.tipoAviso.descripcion}}</td>
-                    <td>
-                      <button type="button" class="btn btn-default btn-circle waves-effect waves-circle waves-float" (click)="goEdit(aviso)">
-                        <i class="material-icons">search</i>
-                      </button>
-                      <button type="button" class="btn btn-default btn-circle waves-effect waves-circle waves-float" (click)="delete(aviso)">
-                        <i class="material-icons">delete</i>
-                      </button>
-                    </td>
-                </tr>
-              </tbody>
-            </table>
-            <button type="button" class="btn btn-success waves-effect" (click)="goCreate()">
-              Agregar
-            </button>
-          </div>
+<div class="container-fluid">
+  <div class="block-header">
+      <h2>AVISOS</h2>
+  </div>
+  <div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="body table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>AVISO</th>
+                <th>FECHA AVISO</th>
+                <th>TIPO AVISO</th>
+                <th>ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let aviso of avisos">
+                  <td>{{aviso.id}}</td>
+                  <td>{{aviso.descripcion}}</td>
+                  <td>{{aviso.fecha | date: 'dd/MM/yyyy'}}</td>
+                  <td *ngIf="aviso.tipoAviso">{{aviso.tipoAviso.descripcion}}</td>
+                  <td>
+                    <button type="button" class="btn btn-default btn-circle waves-effect waves-circle waves-float" (click)="goEdit(aviso)">
+                      <i class="material-icons">search</i>
+                    </button>
+                    <button type="button" class="btn btn-default btn-circle waves-effect waves-circle waves-float" (click)="delete(aviso)">
+                      <i class="material-icons">delete</i>
+                    </button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="button" class="btn btn-success waves-effect" (click)="goCreate()">
+            Agregar
+          </button>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
+
 
 </html>
