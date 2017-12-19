@@ -19,11 +19,11 @@ export class PlanComponent implements OnInit {
   }
 
   goCreate(): void {
-    this.router.navigate(['/plan-detail']);
+    this.router.navigate(['/menu/plan-detail']);
   }
 
   goEdit(plan: Plan): void {
-    this.router.navigate(['/plan-detail', plan.id]);
+    this.router.navigate(['/menu/plan-detail', plan.id]);
   }
 
   goMenu() {

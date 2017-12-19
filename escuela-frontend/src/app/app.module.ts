@@ -15,6 +15,11 @@ import { PlanDetailComponent } from './plan/plan-detail/plan-detail.component';
 import { NivelDetailComponent } from './nivel/nivel-detail/nivel-detail.component';
 import { CursoComponent } from './curso/curso.component';
 import { MenuAvisoComponent } from './menu/menu-aviso/menu-aviso.component';
+import { CursoDetailComponent } from './curso/curso-detail/curso-detail.component';
+import { PlanService } from './plan/plan.service';
+import { NivelService } from './nivel/nivel.service';
+import { CursoService } from './curso/curso.service';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +32,8 @@ import { MenuAvisoComponent } from './menu/menu-aviso/menu-aviso.component';
     PlanDetailComponent,
     NivelDetailComponent,
     CursoComponent,
-    MenuAvisoComponent
+    MenuAvisoComponent,
+    CursoDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,10 @@ import { MenuAvisoComponent } from './menu/menu-aviso/menu-aviso.component';
     AppRoutingModule
   ],
   providers: [
-    AvisoService
+    AvisoService,
+    PlanService,
+    NivelService,
+    CursoService
   ],
   bootstrap: [AppComponent]
 })
