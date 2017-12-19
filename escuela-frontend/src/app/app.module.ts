@@ -14,6 +14,7 @@ import { PlanComponent } from './plan/plan.component';
 import { PlanDetailComponent } from './plan/plan-detail/plan-detail.component';
 import { NivelDetailComponent } from './nivel/nivel-detail/nivel-detail.component';
 import { CursoComponent } from './curso/curso.component';
+import { MenuAvisoComponent } from './menu/menu-aviso/menu-aviso.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CursoComponent } from './curso/curso.component';
     PlanComponent,
     PlanDetailComponent,
     NivelDetailComponent,
-    CursoComponent
+    CursoComponent,
+    MenuAvisoComponent
   ],
   imports: [
     BrowserModule,

@@ -32,7 +32,7 @@ export class AvisoComponent implements OnInit {
   }
 
   goMenu() {
-    this.router.navigate(['/menu']);
+    this.router.navigate(['/menu/menu-aviso']);
   }
 
   delete(aviso: Aviso) {
