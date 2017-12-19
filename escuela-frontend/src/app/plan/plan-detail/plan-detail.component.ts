@@ -31,7 +31,7 @@ export class PlanDetailComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/planes']);
+    this.router.navigate(['menu/planes']);
   }
 
   save() {
@@ -39,7 +39,7 @@ export class PlanDetailComponent implements OnInit {
     this.service.savePlan(this.plan).subscribe(
       data => {
         console.log('ok');
-        this.router.navigate(['/planes']);
+        this.router.navigate(['menu/planes']);
       }, err => {
         console.log('err');
       }
@@ -52,7 +52,7 @@ export class PlanDetailComponent implements OnInit {
       data => {
         console.log('ok');
         this.plan = data;
-        this.router.navigate(['/planes']);
+        this.router.navigate(['menu/planes']);
       }, err => {
         console.log('ok');
       }

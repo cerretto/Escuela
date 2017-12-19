@@ -6,24 +6,25 @@ import { MenuComponent } from './menu/menu.component';
 import { AvisoDetailComponent } from './aviso/aviso-detail/aviso-detail.component';
 import { PlanComponent } from './plan/plan.component';
 import { NivelComponent } from './nivel/nivel.component';
+import { PlanDetailComponent } from './plan/plan-detail/plan-detail.component';
+import { NivelDetailComponent } from './nivel/nivel-detail/nivel-detail.component';
 
 
 const routes: Routes = [
     { path: '', redirectTo: '/menu', pathMatch: 'full' },
-    { path: 'menu',     component: MenuComponent, 
+    { path: 'menu',     component: MenuComponent,
         children: [
           { path: 'avisos',  component: AvisoComponent },
           { path: 'aviso-detail', component: AvisoDetailComponent },
           { path: 'aviso-detail/:id', component: AvisoDetailComponent },
           { path: 'planes',  component: PlanComponent },
-          { path: 'plan-detail', component: PlanComponent },
-          { path: 'plan-detail/:id', component: PlanComponent },
+          { path: 'plan-detail', component: PlanDetailComponent },
+          { path: 'plan-detail/:id', component: PlanDetailComponent },
           { path: 'niveles',  component: NivelComponent },
-          { path: 'nivel-detail', component: NivelComponent },
-          { path: 'nivel-detail/:id', component: NivelComponent },
-        ] 
+          { path: 'nivel-detail', component: NivelDetailComponent },
+          { path: 'nivel-detail/:id', component: NivelDetailComponent },
+        ]
     },
-    
     // redireccion (debe quedar al final de los routing)
     { path: '**', redirectTo: '/menu', pathMatch: 'full' },
 ];
