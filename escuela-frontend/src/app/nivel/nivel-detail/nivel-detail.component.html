@@ -1,3 +1,61 @@
-<p>
-  nivel-detail works!
-</p>
+
+
+
+<div class="container-fluid">
+  <div class="block-header">
+    <ng-container *ngIf="!updateFlag">
+      <h2>Agregar Nivel</h2>
+    </ng-container>
+    <ng-container *ngIf="updateFlag">
+      <h2>Modificar Nivel</h2>
+    </ng-container>
+  </div>
+  <!-- Input -->
+  <div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="body">
+          <div class="row clearfix">
+              <div class="col-sm-12">
+                <h2 class="card-inside-title">Numero</h2>
+                <div class="form-group">
+                  <div class="form-line">
+                      <input type="text" class="form-control" [(ngModel)]="nivel.numero" placeholder="Numero" />
+                  </div>
+                </div>
+                <h2 class="card-inside-title">Descripción</h2>
+                <div class="form-group">
+                  <div class="form-line">
+                      <input type="text" class="form-control" [(ngModel)]="nivel.descripcion" placeholder="Descripción" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <h2 class="card-inside-title">Plan</h2>
+                  <select class="form-control show-tick" name="plan" required [(ngModel)]="nivel.plan" #plan="ngModel">
+                      <option [ngValue]=undefined disabled> Seleccionar</option>
+                    <option *ngFor="let plan of planCombo" [ngValue]="plan">{{plan.descripcion}}</option>
+                  </select>
+                </div>
+              </div>
+          </div>
+          <div>
+            <button type="button" class="btn btn-primary waves-effect" (click)="goBack()">
+              Volver
+            </button>
+            <ng-container *ngIf="!updateFlag">
+              <button type="button" class="btn btn-success waves-effect" (click)="save()">
+                Agregar
+              </button>
+            </ng-container>
+            <ng-container *ngIf="updateFlag">
+              <button type="button" class="btn btn-success waves-effect" (click)="update()">
+                Modificar
+              </button>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

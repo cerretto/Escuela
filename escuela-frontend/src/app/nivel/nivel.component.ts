@@ -19,11 +19,11 @@ export class NivelComponent implements OnInit {
   }
 
   goCreate(): void {
-    this.router.navigate(['/nivel-detail']);
+    this.router.navigate(['/menu/nivel-detail']);
   }
 
   goEdit(nivel: Nivel): void {
-    this.router.navigate(['/nivel-detail', nivel.id]);
+    this.router.navigate(['/menu/nivel-detail', nivel.id]);
   }
 
   goMenu() {

@@ -8,6 +8,8 @@ import { PlanComponent } from './plan/plan.component';
 import { NivelComponent } from './nivel/nivel.component';
 import { PlanDetailComponent } from './plan/plan-detail/plan-detail.component';
 import { NivelDetailComponent } from './nivel/nivel-detail/nivel-detail.component';
+import { CursoComponent } from './curso/curso.component';
+import { CursoDetailComponent } from './curso/curso-detail/curso-detail.component';
 
 
 const routes: Routes = [
@@ -23,6 +25,9 @@ const routes: Routes = [
           { path: 'niveles',  component: NivelComponent },
           { path: 'nivel-detail', component: NivelDetailComponent },
           { path: 'nivel-detail/:id', component: NivelDetailComponent },
+          { path: 'cursos',  component: CursoComponent },
+          { path: 'curso-detail', component: CursoDetailComponent },
+          { path: 'curso-detail/:id', component: CursoDetailComponent },
         ]
     },
     // redireccion (debe quedar al final de los routing)
