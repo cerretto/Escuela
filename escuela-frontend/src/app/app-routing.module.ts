@@ -6,16 +6,17 @@ import { MenuComponent } from './menu/menu.component';
 import { AvisoDetailComponent } from './aviso/aviso-detail/aviso-detail.component';
 import { PlanComponent } from './plan/plan.component';
 import { NivelComponent } from './nivel/nivel.component';
+import { MenuAvisoComponent } from './menu/menu-aviso/menu-aviso.component';
 import { PlanDetailComponent } from './plan/plan-detail/plan-detail.component';
 import { NivelDetailComponent } from './nivel/nivel-detail/nivel-detail.component';
 import { CursoComponent } from './curso/curso.component';
 import { CursoDetailComponent } from './curso/curso-detail/curso-detail.component';
 
-
 const routes: Routes = [
     { path: '', redirectTo: '/menu', pathMatch: 'full' },
     { path: 'menu',     component: MenuComponent,
         children: [
+          { path: 'menu-aviso', component: MenuAvisoComponent},
           { path: 'avisos',  component: AvisoComponent },
           { path: 'aviso-detail', component: AvisoDetailComponent },
           { path: 'aviso-detail/:id', component: AvisoDetailComponent },

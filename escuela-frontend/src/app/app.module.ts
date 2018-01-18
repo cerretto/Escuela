@@ -14,10 +14,12 @@ import { PlanComponent } from './plan/plan.component';
 import { PlanDetailComponent } from './plan/plan-detail/plan-detail.component';
 import { NivelDetailComponent } from './nivel/nivel-detail/nivel-detail.component';
 import { CursoComponent } from './curso/curso.component';
+import { MenuAvisoComponent } from './menu/menu-aviso/menu-aviso.component';
 import { CursoDetailComponent } from './curso/curso-detail/curso-detail.component';
 import { PlanService } from './plan/plan.service';
 import { NivelService } from './nivel/nivel.service';
 import { CursoService } from './curso/curso.service';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { CursoService } from './curso/curso.service';
     PlanDetailComponent,
     NivelDetailComponent,
     CursoComponent,
+    MenuAvisoComponent,
     CursoDetailComponent
   ],
   imports: [
