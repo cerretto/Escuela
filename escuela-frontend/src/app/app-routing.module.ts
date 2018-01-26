@@ -9,6 +9,7 @@ import { NivelComponent } from './nivel/nivel.component';
 import { MenuAvisoComponent } from './menu/menu-aviso/menu-aviso.component';
 import { PlanDetailComponent } from './plan/plan-detail/plan-detail.component';
 import { NivelDetailComponent } from './nivel/nivel-detail/nivel-detail.component';
+import { TipoAvisoComponent } from './tipo-aviso/tipo-aviso.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/menu', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
           { path: 'niveles',  component: NivelComponent },
           { path: 'nivel-detail', component: NivelDetailComponent },
           { path: 'nivel-detail/:id', component: NivelDetailComponent },
+          { path: 'tipo-aviso', component: TipoAvisoComponent },
         ]
     },
     // redireccion (debe quedar al final de los routing)

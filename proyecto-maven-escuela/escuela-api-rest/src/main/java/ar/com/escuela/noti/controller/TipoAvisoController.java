@@ -14,7 +14,7 @@ import ar.com.escuela.noti.bean.TipoAviso;
 import ar.com.escuela.noti.service.NotificacionService;
 
 @RestController
-@RequestMapping("/tipoaviso")
+@RequestMapping("/tipo-avisos")
 @CrossOrigin(origins = "http://localhost:4200")
 public class TipoAvisoController {
 	
