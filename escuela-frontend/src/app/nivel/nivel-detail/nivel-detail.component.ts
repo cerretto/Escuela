@@ -50,7 +50,7 @@ export class NivelDetailComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/niveles']);
+    this.router.navigate(['/menu/niveles']);
   }
 
   save() {
@@ -58,7 +58,7 @@ export class NivelDetailComponent implements OnInit {
     this.service.saveNivel(this.nivel).subscribe(
       data => {
         console.log('ok');
-        this.router.navigate(['/niveles']);
+        this.router.navigate(['/menu/niveles']);
       }, err => {
         console.log('err');
       }
@@ -71,7 +71,7 @@ export class NivelDetailComponent implements OnInit {
       data => {
         console.log('ok');
         this.nivel = data;
-        this.router.navigate(['/niveles']);
+        this.router.navigate(['/menu/niveles']);
       }, err => {
         console.log('ok');
       }

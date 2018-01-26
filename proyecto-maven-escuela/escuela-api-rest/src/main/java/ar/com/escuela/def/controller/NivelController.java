@@ -3,6 +3,7 @@ package ar.com.escuela.def.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,12 +15,13 @@ import ar.com.escuela.def.service.DefinicionService;
 
 @RestController
 @RequestMapping("/niveles")
+@CrossOrigin(origins = "http://localhost:4200")
 public class NivelController {
 	
 	@Autowired
 	private DefinicionService nivelService;
 	
-	@RequestMapping("/")
+	@RequestMapping("")
 	public List<Nivel> getAllNiveles(){
 		return nivelService.getAllNiveles();
 	}
