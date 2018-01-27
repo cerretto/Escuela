@@ -1,12 +1,10 @@
 package ar.com.escuela.pad.bean;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import ar.com.escuela.base.bean.BaseBO;
@@ -30,24 +28,24 @@ public class Persona extends BaseBO{
 	@Column
 	private String telefono;
 	
-	@OneToMany
-	private List<Domicilio> domicilios;
+//	@OneToMany
+//	private List<Domicilio> domicilios;
 	
 	@ManyToOne
 	private Persona responsable;
 	
-	@OneToMany
-	private List<Persona> hijos;
+//	@OneToMany
+//	private List<Persona> hijos;
 	
 	
 	
 	
-	public List<Domicilio> getDomicilios() {
-		return domicilios;
-	}
-	public void setDomicilios(List<Domicilio> domicilios) {
-		this.domicilios = domicilios;
-	}
+//	public List<Domicilio> getDomicilios() {
+//		return domicilios;
+//	}
+//	public void setDomicilios(List<Domicilio> domicilios) {
+//		this.domicilios = domicilios;
+//	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -84,11 +82,11 @@ public class Persona extends BaseBO{
 	public void setResponsable(Persona responsable) {
 		this.responsable = responsable;
 	}
-	public List<Persona> getHijos() {
-		return hijos;
-	}
-	public void setHijos(List<Persona> hijos) {
-		this.hijos = hijos;
-	}
+//	public List<Persona> getHijos() {
+//		return hijos;
+//	}
+//	public void setHijos(List<Persona> hijos) {
+//		this.hijos = hijos;
+//	}
 
 }

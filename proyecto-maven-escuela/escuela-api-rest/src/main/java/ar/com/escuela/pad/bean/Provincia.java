@@ -1,10 +1,7 @@
 package ar.com.escuela.pad.bean;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import ar.com.escuela.base.bean.BaseBO;
@@ -16,16 +13,16 @@ public class Provincia extends BaseBO{
 	@Column
 	private String descripcion;
 	
-	@OneToMany
-	private List<Localidad> localidades;
+//	@OneToMany
+//	private List<Localidad> localidades;
 	
-	public List<Localidad> getLocalidades() {
-		return localidades;
-	}
-
-	public void setLocalidades(List<Localidad> localidades) {
-		this.localidades = localidades;
-	}
+//	public List<Localidad> getLocalidades() {
+//		return localidades;
+//	}
+//
+//	public void setLocalidades(List<Localidad> localidades) {
+//		this.localidades = localidades;
+//	}
 
 	public Provincia(){
 	}

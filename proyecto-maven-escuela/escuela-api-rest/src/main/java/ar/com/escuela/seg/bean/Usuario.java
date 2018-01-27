@@ -1,11 +1,9 @@
 package ar.com.escuela.seg.bean;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -25,8 +23,8 @@ public class Usuario extends BaseBO{
 	@Column
 	private Date fechaInscripcion;
 	
-	@OneToMany
-	private List<UsuarioRol> usuarioRoles;
+//	@OneToMany
+//	private List<UsuarioRol> usuarioRoles;
 	
 	@OneToOne
 	private Persona persona;
@@ -55,13 +53,13 @@ public class Usuario extends BaseBO{
 		this.password = password;
 	}
 
-	public List<UsuarioRol> getUsuarioRoles() {
-		return usuarioRoles;
-	}
-
-	public void setUsuarioRoles(List<UsuarioRol> usuarioRoles) {
-		this.usuarioRoles = usuarioRoles;
-	}
+//	public List<UsuarioRol> getUsuarioRoles() {
+//		return usuarioRoles;
+//	}
+//
+//	public void setUsuarioRoles(List<UsuarioRol> usuarioRoles) {
+//		this.usuarioRoles = usuarioRoles;
+//	}
 
 	public Persona getPersona() {
 		return persona;
