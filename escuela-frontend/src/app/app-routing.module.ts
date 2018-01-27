@@ -12,6 +12,7 @@ import { NivelDetailComponent } from './nivel/nivel-detail/nivel-detail.componen
 import { TipoAvisoComponent } from './tipo-aviso/tipo-aviso.component';
 import { CursoComponent } from './curso/curso.component';
 import { CursoDetailComponent } from './curso/curso-detail/curso-detail.component';
+import { TipoAvisoDetailComponent } from './tipo-aviso/tipo-aviso-detail/tipo-aviso-detail.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/menu', pathMatch: 'full' },
@@ -28,6 +29,8 @@ const routes: Routes = [
           { path: 'nivel-detail', component: NivelDetailComponent },
           { path: 'nivel-detail/:id', component: NivelDetailComponent },
           { path: 'tipo-aviso', component: TipoAvisoComponent },
+          { path: 'tipo-aviso-detail', component: TipoAvisoDetailComponent },
+          { path: 'tipo-aviso-detail/:id', component: TipoAvisoDetailComponent },
           { path: 'cursos',  component: CursoComponent },
           { path: 'curso-detail', component: CursoDetailComponent },
           { path: 'curso-detail/:id', component: CursoDetailComponent },
