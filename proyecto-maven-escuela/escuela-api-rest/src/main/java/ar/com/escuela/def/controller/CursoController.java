@@ -31,7 +31,7 @@ public class CursoController {
 		return cursoService.getCursoById(id);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/")
+	@RequestMapping(method=RequestMethod.POST)
 	public void addCurso(@RequestBody Curso curso){
 		cursoService.addCurso(curso);
 	}

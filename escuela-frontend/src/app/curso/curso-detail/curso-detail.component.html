@@ -30,7 +30,7 @@
                   <h2 class="card-inside-title">Nivel</h2>
                   <select class="form-control show-tick" name="nivel" required [(ngModel)]="curso.nivel" #nivel="ngModel">
                       <option [ngValue]=undefined disabled> Seleccionar</option>
-                    <option *ngFor="let nivel of nivelCombo" [ngValue]="nivel">{{nivel.descripcion}}</option>
+                    <option *ngFor="let nivel of nivelCombo" [ngValue]="nivel">{{nivel.descripcion}} - {{nivel.plan.descripcion}}</option>
                   </select>
                 </div>
                 <h2 class="card-inside-title">Cupo</h2>
@@ -42,7 +42,7 @@
                 <h2 class="card-inside-title">Calendario</h2>
                 <div class="form-group">
                   <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="curso.aniocalendario" placeholder="Calenadario" />
+                      <input type="text" class="form-control" [(ngModel)]="curso.anioCalendario" placeholder="Calenadario" />
                   </div>
                 </div>
               </div>

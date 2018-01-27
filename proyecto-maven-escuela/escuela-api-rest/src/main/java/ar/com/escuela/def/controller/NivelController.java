@@ -31,7 +31,7 @@ public class NivelController {
 		return nivelService.getNivelById(id);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/")
+	@RequestMapping(method=RequestMethod.POST)
 	public void addNivel(@RequestBody Nivel nivel){
 		nivelService.addNivel(nivel);
 	}
