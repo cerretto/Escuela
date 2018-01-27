@@ -1,9 +1,6 @@
 package ar.com.escuela.cur.bean;
 
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -17,6 +14,6 @@ public class Alumno extends BaseBO {
 	@OneToOne
 	private Persona persona;
 	
-	@OneToMany
-	private List<AlumnoCurso> alumnoCursos;
+//	@OneToMany
+//	private List<AlumnoCurso> alumnoCursos;
 }

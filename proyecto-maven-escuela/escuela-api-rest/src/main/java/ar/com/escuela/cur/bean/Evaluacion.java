@@ -1,11 +1,8 @@
 package ar.com.escuela.cur.bean;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import ar.com.escuela.base.bean.BaseBO;
@@ -21,8 +18,8 @@ public class Evaluacion extends BaseBO{
 	@ManyToOne
 	private Materia materia;
 	
-	@OneToMany
-	private List<Nota> notas;
+//	@OneToMany
+//	private List<Nota> notas;
 
 	public String getDescripcion() {
 		return descripcion;
@@ -40,11 +37,11 @@ public class Evaluacion extends BaseBO{
 		this.materia = materia;
 	}
 
-	public List<Nota> getNotas() {
-		return notas;
-	}
-
-	public void setNotas(List<Nota> notas) {
-		this.notas = notas;
-	}
+//	public List<Nota> getNotas() {
+//		return notas;
+//	}
+//
+//	public void setNotas(List<Nota> notas) {
+//		this.notas = notas;
+//	}
 }
