@@ -19,6 +19,9 @@ import { CursoDetailComponent } from './curso/curso-detail/curso-detail.componen
 import { PlanService } from './plan/plan.service';
 import { NivelService } from './nivel/nivel.service';
 import { CursoService } from './curso/curso.service';
+import { TipoAvisoComponent } from './tipo-aviso/tipo-aviso.component';
+import { TipoAvisoDetailComponent } from './tipo-aviso/tipo-aviso-detail/tipo-aviso-detail.component';
+import { TipoAvisoService } from './tipo-aviso/tipo-aviso.service';
 
 
 @NgModule({
@@ -33,7 +36,9 @@ import { CursoService } from './curso/curso.service';
     NivelDetailComponent,
     CursoComponent,
     MenuAvisoComponent,
-    CursoDetailComponent
+    CursoDetailComponent,
+    TipoAvisoComponent,
+    TipoAvisoDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,8 @@ import { CursoService } from './curso/curso.service';
     AvisoService,
     PlanService,
     NivelService,
-    CursoService
+    CursoService,
+    TipoAvisoService
   ],
   bootstrap: [AppComponent]
 })

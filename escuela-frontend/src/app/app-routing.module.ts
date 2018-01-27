@@ -9,6 +9,7 @@ import { NivelComponent } from './nivel/nivel.component';
 import { MenuAvisoComponent } from './menu/menu-aviso/menu-aviso.component';
 import { PlanDetailComponent } from './plan/plan-detail/plan-detail.component';
 import { NivelDetailComponent } from './nivel/nivel-detail/nivel-detail.component';
+import { TipoAvisoComponent } from './tipo-aviso/tipo-aviso.component';
 import { CursoComponent } from './curso/curso.component';
 import { CursoDetailComponent } from './curso/curso-detail/curso-detail.component';
 
@@ -26,6 +27,7 @@ const routes: Routes = [
           { path: 'niveles',  component: NivelComponent },
           { path: 'nivel-detail', component: NivelDetailComponent },
           { path: 'nivel-detail/:id', component: NivelDetailComponent },
+          { path: 'tipo-aviso', component: TipoAvisoComponent },
           { path: 'cursos',  component: CursoComponent },
           { path: 'curso-detail', component: CursoDetailComponent },
           { path: 'curso-detail/:id', component: CursoDetailComponent },
