@@ -27,7 +27,7 @@ export class NivelComponent implements OnInit {
   }
 
   goMenu() {
-    this.router.navigate(['/menu']);
+    this.router.navigate(['/menu/menu-definicion']);
   }
 
   delete(nivel: Nivel) {

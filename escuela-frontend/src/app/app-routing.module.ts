@@ -13,6 +13,7 @@ import { TipoAvisoComponent } from './tipo-aviso/tipo-aviso.component';
 import { CursoComponent } from './curso/curso.component';
 import { CursoDetailComponent } from './curso/curso-detail/curso-detail.component';
 import { TipoAvisoDetailComponent } from './tipo-aviso/tipo-aviso-detail/tipo-aviso-detail.component';
+import { MenuDefinicionComponent } from './menu/menu-definicion/menu-definicion.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/menu', pathMatch: 'full' },
@@ -34,6 +35,7 @@ const routes: Routes = [
           { path: 'cursos',  component: CursoComponent },
           { path: 'curso-detail', component: CursoDetailComponent },
           { path: 'curso-detail/:id', component: CursoDetailComponent },
+          { path: 'menu-definicion', component: MenuDefinicionComponent },
         ]
     },
     // redireccion (debe quedar al final de los routing)

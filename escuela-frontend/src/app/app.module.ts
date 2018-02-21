@@ -22,6 +22,7 @@ import { CursoService } from './curso/curso.service';
 import { TipoAvisoComponent } from './tipo-aviso/tipo-aviso.component';
 import { TipoAvisoDetailComponent } from './tipo-aviso/tipo-aviso-detail/tipo-aviso-detail.component';
 import { TipoAvisoService } from './tipo-aviso/tipo-aviso.service';
+import { MenuDefinicionComponent } from './menu/menu-definicion/menu-definicion.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { TipoAvisoService } from './tipo-aviso/tipo-aviso.service';
     MenuAvisoComponent,
     CursoDetailComponent,
     TipoAvisoComponent,
-    TipoAvisoDetailComponent
+    TipoAvisoDetailComponent,
+    MenuDefinicionComponent
   ],
   imports: [
     BrowserModule,

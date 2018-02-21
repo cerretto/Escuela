@@ -1,7 +1,6 @@
-
 <div class="container-fluid">
   <div class="block-header">
-      <h2>CURSO</h2>
+    <h2>CURSO</h2>
   </div>
   <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -20,26 +19,35 @@
             </thead>
             <tbody>
               <tr *ngFor="let curso of cursos">
-                  <td>{{curso.id}}</td>
-                  <td>{{curso.codigo}}</td>
-                  <td>{{curso.descripcion}}</td>
-                  <td>{{curso.cupo}}</td>
-                  <td>{{curso.anioCalendario}}</td>
-                  <td>{{curso.nivel.descripcion}}</td>
-                  <td>
-                    <button type="button" class="btn btn-default btn-circle waves-effect waves-circle waves-float" (click)="goEdit(nivel)">
-                      <i class="material-icons">search</i>
-                    </button>
-                    <button type="button" class="btn btn-default btn-circle waves-effect waves-circle waves-float" (click)="delete(nivel)">
-                      <i class="material-icons">delete</i>
-                    </button>
-                  </td>
+                <td>{{curso.id}}</td>
+                <td>{{curso.codigo}}</td>
+                <td>{{curso.descripcion}}</td>
+                <td>{{curso.cupo}}</td>
+                <td>{{curso.anioCalendario}}</td>
+                <td>{{curso.nivel.descripcion}}</td>
+                <td>
+                  <button type="button" class="btn btn-default btn-circle waves-effect waves-circle waves-float" (click)="goEdit(nivel)">
+                    <i class="material-icons">search</i>
+                  </button>
+                  <button type="button" class="btn btn-default btn-circle waves-effect waves-circle waves-float" (click)="delete(nivel)">
+                    <i class="material-icons">delete</i>
+                  </button>
+                </td>
               </tr>
             </tbody>
           </table>
-          <button type="button" class="btn btn-success waves-effect" (click)="goCreate()">
-            Agregar
-          </button>
+          <div class="row clearfix demo-button">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <button type="button" class="btn btn-block btn-lg btn-primary waves-effect" (click)="goMenu()">
+                Volver
+              </button>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <button type="button" class="btn btn-block btn-lg btn-success waves-effect" (click)="goCreate()">
+                Agregar
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
