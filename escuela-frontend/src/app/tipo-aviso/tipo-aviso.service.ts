@@ -8,23 +8,23 @@ export class TipoAvisoService {
   constructor(private http: HttpClient) { }
 
   getTipoAvisos() {
-    return this.http.get<TipoAviso[]>("http://localhost:8081/tipo-avisos");
+    return this.http.get<TipoAviso[]>("http://localhost:8081/tipoaviso");
   }
 
   getTipoAviso(id: Number) {
-    return this.http.get<TipoAviso>("http://localhost:8081/tipo-aviso/" + id);
+    return this.http.get<TipoAviso>("http://localhost:8081/tipoaviso/" + id);
   }
 
   deleteTipoAviso(id: Number) {
-    return this.http.delete("http://localhost:8081/tipo-aviso/" + id);
+    return this.http.delete("http://localhost:8081/tipoaviso/" + id);
   }
 
   saveTipoAviso(tipoaviso: TipoAviso) {
-    return this.http.post<TipoAviso>("http://localhost:8081/avisos", tipoaviso);
+    return this.http.post<TipoAviso>("http://localhost:8081/tipoaviso", tipoaviso);
   }
 
   updateTipoAviso(tipoaviso: TipoAviso) {
-    return this.http.put<TipoAviso>("http://localhost:8081/avisos/"+ tipoaviso.id, tipoaviso);
+    return this.http.put<TipoAviso>("http://localhost:8081/tipoaviso/"+ tipoaviso.id, tipoaviso);
   }
 
 }

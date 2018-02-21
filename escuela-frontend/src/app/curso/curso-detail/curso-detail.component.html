@@ -13,58 +13,58 @@
       <div class="card">
         <div class="body">
           <div class="row clearfix">
-              <div class="col-sm-12">
-                <h2 class="card-inside-title">Codigo</h2>
-                <div class="form-group">
-                  <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="curso.codigo" placeholder="Codigo" />
-                  </div>
-                </div>
-                <h2 class="card-inside-title">Descripción</h2>
-                <div class="form-group">
-                  <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="curso.descripcion" placeholder="Descripción" />
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <h2 class="card-inside-title">Nivel</h2>
-                  <select class="form-control show-tick" name="nivel" required [(ngModel)]="curso.nivel" #nivel="ngModel">
-                      <option [ngValue]=undefined disabled> Seleccionar</option>
-                    <option *ngFor="let nivel of nivelCombo" [ngValue]="nivel">{{nivel.descripcion}} - {{nivel.plan.descripcion}}</option>
-                  </select>
-                </div>
-                <h2 class="card-inside-title">Cupo</h2>
-                <div class="form-group">
-                  <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="curso.cupo" placeholder="Cupo" />
-                  </div>
-                </div>
-                <h2 class="card-inside-title">Calendario</h2>
-                <div class="form-group">
-                  <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="curso.anioCalendario" placeholder="Calenadario" />
-                  </div>
+            <div class="col-sm-12">
+              <h2 class="card-inside-title">Codigo</h2>
+              <div class="form-group">
+                <div class="form-line">
+                  <input type="text" class="form-control" [(ngModel)]="curso.codigo" placeholder="Codigo" />
                 </div>
               </div>
+              <h2 class="card-inside-title">Descripción</h2>
+              <div class="form-group">
+                <div class="form-line">
+                  <input type="text" class="form-control" [(ngModel)]="curso.descripcion" placeholder="Descripción" />
+                </div>
+              </div>
+              <h2 class="card-inside-title">Nivel</h2>
+              <select class="form-control show-tick" name="nivel" required [(ngModel)]="curso.nivel" #nivel="ngModel">
+                <option [ngValue]=undefined disabled> Seleccionar</option>
+                <option *ngFor="let nivel of nivelCombo" [ngValue]="nivel">{{nivel.descripcion}} - {{nivel.plan.descripcion}}</option>
+              </select>
+              <h2 class="card-inside-title">Cupo</h2>
+              <div class="form-group">
+                <div class="form-line">
+                  <input type="text" class="form-control" [(ngModel)]="curso.cupo" placeholder="Cupo" />
+                </div>
+              </div>
+              <h2 class="card-inside-title">Calendario</h2>
+              <div class="form-group">
+                <div class="form-line">
+                  <input type="text" class="form-control" [(ngModel)]="curso.anioCalendario" placeholder="Calenadario" />
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <button type="button" class="btn btn-primary waves-effect" (click)="goBack()">
-              Volver
-            </button>
-            <ng-container *ngIf="!updateFlag">
-              <button type="button" class="btn btn-success waves-effect" (click)="save()">
-                Agregar
+          <div class="row clearfix demo-button">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <button type="button" class="btn btn-block btn-lg btn-primary waves-effect" (click)="goBack()">
+                Volver
               </button>
-            </ng-container>
-            <ng-container *ngIf="updateFlag">
-              <button type="button" class="btn btn-success waves-effect" (click)="update()">
-                Modificar
-              </button>
-            </ng-container>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <ng-container *ngIf="!updateFlag">
+                <button type="button" class="btn btn-block btn-lg btn-success waves-effect" (click)="save()">
+                  Agregar
+                </button>
+              </ng-container>
+              <ng-container *ngIf="updateFlag">
+                <button type="button" class="btn btn-block btn-lg btn-success waves-effect" (click)="update()">
+                  Modificar
+                </button>
+              </ng-container>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-

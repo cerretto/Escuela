@@ -27,7 +27,7 @@ export class CursoComponent implements OnInit {
   }
 
   goMenu() {
-    this.router.navigate(['/menu']);
+    this.router.navigate(['/menu/menu-definicion']);
   }
 
   delete(curso: Curso) {
