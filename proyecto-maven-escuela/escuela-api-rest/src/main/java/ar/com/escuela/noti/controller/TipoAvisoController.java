@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import ar.com.escuela.def.bean.Plan;
 import ar.com.escuela.noti.bean.TipoAviso;
 import ar.com.escuela.noti.service.NotificacionService;
 
