@@ -33,3 +33,10 @@ INSERT INTO curso (id,anio_calendario,codigo,cupo,decripcion,nivel_id) VALUES (1
 INSERT INTO curso (id,anio_calendario,codigo,cupo,decripcion,nivel_id) VALUES (2,2017,'B',10,'Curso B',1);
 INSERT INTO curso (id,anio_calendario,codigo,cupo,decripcion,nivel_id) VALUES (3,2017,'A',15,'Curso A',2);
 INSERT INTO curso (id,anio_calendario,codigo,cupo,decripcion,nivel_id) VALUES (4,2017,'B',14,'Curso B',2);
+--MATERIA
+INSERT INTO materia (id,descripcion,horario,salon,nivel_id) VALUES (1,'Matematica 1','7am','Salon A',1);
+INSERT INTO materia (id,descripcion,horario,salon,nivel_id) VALUES (2,'Matematica 2','9am','Salon B',2);
+INSERT INTO materia (id,descripcion,horario,salon,nivel_id) VALUES (3,'Matematica 3','11am','Salon C',3);
+
+
+

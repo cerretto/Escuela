@@ -2,6 +2,8 @@ package ar.com.escuela.cur.bean;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -16,10 +18,12 @@ public class AlumnoCurso extends BaseBO{
 	@Column
 	private Integer anio;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "alumno_id")
 	private Usuario alumno;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "curso_id")
 	private Curso curso;
 
 //	@OneToMany

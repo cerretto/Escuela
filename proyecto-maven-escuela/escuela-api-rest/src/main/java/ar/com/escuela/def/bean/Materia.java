@@ -2,6 +2,8 @@ package ar.com.escuela.def.bean;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -20,7 +22,8 @@ public class Materia  extends BaseBO{
 	@Column
 	private String salon;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "nivel_id")
 	private Nivel nivel;
 	
 //	@OneToMany

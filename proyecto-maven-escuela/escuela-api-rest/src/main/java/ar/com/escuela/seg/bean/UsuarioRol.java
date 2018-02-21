@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -13,10 +15,12 @@ import ar.com.escuela.base.bean.BaseBO;
 @Table(name = "usuRol")
 public class UsuarioRol extends BaseBO {
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "rol_id")
 	private Rol rol;
 	
 	@Column

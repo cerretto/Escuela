@@ -2,6 +2,8 @@ package ar.com.escuela.cur.bean;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -15,7 +17,8 @@ public class Evaluacion extends BaseBO{
 	@Column
 	private String descripcion;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "materia_id")
 	private Materia materia;
 	
 //	@OneToMany
