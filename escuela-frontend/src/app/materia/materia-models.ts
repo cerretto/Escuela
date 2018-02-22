@@ -5,5 +5,5 @@ export class Materia {
     salon: String;
     descripcion: String;
     horario: String;
-    niveles: Nivel[];
+    nivel: Nivel;
 }

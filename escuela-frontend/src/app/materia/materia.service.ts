@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Materia } from './materia-models';
+import { Nivel } from '../nivel/nivel-models';
 
 @Injectable()
 export class MateriaService {
@@ -27,5 +28,8 @@ export class MateriaService {
     return this.http.put<Materia>("http://localhost:8081/materias/"+ Materia.id, Materia);
   }
 
+  getNivel() {
+    return this.http.get<Nivel[]>("http://localhost:8081/niveles");
+  }
 
 }

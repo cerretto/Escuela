@@ -39,7 +39,8 @@ const routes: Routes = [
           { path: 'curso-detail/:id', component: CursoDetailComponent },
           { path: 'menu-definicion', component: MenuDefinicionComponent },
           { path: 'materias', component: MateriaComponent },
-          { path: 'materia-datail', component: MateriaDetailComponent },
+          { path: 'materia-detail', component: MateriaDetailComponent },
+          { path: 'materia-detail/:id', component: MateriaDetailComponent },
         ]
     },
     // redireccion (debe quedar al final de los routing)
