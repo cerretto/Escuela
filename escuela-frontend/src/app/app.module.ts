@@ -23,6 +23,9 @@ import { TipoAvisoComponent } from './tipo-aviso/tipo-aviso.component';
 import { TipoAvisoDetailComponent } from './tipo-aviso/tipo-aviso-detail/tipo-aviso-detail.component';
 import { TipoAvisoService } from './tipo-aviso/tipo-aviso.service';
 import { MenuDefinicionComponent } from './menu/menu-definicion/menu-definicion.component';
+import { MateriaComponent } from './materia/materia.component';
+import { MateriaDetailComponent } from './materia/materia-detail/materia-detail.component';
+import { MateriaService } from './materia/materia.service';
 
 
 @NgModule({
@@ -40,7 +43,9 @@ import { MenuDefinicionComponent } from './menu/menu-definicion/menu-definicion.
     CursoDetailComponent,
     TipoAvisoComponent,
     TipoAvisoDetailComponent,
-    MenuDefinicionComponent
+    MenuDefinicionComponent,
+    MateriaComponent,
+    MateriaDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,8 @@ import { MenuDefinicionComponent } from './menu/menu-definicion/menu-definicion.
     PlanService,
     NivelService,
     CursoService,
-    TipoAvisoService
+    TipoAvisoService,
+    MateriaService
   ],
   bootstrap: [AppComponent]
 })
