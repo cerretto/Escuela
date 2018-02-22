@@ -23,6 +23,7 @@ export class MateriaComponent implements OnInit {
   }
 
   goEdit(materia: Materia): void {
+    console.log(materia.id);
     this.router.navigate(['/menu/materia-detail', materia.id]);
   }
 
