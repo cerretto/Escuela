@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <div class="block-header">
     <ng-container *ngIf="!updateFlag">
-      <h2>Agregar Aviso</h2>
+      <h2>Agregar Inscripción</h2>
     </ng-container>
     <ng-container *ngIf="updateFlag">
-      <h2>Modificar Aviso</h2>
+      <h2>Modificar Inscripción</h2>
     </ng-container>
   </div>
   <!-- Input -->
@@ -13,26 +13,25 @@
       <div class="card">
         <div class="body">
           <div class="row clearfix">
-              <div class="col-sm-12">
-                <h2 class="card-inside-title">Descripción</h2>
-                <div class="form-group">
-                  <div class="form-line">
-                      <input type="text" class="form-control" [(ngModel)]="aviso.descripcion" placeholder="Descripción" />
-                  </div>
-                </div>
+              <div class="col-sm-6">
+                <h2 class="card-inside-title">Alumno</h2>
+                <select class="form-control show-tick" name="alumno" required [(ngModel)]="inscripcion.alumno" #alumno="ngModel">
+                    <option [ngValue]=undefined disabled> Seleccionar</option>
+                  <option *ngFor="let alumno of alumnoCombo" [ngValue]="alumno">{{alumno.nombre}}</option>
+                </select>
               </div>
               <div class="col-sm-6">
-                <h2 class="card-inside-title">Tipo Aviso</h2>
-                <select class="form-control show-tick" name="tipoAviso" required [(ngModel)]="aviso.tipoAviso" #tipoAviso="ngModel">
+                <h2 class="card-inside-title">Curso</h2>
+                <select class="form-control show-tick" name="curso" required [(ngModel)]="inscripcion.curso" #curso="ngModel">
                     <option [ngValue]=undefined disabled> Seleccionar</option>
-                  <option *ngFor="let tipoAviso of tipoAvisoCombo" [ngValue]="tipoAviso">{{tipoAviso.descripcion}}</option>
+                  <option *ngFor="let curso of cursoCombo" [ngValue]="curso">{{curso.descripcion}}</option>
                 </select>
               </div>
               <div class="col-sm-6">
                 <h2 class="card-inside-title">Fecha</h2>
                 <div class="form-group">
                   <div class="form-line">
-                      <input type="text" class="datepicker form-control" [ngModel]="aviso.fecha  | date:'yyyy-MM-dd'" (ngModelChange)="aviso.fecha = $event" name="fecha" placeholder="Fecha" />
+                      <input type="text" class="datepicker form-control" [ngModel]="inscripcion.fecha  | date:'yyyy-MM-dd'" (ngModelChange)="inscripcion.fecha = $event" name="fecha" placeholder="Fecha" />
                   </div>
                 </div>
               </div>
