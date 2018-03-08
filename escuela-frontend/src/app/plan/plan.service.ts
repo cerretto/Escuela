@@ -19,12 +19,12 @@ export class PlanService {
     return this.http.delete("http://localhost:8081/planes/" + id);
   }
 
-  savePlan(Plan: Plan) {
-    return this.http.post<Plan>("http://localhost:8081/planes", Plan);
+  savePlan(plan: Plan) {
+    return this.http.post<Plan>("http://localhost:8081/planes", plan);
   }
 
-  updatePlan(Plan: Plan) {
-    return this.http.put<Plan>("http://localhost:8081/planes/"+ Plan.id, Plan);
+  updatePlan(plan: Plan) {
+    return this.http.put<Plan>("http://localhost:8081/planes/"+ plan.id, plan);
   }
 
 

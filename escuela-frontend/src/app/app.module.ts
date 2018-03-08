@@ -30,6 +30,10 @@ import { MenuCursadoComponent } from './menu/menu-cursado/menu-cursado.component
 import { InscripcionComponent } from './inscripcion/inscripcion.component';
 import { InscripcionDetailComponent } from './inscripcion/inscripcion-detail/inscripcion-detail.component';
 import { InscripcionService } from './inscripcion/inscripcion.service';
+import { MenuAdministracionComponent } from './menu/menu-administracion/menu-administracion.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioService } from './usuario/usuario.service';
+import { UsuarioDetailComponent } from './usuario/usuario-detail/usuario-detail.component';
 
 
 @NgModule({
@@ -52,7 +56,10 @@ import { InscripcionService } from './inscripcion/inscripcion.service';
     MateriaDetailComponent,
     MenuCursadoComponent,
     InscripcionComponent,
-    InscripcionDetailComponent
+    InscripcionDetailComponent,
+    MenuAdministracionComponent,
+    UsuarioComponent,
+    UsuarioDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +74,8 @@ import { InscripcionService } from './inscripcion/inscripcion.service';
     CursoService,
     TipoAvisoService,
     MateriaService,
-    InscripcionService
+    InscripcionService,
+    UsuarioService
   ],
   bootstrap: [AppComponent]
 })
