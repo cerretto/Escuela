@@ -7,22 +7,22 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import ar.com.escuela.base.bean.BaseBO;
-import ar.com.escuela.seg.bean.Usuario;
+import ar.com.escuela.pad.bean.Persona;
 
 @Entity
 @Table(name = "docente")
 public class Docente extends BaseBO {
 
 	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "usuario_id")
-	private Usuario usuario;
+	@JoinColumn(name = "persona_id")
+	private Persona persona;
 
-	public Usuario getUsuario() {
-		return usuario;
+	public Persona getPersona() {
+		return persona;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setPersona(Persona persona) {
+		this.persona = persona;
 	}
 
 }

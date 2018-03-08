@@ -28,4 +28,15 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
         return new ResponseEntity<Object>(restError, new HttpHeaders(),status);
     }
     
+    @ExceptionHandler({ Exception.class})
+    public ResponseEntity<Object> handleAll(Exception ex, WebRequest request) {
+    	
+    	String code = EscuelaRestErrorCode.GENERIC_ERROR.toString();
+    	HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
+    	
+    	RestApiError restError = new RestApiError(status, code, ex.getLocalizedMessage());
+    	
+    	return new ResponseEntity<Object>(restError, new HttpHeaders(), status);
+    }
+    
 }
