@@ -17,7 +17,7 @@ import ar.com.escuela.def.service.DefinicionService;
 
 @RestController
 @RequestMapping("/materias")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class MateriaController {
 	
 	@Autowired

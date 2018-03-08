@@ -8,4 +8,5 @@ import ar.com.escuela.def.bean.Materia;
 @Repository
 public interface MateriaRepository extends JpaRepository<Materia, Long>{
 
+	Materia findByDescripcion(String descripcion);
 }

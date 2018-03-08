@@ -1,10 +1,47 @@
 package ar.com.escuela.exceptions;
 
-public class EscuelaException extends Exception{
+import java.util.Arrays;
+import java.util.List;
 
-	private String message;
+public class EscuelaException extends RuntimeException {
+
+	private static final long serialVersionUID = 1L;
+
+	private EscuelaRestErrorCode code;
+	
+	private List<String> errors;
 	
 	EscuelaException() {}
+	
+	public EscuelaException(EscuelaRestErrorCode code, String error){
+		super();
+		this.code = code;
+		this.errors = Arrays.asList(error);
+	}
+	
+	public EscuelaException(EscuelaRestErrorCode code, List<String> erros){
+		super();
+		this.code = code;
+		this.errors = erros;
+	}
+
+	public EscuelaRestErrorCode getCode() {
+		return code;
+	}
+
+	public void setCode(EscuelaRestErrorCode code) {
+		this.code = code;
+	}
+
+	public List<String> getErrors() {
+		return errors;
+	}
+
+	public void setErrors(List<String> errors) {
+		this.errors = errors;
+	}
+	
+	
 	
 		
 	

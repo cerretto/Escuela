@@ -14,6 +14,8 @@ import ar.com.escuela.def.repository.CursoRepository;
 import ar.com.escuela.def.repository.MateriaRepository;
 import ar.com.escuela.def.repository.NivelRepository;
 import ar.com.escuela.def.repository.PlanRepository;
+import ar.com.escuela.exceptions.EscuelaException;
+import ar.com.escuela.exceptions.EscuelaRestErrorCode;
 
 @Service
 public class DefinicionServiceImpl implements DefinicionService{
@@ -100,6 +102,11 @@ public class DefinicionServiceImpl implements DefinicionService{
 	
 	@Override
 	public void addMateria(Materia materia){
+		
+		Materia materiaExistente = materiaRepository.findByDescripcion(materia.getDescripcion());
+		if (materiaExistente != null) 
+			throw new EscuelaException(EscuelaRestErrorCode.VALIDATION_ERROR, "Existe una materia con esa Descripcion.");
+		
 		materiaRepository.save(materia);
 	}
 	

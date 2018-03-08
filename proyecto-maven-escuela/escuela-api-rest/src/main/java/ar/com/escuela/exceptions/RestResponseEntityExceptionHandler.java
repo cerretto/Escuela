@@ -1,5 +1,8 @@
 package ar.com.escuela.exceptions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,11 +14,18 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
  
+	
     @ExceptionHandler(value = { EscuelaException.class })
-    protected ResponseEntity<Object> handleConflict(RuntimeException ex, WebRequest request) {
-        String bodyOfResponse = "This should be application specific";
-        return handleExceptionInternal(ex, bodyOfResponse, 
-          new HttpHeaders(), HttpStatus.CONFLICT, request);
+    protected ResponseEntity<Object> handleConflict(EscuelaException ex, WebRequest request) {
+    	
+    	String code = ex.getCode().toString();
+    	List<String> errors = new ArrayList<String>();
+    	ex.getErrors().stream().forEach(x -> errors.add(x));
+    	HttpStatus status = HttpStatus.CONFLICT;
+      
+    	RestApiError restError = new RestApiError(status, code, errors);
+    	
+        return new ResponseEntity<Object>(restError, new HttpHeaders(),status);
     }
     
 }
