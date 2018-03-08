@@ -12,8 +12,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import ar.com.escuela.base.bean.BaseBO;
-import ar.com.escuela.cur.bean.Alumno;
-import ar.com.escuela.cur.bean.Docente;
 import ar.com.escuela.pad.bean.Persona;
 
 @Entity
@@ -28,12 +26,6 @@ public class Usuario extends BaseBO{
 	
 	@Column
 	private Date fechaInscripcion;
-	
-	@OneToOne(mappedBy = "usuario",fetch = FetchType.LAZY, optional = true)
-	private Alumno alumno;
-	
-	@OneToOne(mappedBy = "usuario",fetch = FetchType.LAZY, optional = true)
-	private Docente docente;
 	
 	@OneToMany(mappedBy = "usuario",fetch = FetchType.LAZY)
 	private List<UsuarioRol> usuarioRoles;
@@ -82,21 +74,6 @@ public class Usuario extends BaseBO{
 		this.persona = persona;
 	}
 
-	public Alumno getAlumno() {
-		return alumno;
-	}
-
-	public void setAlumno(Alumno alumno) {
-		this.alumno = alumno;
-	}
-
-	public Docente getDocente() {
-		return docente;
-	}
-
-	public void setDocente(Docente docente) {
-		this.docente = docente;
-	}
 
 
 }
