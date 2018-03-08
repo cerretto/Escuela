@@ -16,6 +16,9 @@ import { TipoAvisoDetailComponent } from './tipo-aviso/tipo-aviso-detail/tipo-av
 import { MenuDefinicionComponent } from './menu/menu-definicion/menu-definicion.component';
 import { MateriaComponent } from './materia/materia.component';
 import { MateriaDetailComponent } from './materia/materia-detail/materia-detail.component';
+import { MenuCursadoComponent } from './menu/menu-cursado/menu-cursado.component';
+import { InscripcionComponent } from './inscripcion/inscripcion.component';
+import { InscripcionDetailComponent } from './inscripcion/inscripcion-detail/inscripcion-detail.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/menu', pathMatch: 'full' },
@@ -40,7 +43,11 @@ const routes: Routes = [
           { path: 'menu-definicion', component: MenuDefinicionComponent },
           { path: 'materias', component: MateriaComponent },
           { path: 'materia-detail', component: MateriaDetailComponent },
-          { path: 'materia-detail/:id', component: MateriaDetailComponent }
+          { path: 'materia-detail/:id', component: MateriaDetailComponent },
+          { path: 'menu-cursado', component: MenuCursadoComponent },
+          { path: 'inscripciones', component: InscripcionComponent },
+          { path: 'inscripcion-detail', component: InscripcionDetailComponent },
+          { path: 'inscripcion-detail/:id', component: InscripcionDetailComponent }
         ]
     },
     // redireccion (debe quedar al final de los routing)

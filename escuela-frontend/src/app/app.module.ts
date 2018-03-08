@@ -26,6 +26,10 @@ import { MenuDefinicionComponent } from './menu/menu-definicion/menu-definicion.
 import { MateriaComponent } from './materia/materia.component';
 import { MateriaDetailComponent } from './materia/materia-detail/materia-detail.component';
 import { MateriaService } from './materia/materia.service';
+import { MenuCursadoComponent } from './menu/menu-cursado/menu-cursado.component';
+import { InscripcionComponent } from './inscripcion/inscripcion.component';
+import { InscripcionDetailComponent } from './inscripcion/inscripcion-detail/inscripcion-detail.component';
+import { InscripcionService } from './inscripcion/inscripcion.service';
 
 
 @NgModule({
@@ -45,7 +49,10 @@ import { MateriaService } from './materia/materia.service';
     TipoAvisoDetailComponent,
     MenuDefinicionComponent,
     MateriaComponent,
-    MateriaDetailComponent
+    MateriaDetailComponent,
+    MenuCursadoComponent,
+    InscripcionComponent,
+    InscripcionDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +66,8 @@ import { MateriaService } from './materia/materia.service';
     NivelService,
     CursoService,
     TipoAvisoService,
-    MateriaService
+    MateriaService,
+    InscripcionService
   ],
   bootstrap: [AppComponent]
 })
