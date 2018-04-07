@@ -37,6 +37,23 @@ INSERT INTO curso (id,anio_calendario,codigo,cupo,decripcion,nivel_id) VALUES (4
 INSERT INTO materia (id,descripcion,horario,salon,nivel_id) VALUES (1,'Matematica 1','7am','Salon A',1);
 INSERT INTO materia (id,descripcion,horario,salon,nivel_id) VALUES (2,'Matematica 2','9am','Salon B',2);
 INSERT INTO materia (id,descripcion,horario,salon,nivel_id) VALUES (3,'Matematica 3','11am','Salon C',3);
+--PERSONA
+INSERT INTO persona(id,nombre,apellido,nro_documento,fecha_nacimiento,telefono,responsable_id) VALUES (1,'Pablo','Cerretto','93720038','1991-08-08 00:00:00','262464',null);
+INSERT INTO persona(id,nombre,apellido,nro_documento,fecha_nacimiento,telefono,responsable_id) VALUES (2,'Matias','Lusardi','2565','1991-08-08 00:00:00','25888888',null);
+INSERT INTO persona(id,nombre,apellido,nro_documento,fecha_nacimiento,telefono,responsable_id) VALUES (3,'Adolfo','Cia','1234','1991-08-08 00:00:00','126854',null);
+INSERT INTO persona(id,nombre,apellido,nro_documento,fecha_nacimiento,telefono,responsable_id) VALUES (4,'Alumno','Alumno','12555554','1991-08-08 00:00:00','555555',null);
+INSERT INTO persona(id,nombre,apellido,nro_documento,fecha_nacimiento,telefono,responsable_id) VALUES (5,'Docente','Docente','4444444','1991-08-08 00:00:00','444444',null);
+--USUARIO
+INSERT INTO usuario (id,usr,password,fecha_inscripcion,persona_id) VALUES (1,'pablo','pablo',CURRENT_TIMESTAMP,1);
+INSERT INTO usuario (id,usr,password,fecha_inscripcion,persona_id) VALUES (2,'mati','mati',CURRENT_TIMESTAMP,2);
+INSERT INTO usuario (id,usr,password,fecha_inscripcion,persona_id) VALUES (3,'ado','ado',CURRENT_TIMESTAMP,3);
+--ALUMNO
+INSERT INTO alumno (id,persona_id) VALUES (1,4);
+--DOCENTE
+INSERT INTO docente (id,persona_id) VALUES (1,5);
+--ROL
+INSERT INTO rol (id,codigo,descripcion) VALUES (1,'admin','Administrador');
+
 
 
 

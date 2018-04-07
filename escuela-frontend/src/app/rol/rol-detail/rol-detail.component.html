@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <div class="block-header">
     <ng-container *ngIf="!updateFlag">
-      <h2>Agregar Usuario</h2>
+      <h2>Agregar Rol</h2>
     </ng-container>
     <ng-container *ngIf="updateFlag">
-      <h2>Modificar Usuario</h2>
+      <h2>Modificar Rol</h2>
     </ng-container>
   </div>
   <!-- Input -->
@@ -13,29 +13,21 @@
       <div class="card">
         <div class="body">
           <div class="row clearfix">
-            <div class="col-sm-6">
-              <h2 class="card-inside-title">Nombre de Usuario</h2>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <h2 class="card-inside-title">Código</h2>
               <div class="form-group">
                 <div class="form-line">
-                  <input type="text" class="form-control" [(ngModel)]="usuario.usr" placeholder="Nombre de Usuario" />
+                  <input type="text" class="form-control" [(ngModel)]="rol.codigo" placeholder="Código" />
                 </div>
               </div>
             </div>
-            <div class="col-sm-6">
-              <h2 class="card-inside-title">Fecha Inscripción</h2>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <h2 class="card-inside-title">Descripción</h2>
               <div class="form-group">
                 <div class="form-line">
-                  <input type="text" class="datepicker form-control" [ngModel]="usuario.fechaInscripcion  | date:'yyyy-MM-dd'" (ngModelChange)="usuario.fechaInscripcion = $event"
-                    name="fecha" placeholder="Fecha" />
+                  <input type="text" class="form-control" [(ngModel)]="rol.descripcion" placeholder="Descripción" />
                 </div>
               </div>
-            </div>
-            <div class="col-sm-6">
-              <h2 class="card-inside-title">Persona</h2>
-              <select class="form-control show-tick" data-live-search="true" name="persona" required [(ngModel)]="usuario.persona" #curso="ngModel">
-                <option [ngValue]=undefined disabled> Seleccionar</option>
-                <option *ngFor="let persona of personaCombo" [ngValue]="persona">{{persona.nombre}} {{persona.apellido}}</option>
-              </select>
             </div>
           </div>
           <div class="row clearfix demo-button">
