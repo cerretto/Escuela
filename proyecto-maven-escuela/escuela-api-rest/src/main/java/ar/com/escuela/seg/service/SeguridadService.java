@@ -28,5 +28,6 @@ public interface SeguridadService {
 	public void addUsuario(Usuario usuario);
 	public void updateUsuario(Usuario usuario, Long id);
 	public void deleteUsuario(Long id);
+	public Usuario getUsuarioByUserName(String userName);
 	
 }

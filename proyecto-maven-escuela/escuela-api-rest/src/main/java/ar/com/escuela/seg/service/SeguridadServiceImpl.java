@@ -89,6 +89,11 @@ public class SeguridadServiceImpl implements SeguridadService {
 		usuarioRepository.delete(id);
 	}
 	
+	@Override
+	public Usuario getUsuarioByUserName(String userName) {
+		return usuarioRepository.findByUsr(userName);
+	}
+	
 	//Servicios para UsuarioRol--------------------------------------------------------------------------------
 	@Override
 	public List<UsuarioRol> getAllUsuariosRoles(){
