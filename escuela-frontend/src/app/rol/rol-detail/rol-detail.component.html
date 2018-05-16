@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="block-header">
+    <ng-container *ngIf="!updateFlag">
+      <h2>Agregar Rol</h2>
+    </ng-container>
+    <ng-container *ngIf="updateFlag">
+      <h2>Modificar Rol</h2>
+    </ng-container>
+  </div>
+  <!-- Input -->
+  <div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="body">
+          <div class="row clearfix">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <h2 class="card-inside-title">Código</h2>
+              <div class="form-group">
+                <div class="form-line">
+                  <input type="text" class="form-control" [(ngModel)]="rol.codigo" placeholder="Código" />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <h2 class="card-inside-title">Descripción</h2>
+              <div class="form-group">
+                <div class="form-line">
+                  <input type="text" class="form-control" [(ngModel)]="rol.descripcion" placeholder="Descripción" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row clearfix demo-button">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <button type="button" class="btn btn-block btn-lg btn-primary waves-effect" (click)="goBack()">
+                Volver
+              </button>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <ng-container *ngIf="!updateFlag">
+                <button type="button" class="btn btn-block btn-lg btn-success waves-effect" (click)="save()">
+                  Agregar
+                </button>
+              </ng-container>
+              <ng-container *ngIf="updateFlag">
+                <button type="button" class="btn btn-block btn-lg btn-success waves-effect" (click)="update()">
+                  Modificar
+                </button>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

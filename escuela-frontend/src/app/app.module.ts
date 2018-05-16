@@ -30,6 +30,16 @@ import { MenuCursadoComponent } from './menu/menu-cursado/menu-cursado.component
 import { InscripcionComponent } from './inscripcion/inscripcion.component';
 import { InscripcionDetailComponent } from './inscripcion/inscripcion-detail/inscripcion-detail.component';
 import { InscripcionService } from './inscripcion/inscripcion.service';
+import { MenuAdministracionComponent } from './menu/menu-administracion/menu-administracion.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioService } from './usuario/usuario.service';
+import { UsuarioDetailComponent } from './usuario/usuario-detail/usuario-detail.component';
+import { PersonaComponent } from './persona/persona.component';
+import { PersonaDetailComponent } from './persona/persona-detail/persona-detail.component';
+import { RolComponent } from './rol/rol.component';
+import { RolDetailComponent } from './rol/rol-detail/rol-detail.component';
+import { PersonaService } from './persona/persona.service';
+import { RolService } from './rol/rol.service';
 
 
 @NgModule({
@@ -52,7 +62,14 @@ import { InscripcionService } from './inscripcion/inscripcion.service';
     MateriaDetailComponent,
     MenuCursadoComponent,
     InscripcionComponent,
-    InscripcionDetailComponent
+    InscripcionDetailComponent,
+    MenuAdministracionComponent,
+    UsuarioComponent,
+    UsuarioDetailComponent,
+    PersonaComponent,
+    PersonaDetailComponent,
+    RolComponent,
+    RolDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +84,10 @@ import { InscripcionService } from './inscripcion/inscripcion.service';
     CursoService,
     TipoAvisoService,
     MateriaService,
-    InscripcionService
+    InscripcionService,
+    UsuarioService,
+    PersonaService,
+    RolService
   ],
   bootstrap: [AppComponent]
 })

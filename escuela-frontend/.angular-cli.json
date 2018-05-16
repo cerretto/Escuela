@@ -23,11 +23,17 @@
         "assets/plugins/node-waves/waves.css",
         "assets/plugins/animate-css/animate.css",
         "assets/plugins/sweetalert/sweetalert.css",
+        "assets/plugins/bootstrap-select/css/bootstrap-select.css",
         "assets/css/style.css",
         "assets/css/themes/all-themes.css",
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "assets/plugins/jquery/jquery.js",
+        "assets/plugins/bootstrap/js/bootstrap.js",
+        "assets/plugins/bootstrap-select/js/bootstrap-select.js",
+        "assets/js/admin.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
