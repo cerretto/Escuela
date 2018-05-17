@@ -56,6 +56,20 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
 
 		return new ResponseEntity<Object>(restError, new HttpHeaders(), status);
 	}
+	
+	@ExceptionHandler(InvalidUserNameOrPasswordException.class)
+	public ResponseEntity<Object> InvalidUserNameOrPasswordException(InvalidUserNameOrPasswordException ex,
+			HttpServletResponse res) throws IOException {
+
+		String code = ex.getCode().toString();
+		List<String> errors = new ArrayList<String>();
+		ex.getErrors().stream().forEach(x -> errors.add(x));
+		HttpStatus status = HttpStatus.UNPROCESSABLE_ENTITY;
+
+		RestApiError restError = new RestApiError(status, code, errors);
+
+		return new ResponseEntity<Object>(restError, new HttpHeaders(), status);
+	}
 
 	@ExceptionHandler({ Exception.class })
 	public ResponseEntity<Object> handleAll(Exception ex, WebRequest request) {

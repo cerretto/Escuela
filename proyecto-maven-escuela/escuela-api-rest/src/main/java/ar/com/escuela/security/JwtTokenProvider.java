@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Role;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,6 +16,7 @@ import org.springframework.stereotype.Component;
 
 import ar.com.escuela.exceptions.EscuelaRestErrorCode;
 import ar.com.escuela.exceptions.InvalidOrExpiredTokenException;
+import ar.com.escuela.seg.bean.Rol;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
@@ -44,7 +44,7 @@ public class JwtTokenProvider {
 		secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
 	}
 
-	public String createToken(String username, List<Role> roles) {
+	public String createToken(String username, List<Rol> roles) {
 
 		Claims claims = Jwts.claims().setSubject(username);
 		claims.put("auth", roles);

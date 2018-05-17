@@ -52,7 +52,8 @@ INSERT INTO alumno (id,persona_id) VALUES (1,4);
 --DOCENTE
 INSERT INTO docente (id,persona_id) VALUES (1,5);
 --ROL
-INSERT INTO rol (id,codigo,descripcion) VALUES (1,'admin','Administrador');
+INSERT INTO rol (id,codigo,descripcion) VALUES (1,'ADMIN','Administrador');
+INSERT INTO rol (id,codigo,descripcion) VALUES (2,'DOCENTE','Administrador');
 
 
 

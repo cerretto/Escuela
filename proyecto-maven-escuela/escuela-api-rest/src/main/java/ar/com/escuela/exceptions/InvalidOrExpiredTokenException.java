@@ -1,6 +1,6 @@
 package ar.com.escuela.exceptions;
 
-public class InvalidOrExpiredTokenException extends EscuelaException{
+public class InvalidOrExpiredTokenException extends EscuelaException {
 
 	/**
 	 * 
