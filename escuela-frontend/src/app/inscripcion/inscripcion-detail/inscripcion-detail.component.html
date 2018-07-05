@@ -17,7 +17,7 @@
                 <h2 class="card-inside-title">Alumno</h2>
                 <select class="form-control show-tick" name="alumno" required [(ngModel)]="inscripcion.alumno" #alumno="ngModel">
                     <option [ngValue]=undefined disabled> Seleccionar</option>
-                  <option *ngFor="let alumno of alumnoCombo" [ngValue]="alumno">{{alumno.nombre}}</option>
+                  <option *ngFor="let alumno of alumnoCombo" [ngValue]="alumno">{{alumno.persona.nombre}}</option>
                 </select>
               </div>
               <div class="col-sm-6">
@@ -26,14 +26,6 @@
                     <option [ngValue]=undefined disabled> Seleccionar</option>
                   <option *ngFor="let curso of cursoCombo" [ngValue]="curso">{{curso.descripcion}}</option>
                 </select>
-              </div>
-              <div class="col-sm-6">
-                <h2 class="card-inside-title">Fecha</h2>
-                <div class="form-group">
-                  <div class="form-line">
-                      <input type="text" class="datepicker form-control" [ngModel]="inscripcion.fecha  | date:'yyyy-MM-dd'" (ngModelChange)="inscripcion.fecha = $event" name="fecha" placeholder="Fecha" />
-                  </div>
-                </div>
               </div>
           </div>
           <div class="body">

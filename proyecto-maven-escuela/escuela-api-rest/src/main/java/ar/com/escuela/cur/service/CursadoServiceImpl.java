@@ -6,11 +6,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ar.com.escuela.cur.bean.Alumno;
 import ar.com.escuela.cur.bean.AlumnoCurso;
 import ar.com.escuela.cur.bean.DocenteMateria;
 import ar.com.escuela.cur.bean.Evaluacion;
 import ar.com.escuela.cur.bean.Nota;
 import ar.com.escuela.cur.repository.AlumnoCursoRepository;
+import ar.com.escuela.cur.repository.AlumnoRepository;
 import ar.com.escuela.cur.repository.DocenteMateriaRepository;
 import ar.com.escuela.cur.repository.EvaluacionRepository;
 import ar.com.escuela.cur.repository.NotaRepository;
@@ -31,8 +33,8 @@ public class CursadoServiceImpl implements CursadoService {
 	@Autowired
 	private NotaRepository notaRepository;
 	
-	
-	
+	@Autowired
+	private AlumnoRepository alumnoRepository;
 	
 	//Servicios para Alumnocurso------------------------------------------------------------------------------------
 	@Override
@@ -158,6 +160,37 @@ public class CursadoServiceImpl implements CursadoService {
 	@Override
 	public void deleteNota(Long id) {
 		notaRepository.delete(id);
+	}
+	
+	//-----------------------------------------------------------------------------
+	// Servicios para Alumno
+	//------------------------------------------------------------------------------
+	@Override
+	public List<Alumno> getAllAlumnos(){
+		List<Alumno> alumno = new ArrayList<>();
+		//personaRepository sería el DAO. El add agarra a cada alumno y la mete en la lista de alumnos.
+		alumnoRepository.findAll().forEach(alumno::add);
+		return alumno;
+	}
+	
+	@Override
+	public Alumno getAlumnoById(Long id){
+		return alumnoRepository.findOne(id);
+	}
+	
+	@Override
+	public void addAlumno(Alumno alumno){
+		alumnoRepository.save(alumno);
+	}
+	
+	@Override
+	public void updateAlumno(Alumno alumno, Long id){
+		alumnoRepository.save(alumno);
+	}
+	
+	@Override
+	public void deleteAlumno(Long id){
+		alumnoRepository.delete(id);
 	}
 
 }
