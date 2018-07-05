@@ -1,50 +1,62 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
- 
-  <parent>
-    <groupId>utn.electiva.java.proyecto</groupId>
-    <artifactId>proyecto-maven-escuela</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
- 
-  <artifactId>escuela-api-rest</artifactId>
-  <name>REST API - ${project.artifactId}</name>
-  <description>Backend de la aplicacion con API Rest</description>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-<!-- 	Add typical dependencies for a web application  -->
+	<parent>
+		<groupId>utn.electiva.java.proyecto</groupId>
+		<artifactId>proyecto-maven-escuela</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>escuela-api-rest</artifactId>
+	<name>REST API - ${project.artifactId}</name>
+	<description>Backend de la aplicacion con API Rest</description>
+
+	<!-- Add typical dependencies for a web application -->
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-data-jpa</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-        
-        <dependency>
+
+		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-java8</artifactId>
 		</dependency>
 
-<!-- 		<dependency> -->
-<!-- 		    <groupId>com.h2database</groupId> -->
-<!-- 		    <artifactId>h2</artifactId> -->
-<!-- 		    <scope>runtime</scope> -->
-<!-- 		</dependency> -->
-		
+		<!-- <dependency> -->
+		<!-- <groupId>com.h2database</groupId> -->
+		<!-- <artifactId>h2</artifactId> -->
+		<!-- <scope>runtime</scope> -->
+		<!-- </dependency> -->
+
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
+			<version>9.4.1212</version>
 			<scope>runtime</scope>
 		</dependency>
-		
-		
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.0</version>
+		</dependency>
+
 	</dependencies>
 
-<!-- 	Package as an executable jar -->
+	<!-- Package as an executable jar -->
 	<build>
 		<plugins>
 			<plugin>

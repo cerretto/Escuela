@@ -2,6 +2,8 @@ package ar.com.escuela.seg.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import ar.com.escuela.seg.bean.Rol;
 import ar.com.escuela.seg.bean.Usuario;
 import ar.com.escuela.seg.bean.UsuarioRol;
@@ -28,5 +30,8 @@ public interface SeguridadService {
 	public void addUsuario(Usuario usuario);
 	public void updateUsuario(Usuario usuario, Long id);
 	public void deleteUsuario(Long id);
+	public Usuario getUsuarioByUserName(String userName);
+	String login(String username, String password);
+	Usuario whoami(HttpServletRequest req);
 	
 }

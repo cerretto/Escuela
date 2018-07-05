@@ -11,6 +11,12 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
   application.name: escuela
+
+security:
+  jwt:
+    token:
+      secret-key: secret-key
+      expire-length: 36000
     
 server:
   port: 8081
