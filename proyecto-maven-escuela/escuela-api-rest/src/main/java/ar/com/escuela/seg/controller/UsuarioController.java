@@ -54,4 +54,5 @@ public class UsuarioController {
 	public Usuario whoami(HttpServletRequest req) {
 		return seguridadService.whoami(req);
 	}
+	
 }

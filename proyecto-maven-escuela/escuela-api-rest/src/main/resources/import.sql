@@ -54,7 +54,10 @@ INSERT INTO docente (id,persona_id) VALUES (1,5);
 --ROL
 INSERT INTO rol (id,codigo,descripcion) VALUES (1,'ADMIN','Administrador');
 INSERT INTO rol (id,codigo,descripcion) VALUES (2,'DOCENTE','Administrador');
-
+--USUARIO/ROL
+INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (1, '2018-01-01 00:00:00', '2019-01-01 00:00:00', 1, 1);
+INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (2, '2018-01-01 00:00:00', '2019-01-01 00:00:00', 1, 2);
+INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (3, '2018-01-01 00:00:00', '2019-01-01 00:00:00', 1, 3);
 
 
 

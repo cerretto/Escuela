@@ -15,11 +15,11 @@ import ar.com.escuela.base.bean.BaseBO;
 @Table(name = "usuRol")
 public class UsuarioRol extends BaseBO {
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "rol_id")
 	private Rol rol;
 	
