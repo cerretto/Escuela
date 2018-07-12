@@ -27,7 +27,7 @@ public class Usuario extends BaseBO{
 	@Column
 	private Date fechaInscripcion;
 	
-	@OneToMany(mappedBy = "usuario",fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "usuario",fetch = FetchType.EAGER)
 	private List<UsuarioRol> usuarioRoles;
 	
 	@OneToOne(fetch = FetchType.LAZY)

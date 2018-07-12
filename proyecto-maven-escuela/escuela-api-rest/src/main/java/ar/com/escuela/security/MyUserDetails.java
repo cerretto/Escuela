@@ -27,8 +27,13 @@ public class MyUserDetails implements UserDetailsService {
 	    }
 	    
 	    List<String> rolesList = new ArrayList<>();
-	    user.getUsuarioRoles().forEach(x -> rolesList.add(x.getRol().getCodigo()));
-	    String[] arrayRoles = (String[]) rolesList.toArray();
+	    user.getUsuarioRoles()
+	    	.stream()
+	    	.filter(x -> x != null)
+	    	.forEach(x -> {
+	    		rolesList.add(x.getRol().getCodigo());
+	    	});
+	    String[] arrayRoles = rolesList.toArray(new String[0]);
 	    
 	    return org.springframework.security.core.userdetails.User//
 	        .withUsername(username)//

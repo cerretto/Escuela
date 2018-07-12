@@ -34,8 +34,8 @@ public class SeguridadServiceImpl implements SeguridadService {
 	@Autowired
 	private UsuarioRolRepository usuarioRolRepository;
 
-	@Autowired
-	private PasswordEncoder passwordEncoder;
+//	@Autowired
+//	private PasswordEncoder passwordEncoder;
 
 	@Autowired
 	private JwtTokenProvider jwtTokenProvider;
@@ -58,11 +58,11 @@ public class SeguridadServiceImpl implements SeguridadService {
 					"Invalid username/password supplied");
 		}
 	}
-	
+
 	@Override
 	public Usuario whoami(HttpServletRequest req) {
-	    return this.getUsuarioByUserName(jwtTokenProvider.getUsername(jwtTokenProvider.resolveToken(req)));
-	  }
+		return this.getUsuarioByUserName(jwtTokenProvider.getUsername(jwtTokenProvider.resolveToken(req)));
+	}
 
 	// Servicios para
 	// Rol------------------------------------------------------------------------------------

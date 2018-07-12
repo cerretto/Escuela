@@ -16,7 +16,7 @@ security:
   jwt:
     token:
       secret-key: secret-key
-      expire-length: 36000
+      expire-length: 600000
     
 server:
   port: 8081
