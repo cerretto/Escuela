@@ -40,7 +40,8 @@ import { RolComponent } from './rol/rol.component';
 import { RolDetailComponent } from './rol/rol-detail/rol-detail.component';
 import { PersonaService } from './persona/persona.service';
 import { RolService } from './rol/rol.service';
-
+import { AlumnoComponent } from './alumno/alumno.component';
+import { AlumnoService } from './alumno/alumno.service';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { RolService } from './rol/rol.service';
     PersonaComponent,
     PersonaDetailComponent,
     RolComponent,
-    RolDetailComponent
+    RolDetailComponent,
+    AlumnoComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +89,8 @@ import { RolService } from './rol/rol.service';
     InscripcionService,
     UsuarioService,
     PersonaService,
-    RolService
+    RolService,
+    AlumnoService
   ],
   bootstrap: [AppComponent]
 })

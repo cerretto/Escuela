@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Inscripcion } from './inscripcion-model';
 import { Curso } from '../curso/curso-models';
+import { Alumno } from '../alumno/alumno.model';
 
 @Injectable()
 export class InscripcionService {
@@ -25,15 +26,15 @@ export class InscripcionService {
   }
 
   updateInscripcion(inscripcion: Inscripcion) {
-    return this.http.put<Inscripcion>("http://localhost:8081/inscripciones/"+ inscripcion.id, inscripcion);
+    return this.http.put<Inscripcion>("http://localhost:8081/inscripciones/" + inscripcion.id, inscripcion);
   }
 
   getCurso() {
     return this.http.get<Curso[]>("http://localhost:8081/cursos");
   }
 
-//   getAlumno() {
-//     return this.http.get<Alumno[]>("http://localhost:8081/alumnos");
-//   }
+  getAlumno() {
+    return this.http.get<Alumno[]>("http://localhost:8081/alumnos");
+  }
 
 }

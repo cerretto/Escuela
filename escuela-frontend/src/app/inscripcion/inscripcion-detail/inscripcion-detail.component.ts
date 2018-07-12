@@ -5,6 +5,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 import { Curso } from '../../curso/curso-models';
+import { Alumno } from '../../alumno/alumno.model';
 
 @Component({
   selector: 'app-inscripcion-detail',
@@ -16,17 +17,14 @@ export class InscripcionDetailComponent implements OnInit {
   updateFlag: Boolean = false;
   inscripcion: Inscripcion = new Inscripcion();
   cursoCombo: Curso[];
-  //alumnoCombo: Alumno[];
+  alumnoCombo: Alumno[];
 
   constructor(private service: InscripcionService,
-                private route: ActivatedRoute,
-                private router: Router) { }
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
 
-    // this.route.paramMap
-    // .switchMap((params: ParamMap) => this.service.getAviso(+params.get('id')))
-    // .subscribe(aviso => this.aviso = aviso);
     this.route.params.subscribe(params => {
       if (+params['id']) {
         // console.log(+params['id']);
@@ -40,11 +38,11 @@ export class InscripcionDetailComponent implements OnInit {
                 this.cursoCombo = data;
                 this.inscripcion.curso = this.cursoCombo.filter(r => r.id === this.inscripcion.curso.id)[0];
               });
-            // this.service.getAlumno().subscribe(
-            //   data => {
-            //     this.alumnoCombo = data;
-            //     this.inscripcion.alumno = this.alumnoCombo.filter(r => r.id === this.inscripcion.alumno.id)[0];
-            //   });
+            this.service.getAlumno().subscribe(
+              data => {
+                this.alumnoCombo = data;
+                this.inscripcion.alumno = this.alumnoCombo.filter(r => r.id === this.inscripcion.alumno.id)[0];
+              });
           });
 
       } else {
@@ -52,10 +50,10 @@ export class InscripcionDetailComponent implements OnInit {
           data => {
             this.cursoCombo = data;
           });
-        // this.service.getAlumno().subscribe(
-        //   data => {
-        //     this.alumnoCombo = data;
-        //   });
+        this.service.getAlumno().subscribe(
+          data => {
+            this.alumnoCombo = data;
+          });
       }
     });
 
