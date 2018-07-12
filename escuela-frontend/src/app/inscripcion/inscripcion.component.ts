@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Inscripcion } from './inscripcion-model';
 import { InscripcionService } from './inscripcion.service';
+import { AlumnoCurso } from './inscripcion-model';
 
 @Component({
   selector: 'app-inscripcion',
@@ -10,29 +10,29 @@ import { InscripcionService } from './inscripcion.service';
 })
 export class InscripcionComponent implements OnInit {
 
-  inscipciones: Inscripcion[];
-  selectedInscripcion: Inscripcion = new Inscripcion();
+  alumnoCursoCombo: AlumnoCurso[];
+  selectedInscripcion: AlumnoCurso = new AlumnoCurso();
 
   constructor(private service: InscripcionService,  private router: Router) { }
 
   ngOnInit() {
-    this.service.getInscripciones().subscribe(data => this.inscipciones = data);
+    this.service.getInscripciones().subscribe(data => {this.alumnoCursoCombo = data; console.log(this.alumnoCursoCombo)});
   }
 
   goCreate(): void {
     this.router.navigate(['/menu/inscripcion-detail']);
   }
 
-  goEdit(inscripcion: Inscripcion): void {
-    this.router.navigate(['/menu/inscripcion-detail', inscripcion.id]);
+  goEdit(alumnoCurso: AlumnoCurso): void {
+    this.router.navigate(['/menu/inscripcion-detail', alumnoCurso.id]);
   }
 
   goMenu() {
     this.router.navigate(['/menu/menu-cursado']);
   }
 
-  delete(inscripcion: Inscripcion) {
-    this.service.deleteInscripcion(inscripcion.id).subscribe(
+  delete(alumnoCurso: AlumnoCurso) {
+    this.service.deleteInscripcion(alumnoCurso.id).subscribe(
       data => {
         console.log('exito');
         this.ngOnInit();

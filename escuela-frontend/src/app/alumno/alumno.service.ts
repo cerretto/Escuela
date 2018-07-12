@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Alumno } from '../alumno/alumno.model';
+import { Persona } from '../persona/persona-models';
 
 @Injectable()
 export class AlumnoService {
@@ -25,6 +26,10 @@ export class AlumnoService {
 
   updateAlumno(alumno: Alumno) {
     return this.http.put<Alumno>("http://localhost:8081/alumnos/"+ alumno.id, alumno);
+  }
+
+  getPersonas() {
+    return this.http.get<Persona[]>("http://localhost:8081/personas");
   }
 
 }

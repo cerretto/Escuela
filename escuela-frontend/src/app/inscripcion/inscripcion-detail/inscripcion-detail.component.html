@@ -13,19 +13,26 @@
       <div class="card">
         <div class="body">
           <div class="row clearfix">
-              <div class="col-sm-6">
+              <div class="col-sm-4">
                 <h2 class="card-inside-title">Alumno</h2>
-                <select class="form-control show-tick" name="alumno" required [(ngModel)]="inscripcion.alumno" #alumno="ngModel">
+                <select class="form-control show-tick" name="alumno" required [(ngModel)]="alumnoCurso.alumno" #alumno="ngModel">
                     <option [ngValue]=undefined disabled> Seleccionar</option>
-                  <option *ngFor="let alumno of alumnoCombo" [ngValue]="alumno">{{alumno.persona.nombre}}</option>
+                  <option *ngFor="let alumno of alumnoCombo" [ngValue]="alumno">{{alumno.persona.nombre}} {{alumno.persona.apellido}}</option>
                 </select>
               </div>
-              <div class="col-sm-6">
+              <div class="col-sm-4">
                 <h2 class="card-inside-title">Curso</h2>
-                <select class="form-control show-tick" name="curso" required [(ngModel)]="inscripcion.curso" #curso="ngModel">
+                <select class="form-control show-tick" name="curso" required [(ngModel)]="alumnoCurso.curso" #curso="ngModel">
                     <option [ngValue]=undefined disabled> Seleccionar</option>
                   <option *ngFor="let curso of cursoCombo" [ngValue]="curso">{{curso.descripcion}}</option>
                 </select>
+              </div>
+              <div class="col-sm-4">
+                <h2 class="card-inside-title">Año</h2>
+                <select class="form-control show-tick" name="anio" required [(ngModel)]="alumnoCurso.anio" #anio="ngModel">
+                  <option [ngValue]=undefined disabled> Seleccionar</option>
+                <option *ngFor="let anio of anios" [ngValue]="anio">{{anio}}</option>
+              </select>
               </div>
           </div>
           <div class="body">

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Inscripcion } from './inscripcion-model';
+import { AlumnoCurso } from './inscripcion-model';
 import { Curso } from '../curso/curso-models';
 import { Alumno } from '../alumno/alumno.model';
 
@@ -10,23 +10,23 @@ export class InscripcionService {
   constructor(private http: HttpClient) { }
 
   getInscripciones() {
-    return this.http.get<Inscripcion[]>("http://localhost:8081/inscripciones");
+    return this.http.get<AlumnoCurso[]>("http://localhost:8081/inscripciones");
   }
 
   getInscripcion(id: Number) {
-    return this.http.get<Inscripcion>("http://localhost:8081/inscripciones/" + id);
+    return this.http.get<AlumnoCurso>("http://localhost:8081/inscripciones/" + id);
   }
 
   deleteInscripcion(id: Number) {
     return this.http.delete("http://localhost:8081/inscripciones/" + id);
   }
 
-  saveInscripcion(inscripcion: Inscripcion) {
-    return this.http.post<Inscripcion>("http://localhost:8081/inscripciones", inscripcion);
+  saveInscripcion(alumnoCurso: AlumnoCurso) {
+    return this.http.post<AlumnoCurso>("http://localhost:8081/inscripciones", alumnoCurso);
   }
 
-  updateInscripcion(inscripcion: Inscripcion) {
-    return this.http.put<Inscripcion>("http://localhost:8081/inscripciones/" + inscripcion.id, inscripcion);
+  updateInscripcion(alumnoCurso: AlumnoCurso) {
+    return this.http.put<AlumnoCurso>("http://localhost:8081/inscripciones/" + alumnoCurso.id, alumnoCurso);
   }
 
   getCurso() {

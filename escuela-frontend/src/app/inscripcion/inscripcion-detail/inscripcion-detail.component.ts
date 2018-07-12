@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Inscripcion } from '../inscripcion-model';
+import { AlumnoCurso } from '../inscripcion-model';
 import { InscripcionService } from '../inscripcion.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -15,9 +15,10 @@ import { Alumno } from '../../alumno/alumno.model';
 export class InscripcionDetailComponent implements OnInit {
 
   updateFlag: Boolean = false;
-  inscripcion: Inscripcion = new Inscripcion();
+  alumnoCurso: AlumnoCurso = new AlumnoCurso();
   cursoCombo: Curso[];
   alumnoCombo: Alumno[];
+  anios: number[] = [2018,2019,2020,2021];
 
   constructor(private service: InscripcionService,
     private route: ActivatedRoute,
@@ -31,17 +32,17 @@ export class InscripcionDetailComponent implements OnInit {
         this.updateFlag = true;
         this.service.getInscripcion(+params['id']).subscribe(
           inscripcion => {
-            this.inscripcion = inscripcion;
+            this.alumnoCurso = inscripcion;
 
             this.service.getCurso().subscribe(
               data => {
                 this.cursoCombo = data;
-                this.inscripcion.curso = this.cursoCombo.filter(r => r.id === this.inscripcion.curso.id)[0];
+                this.alumnoCurso.curso = this.cursoCombo.filter(r => r.id === this.alumnoCurso.curso.id)[0];
               });
             this.service.getAlumno().subscribe(
               data => {
                 this.alumnoCombo = data;
-                this.inscripcion.alumno = this.alumnoCombo.filter(r => r.id === this.inscripcion.alumno.id)[0];
+                this.alumnoCurso.alumno = this.alumnoCombo.filter(r => r.id === this.alumnoCurso.alumno.id)[0];
               });
           });
 
@@ -65,7 +66,7 @@ export class InscripcionDetailComponent implements OnInit {
 
   save() {
     console.log('func::save');
-    this.service.saveInscripcion(this.inscripcion).subscribe(
+    this.service.saveInscripcion(this.alumnoCurso).subscribe(
       data => {
         console.log('ok');
         this.router.navigate(['menu/inscripciones']);
@@ -77,10 +78,10 @@ export class InscripcionDetailComponent implements OnInit {
 
   update() {
     console.log('func::update');
-    this.service.updateInscripcion(this.inscripcion).subscribe(
+    this.service.updateInscripcion(this.alumnoCurso).subscribe(
       data => {
         console.log('ok');
-        this.inscripcion = data;
+        this.alumnoCurso = data;
         this.router.navigate(['menu/inscripciones']);
       }, err => {
         console.log('ok');

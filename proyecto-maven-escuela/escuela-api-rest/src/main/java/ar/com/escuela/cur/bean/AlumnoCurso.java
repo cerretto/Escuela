@@ -9,7 +9,6 @@ import javax.persistence.Table;
 
 import ar.com.escuela.base.bean.BaseBO;
 import ar.com.escuela.def.bean.Curso;
-import ar.com.escuela.seg.bean.Usuario;
 
 @Entity
 @Table(name="alumnoCurso")
@@ -20,7 +19,7 @@ public class AlumnoCurso extends BaseBO{
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "alumno_id")
-	private Usuario alumno;
+	private Alumno alumno;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "curso_id")
@@ -47,11 +46,11 @@ public class AlumnoCurso extends BaseBO{
 //		this.notas = notas;
 //	}
 
-	public Usuario getAlumno() {
+	public Alumno getAlumno() {
 		return alumno;
 	}
 
-	public void setAlumno(Usuario alumno) {
+	public void setAlumno(Alumno alumno) {
 		this.alumno = alumno;
 	}
 

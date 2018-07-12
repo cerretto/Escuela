@@ -17,16 +17,16 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let inscripcion of inscripciones">
-                  <td>{{inscripcion.id}}</td>
-                  <td>{{inscripcion.alumno.nombre}}</td>
-                  <td>{{inscripcion.curso.descripcion}}</td>
-                  <td>{{inscripcion.fecha | date: 'dd/MM/yyyy'}}</td>
+              <tr *ngFor="let alumnoCurso of alumnoCursoCombo">
+                  <td>{{alumnoCurso.id}}</td>
+                  <td>{{alumnoCurso.alumno.persona.nombre}} {{alumnoCurso.alumno.persona.apellido}}</td>
+                  <td>{{alumnoCurso.curso.descripcion}}</td>
+                  <td>{{alumnoCurso.anio }}</td>
                   <td>
-                    <button type="button" class="btn btn-default btn-circle waves-effect waves-circle waves-float" (click)="goEdit(aviso)">
+                    <button type="button" class="btn btn-default btn-circle waves-effect waves-circle waves-float" (click)="goEdit(alumnoCurso)">
                       <i class="material-icons">search</i>
                     </button>
-                    <button type="button" class="btn btn-default btn-circle waves-effect waves-circle waves-float" (click)="delete(aviso)">
+                    <button type="button" class="btn btn-default btn-circle waves-effect waves-circle waves-float" (click)="delete(alumnoCurso)">
                       <i class="material-icons">delete</i>
                     </button>
                   </td>
