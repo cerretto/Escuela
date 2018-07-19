@@ -16,6 +16,7 @@ public interface CursadoService {
 	public void addAlumnoCurso(AlumnoCurso alumnoCurso);
 	public void updateAlumnoCurso(AlumnoCurso alumnoCurso, Long id);
 	public void deleteAlumnoCurso(Long id);
+	public AlumnoCurso getAlumnoCursoByIdAlumno(Long id);
 	
 	//DocenteMateria
 	public List<DocenteMateria> getAllDocenteMaterias();
@@ -44,4 +45,5 @@ public interface CursadoService {
 	public void addAlumno(Alumno alumno);
 	public void updateAlumno(Alumno alumno, Long id);
 	public void deleteAlumno(Long id);
+	
 }

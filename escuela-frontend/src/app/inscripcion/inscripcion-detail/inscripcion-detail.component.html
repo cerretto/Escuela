@@ -24,7 +24,7 @@
                 <h2 class="card-inside-title">Curso</h2>
                 <select class="form-control show-tick" name="curso" required [(ngModel)]="alumnoCurso.curso" #curso="ngModel">
                     <option [ngValue]=undefined disabled> Seleccionar</option>
-                  <option *ngFor="let curso of cursoCombo" [ngValue]="curso">{{curso.descripcion}}</option>
+                  <option *ngFor="let curso of cursoCombo" [ngValue]="curso">{{curso.descripcion}} {{curso.nivel.descripcion}}</option>
                 </select>
               </div>
               <div class="col-sm-4">

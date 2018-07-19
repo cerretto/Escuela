@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ar.com.escuela.cur.bean.AlumnoCurso;
 import ar.com.escuela.cur.service.CursadoService;
+import ar.com.escuela.exceptions.EscuelaException;
+import ar.com.escuela.exceptions.EscuelaRestErrorCode;
 
 @RestController
 @RequestMapping("/inscripciones")
@@ -38,6 +40,27 @@ public class AlumnoCursoController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<Void> addAlumnoCurso(@RequestBody AlumnoCurso alumnoCurso){
+		
+		// Validaciones de campos requeridos
+		if (alumnoCurso.getAlumno() == null) {
+			throw new EscuelaException(EscuelaRestErrorCode.REQUERIDO, "El alumno es requerido.");
+		}
+		
+		if (alumnoCurso.getCurso() == null) {
+			throw new EscuelaException(EscuelaRestErrorCode.REQUERIDO, "El curso es requerido.");
+		}
+		
+		if (alumnoCurso.getAnio() == null) {
+			throw new EscuelaException(EscuelaRestErrorCode.REQUERIDO, "El año es requerido.");
+		}
+		
+		AlumnoCurso ac = cursadoService.getAlumnoCursoByIdAlumno(alumnoCurso.getAlumno().getId());
+		
+		if (ac != null) {
+			// Valida que si el alumno ya está inscripto a un curso no se pueda inscribir a otro curso
+			throw new EscuelaException(EscuelaRestErrorCode.ALUMNO_INSCRIPTO, "El alumno ya está inscripto a un curso.");
+		}
+		
 		cursadoService.addAlumnoCurso(alumnoCurso);
 		
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);

@@ -1,5 +1,7 @@
 package ar.com.escuela.cur.bean;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -24,12 +26,10 @@ public class AlumnoCurso extends BaseBO{
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "curso_id")
 	private Curso curso;
+	
+	@Column
+	private Date fechaInscripcion;
 
-//	@OneToMany
-//	private List<Nota> notas;
-	
-	
-	
 	public Integer getAnio() {
 		return anio;
 	}
@@ -37,14 +37,6 @@ public class AlumnoCurso extends BaseBO{
 	public void setAnio(Integer anio) {
 		this.anio = anio;
 	}
-
-//	public List<Nota> getNotas() {
-//		return notas;
-//	}
-//
-//	public void setNotas(List<Nota> notas) {
-//		this.notas = notas;
-//	}
 
 	public Alumno getAlumno() {
 		return alumno;
@@ -60,6 +52,14 @@ public class AlumnoCurso extends BaseBO{
 
 	public void setCurso(Curso curso) {
 		this.curso = curso;
+	}
+
+	public Date getFechaInscripcion() {
+		return fechaInscripcion;
+	}
+
+	public void setFechaInscripcion(Date fechaInscripcion) {
+		this.fechaInscripcion = fechaInscripcion;
 	}
 	
 }

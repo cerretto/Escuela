@@ -8,4 +8,6 @@ import ar.com.escuela.cur.bean.AlumnoCurso;
 @Repository
 public interface AlumnoCursoRepository extends JpaRepository<AlumnoCurso, Long>{
 
+	AlumnoCurso findByAlumno(Long id);
+
 }
