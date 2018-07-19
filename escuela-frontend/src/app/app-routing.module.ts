@@ -27,6 +27,7 @@ import { PersonaDetailComponent } from './persona/persona-detail/persona-detail.
 import { RolDetailComponent } from './rol/rol-detail/rol-detail.component';
 import { RolComponent } from './rol/rol.component';
 import { AlumnoComponent } from './alumno/alumno.component';
+import { AlumnoDetailComponent } from './alumno/alumno-detail/alumno-detail.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/menu', pathMatch: 'full' },
@@ -66,7 +67,9 @@ const routes: Routes = [
           { path: 'roles', component: RolComponent },
           { path: 'rol-detail', component: RolDetailComponent },
           { path: 'rol-detail/:id', component: RolDetailComponent },
-          { path: 'alumnos', component: AlumnoComponent }
+          { path: 'alumnos', component: AlumnoComponent },
+          { path: 'alumno-detail', component: AlumnoDetailComponent },
+          { path: 'alumno-detail/:id', component: AlumnoDetailComponent }
         ]
     },
     // redireccion (debe quedar al final de los routing)

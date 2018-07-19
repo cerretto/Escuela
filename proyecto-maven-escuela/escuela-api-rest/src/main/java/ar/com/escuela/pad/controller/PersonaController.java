@@ -17,7 +17,7 @@ import ar.com.escuela.pad.service.PadronService;
 
 @RestController
 @RequestMapping("/personas")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class PersonaController {
 	@Autowired
 	private PadronService personaService;

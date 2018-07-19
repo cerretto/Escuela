@@ -1,6 +1,7 @@
 package ar.com.escuela.cur.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +49,11 @@ public class CursadoServiceImpl implements CursadoService {
 	}
 	
 	@Override
-	public void addAlumnoCurso(AlumnoCurso alumnoCurso){
+	public void addAlumnoCurso(AlumnoCurso alumnoCurso) {
+		
+		// Seteamos la fecha de inscripción con la fecha actual
+		alumnoCurso.setFechaInscripcion(new Date());
+		
 		alumnoCursoRepository.save(alumnoCurso);
 	}
 	
@@ -67,6 +72,14 @@ public class CursadoServiceImpl implements CursadoService {
 	public void deleteAlumnoCurso(Long id) {
 		
 		alumnoCursoRepository.delete(id);
+	}
+	
+	@Override
+	public AlumnoCurso getAlumnoCursoByIdAlumno(Long id) {
+		
+		AlumnoCurso alumnoCurso = alumnoCursoRepository.findByAlumno(id);
+		
+		return alumnoCurso;
 	}
 	
 	//Servicios para DocenteMateria----------------------------------------------------------------------------

@@ -3,6 +3,9 @@ package ar.com.escuela.cur.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,42 +14,70 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ar.com.escuela.cur.bean.AlumnoCurso;
 import ar.com.escuela.cur.service.CursadoService;
-
+import ar.com.escuela.exceptions.EscuelaException;
+import ar.com.escuela.exceptions.EscuelaRestErrorCode;
 
 @RestController
-@RequestMapping("/alumnocurso")
+@RequestMapping("/inscripciones")
+@CrossOrigin(origins = "*")
 public class AlumnoCursoController {
-	
-
 	
 	@Autowired
 	private CursadoService cursadoService;
 	
-	@RequestMapping("/")
-	public List<AlumnoCurso> getAllAlumnoCursos(){
-		return cursadoService.getAllAlumnoCursos();
+	@RequestMapping("")
+	public ResponseEntity<List<AlumnoCurso>> getAllAlumnoCursos(){
+		List<AlumnoCurso> listAlumnoCurso = cursadoService.getAllAlumnoCursos();
+		return new ResponseEntity<List<AlumnoCurso>>(listAlumnoCurso,HttpStatus.OK);
 	}
 	
 	@RequestMapping("/{id}") // otra forma "/alumnoCurso/{foo}" y poner @PathVariable("foo")
-	public AlumnoCurso getAlumnoCurso(@PathVariable Long id){
-		return cursadoService.getAlumnoCursoById(id);
+	public ResponseEntity<AlumnoCurso> getAlumnoCurso(@PathVariable Long id){
+		AlumnoCurso alumnoCurso = cursadoService.getAlumnoCursoById(id);
+		
+		return new ResponseEntity<AlumnoCurso>(alumnoCurso,HttpStatus.OK);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST , value="/")
-	public void addAlumnoCurso(@RequestBody AlumnoCurso alumnoCurso){
+	@RequestMapping(method=RequestMethod.POST)
+	public ResponseEntity<Void> addAlumnoCurso(@RequestBody AlumnoCurso alumnoCurso){
+		
+		// Validaciones de campos requeridos
+		if (alumnoCurso.getAlumno() == null) {
+			throw new EscuelaException(EscuelaRestErrorCode.REQUERIDO, "El alumno es requerido.");
+		}
+		
+		if (alumnoCurso.getCurso() == null) {
+			throw new EscuelaException(EscuelaRestErrorCode.REQUERIDO, "El curso es requerido.");
+		}
+		
+		if (alumnoCurso.getAnio() == null) {
+			throw new EscuelaException(EscuelaRestErrorCode.REQUERIDO, "El año es requerido.");
+		}
+		
+		AlumnoCurso ac = cursadoService.getAlumnoCursoByIdAlumno(alumnoCurso.getAlumno().getId());
+		
+		if (ac != null) {
+			// Valida que si el alumno ya está inscripto a un curso no se pueda inscribir a otro curso
+			throw new EscuelaException(EscuelaRestErrorCode.ALUMNO_INSCRIPTO, "El alumno ya está inscripto a un curso.");
+		}
+		
 		cursadoService.addAlumnoCurso(alumnoCurso);
+		
+		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/{id}")
-	public void updateAlumnoCurso(@RequestBody AlumnoCurso alumnoCurso, @PathVariable Long id){
+	public ResponseEntity<Void> updateAlumnoCurso(@RequestBody AlumnoCurso alumnoCurso, @PathVariable Long id){
 		cursadoService.updateAlumnoCurso(alumnoCurso, id);
 		
+		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/{id}")
-	public void deleteAlumnoCurso(@PathVariable Long id){
+	public ResponseEntity<Void> deleteAlumnoCurso(@PathVariable Long id){
 		cursadoService.deleteAlumnoCurso(id);
+		
+		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
-
 
 }

@@ -42,6 +42,7 @@ import { PersonaService } from './persona/persona.service';
 import { RolService } from './rol/rol.service';
 import { AlumnoComponent } from './alumno/alumno.component';
 import { AlumnoService } from './alumno/alumno.service';
+import { AlumnoDetailComponent } from './alumno/alumno-detail/alumno-detail.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { AlumnoService } from './alumno/alumno.service';
     PersonaDetailComponent,
     RolComponent,
     RolDetailComponent,
-    AlumnoComponent
+    AlumnoComponent,
+    AlumnoDetailComponent
   ],
   imports: [
     BrowserModule,

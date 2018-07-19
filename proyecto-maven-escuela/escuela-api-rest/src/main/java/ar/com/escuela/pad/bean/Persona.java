@@ -33,7 +33,7 @@ public class Persona extends BaseBO{
 //	private List<Domicilio> domicilios;
 	
 	@ManyToOne
-	@JoinColumn(name = "responsable_id")
+	@JoinColumn(name = "persona_id")
 	private Persona responsable;
 	
 //	@OneToMany
