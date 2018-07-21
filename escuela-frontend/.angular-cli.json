@@ -26,7 +26,8 @@
         "assets/plugins/bootstrap-select/css/bootstrap-select.css",
         "assets/css/style.css",
         "assets/css/themes/all-themes.css",
-        "styles.css"
+        "styles.css",
+        "assets/css/styleEscuela.css"
       ],
       "scripts": [
         "assets/plugins/jquery/jquery.min.js",

@@ -6,12 +6,9 @@ import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 import { Curso } from '../../curso/curso-models';
 import { Alumno } from '../../alumno/alumno.model';
-import { MatSelectModule } from '@angular/material/select';
-
-export interface Food {
-  value: string;
-  viewValue: string;
-}
+import { FormControl, Validators, FormGroup, FormBuilder} from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
+import { RestError } from '../../shared/components/global-error-handler/rest-error';
 
 @Component({
   selector: 'app-inscripcion-detail',
@@ -22,19 +19,27 @@ export class InscripcionDetailComponent implements OnInit {
 
   updateFlag: Boolean = false;
   alumnoCurso: AlumnoCurso = new AlumnoCurso();
+  form: FormGroup;
   cursoCombo: Curso[];
   alumnoCombo: Alumno[];
+  backendError: boolean = false;
+  backendErrorMessage: string;
   anios: number[] = [2018,2019,2020,2021];
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
 
   constructor(private service: InscripcionService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private fb: FormBuilder) { 
+      this.createForm();
+    }
 
+  createForm() {
+    this.form = this.fb.group({
+      alumno: new FormControl('', [Validators.required]),
+      curso: new FormControl('', [Validators.required])
+    })
+  }
+    
   ngOnInit() {
 
     this.route.params.subscribe(params => {
@@ -77,12 +82,23 @@ export class InscripcionDetailComponent implements OnInit {
 
   save() {
     console.log('func::save');
+    const formModel = this.form.value;
+    this.alumnoCurso.alumno = formModel.alumno;
+    this.alumnoCurso.curso = formModel.curso;
     this.service.saveInscripcion(this.alumnoCurso).subscribe(
       data => {
         console.log('ok');
         this.router.navigate(['menu/inscripciones']);
-      }, err => {
-        console.log('err');
+      }, (err: HttpErrorResponse) => {
+        var errorObj: RestError;
+        try {
+          errorObj = JSON.parse(err.error) as RestError;
+        } catch (e) {
+          errorObj = err.error as RestError;
+        }
+
+        this.backendError = true;
+        this.backendErrorMessage = errorObj.errors[0];
       }
     );
   }

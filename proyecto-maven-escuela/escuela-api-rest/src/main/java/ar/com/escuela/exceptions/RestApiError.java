@@ -11,20 +11,20 @@ public class RestApiError {
 	
 	private String message;
 	
-	private List<String> erros;
+	private List<String> errors;
 	
 	public RestApiError(HttpStatus status, String message, List<String> errors) {
 		super();
 		this.status = status;
 		this.message = message;
-		this.erros = errors;
+		this.errors = errors;
 	}
 	
 	public RestApiError(HttpStatus status, String message, String error) {
 		super();
 		this.status = status;
 		this.message = message;
-		this.erros = Arrays.asList(error);
+		this.errors = Arrays.asList(error);
 	}
 
 	public HttpStatus getStatus() {
@@ -43,11 +43,11 @@ public class RestApiError {
 		this.message = message;
 	}
 
-	public List<String> getErros() {
-		return erros;
+	public List<String> getErrors() {
+		return errors;
 	}
 
-	public void setErros(List<String> erros) {
-		this.erros = erros;
+	public void setErrors(List<String> errors) {
+		this.errors = errors;
 	}
 }
