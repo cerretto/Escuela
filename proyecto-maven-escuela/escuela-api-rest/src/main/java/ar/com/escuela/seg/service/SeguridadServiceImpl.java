@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import ar.com.escuela.exceptions.EscuelaRestErrorCode;
@@ -34,8 +33,8 @@ public class SeguridadServiceImpl implements SeguridadService {
 	@Autowired
 	private UsuarioRolRepository usuarioRolRepository;
 
-//	@Autowired
-//	private PasswordEncoder passwordEncoder;
+	// @Autowired
+	// private PasswordEncoder passwordEncoder;
 
 	@Autowired
 	private JwtTokenProvider jwtTokenProvider;
@@ -53,9 +52,9 @@ public class SeguridadServiceImpl implements SeguridadService {
 			this.getUsuarioByUserName(username).getUsuarioRoles().forEach(x -> rolesList.add(x.getRol()));
 
 			return jwtTokenProvider.createToken(username, rolesList);
+
 		} catch (AuthenticationException e) {
-			throw new InvalidUserNameOrPasswordException(EscuelaRestErrorCode.INVALID_USERNAME_OR_PASSWORD,
-					"Invalid username/password supplied");
+			throw new InvalidUserNameOrPasswordException(EscuelaRestErrorCode.INVALID_USERNAME_OR_PASSWORD, "Invalid username/password supplied");
 		}
 	}
 
