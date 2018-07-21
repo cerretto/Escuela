@@ -34,6 +34,15 @@
                 <option *ngFor="let anio of anios" [ngValue]="anio">{{anio}}</option>
               </select>
               </div>
+              <div class="col-sm-4">
+                <mat-form-field>
+                  <mat-select placeholder="Favorite food">
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                      {{food.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
           </div>
           <div class="body">
             <div class="row clearfix demo-button">

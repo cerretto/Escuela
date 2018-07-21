@@ -43,6 +43,9 @@ import { RolService } from './rol/rol.service';
 import { AlumnoComponent } from './alumno/alumno.component';
 import { AlumnoService } from './alumno/alumno.service';
 import { AlumnoDetailComponent } from './alumno/alumno-detail/alumno-detail.component';
+import { MatSelectModule } from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -79,8 +82,12 @@ import { AlumnoDetailComponent } from './alumno/alumno-detail/alumno-detail.comp
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSelectModule,
+    BrowserAnimationsModule
+    // SharedModule
   ],
+  // exports: [ SharedModule ],
   providers: [
     AvisoService,
     PlanService,

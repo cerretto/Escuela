@@ -6,6 +6,12 @@ import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 import { Curso } from '../../curso/curso-models';
 import { Alumno } from '../../alumno/alumno.model';
+import { MatSelectModule } from '@angular/material/select';
+
+export interface Food {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-inscripcion-detail',
@@ -19,6 +25,11 @@ export class InscripcionDetailComponent implements OnInit {
   cursoCombo: Curso[];
   alumnoCombo: Alumno[];
   anios: number[] = [2018,2019,2020,2021];
+  foods: Food[] = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
 
   constructor(private service: InscripcionService,
     private route: ActivatedRoute,

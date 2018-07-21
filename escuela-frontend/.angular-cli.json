@@ -29,10 +29,22 @@
         "styles.css"
       ],
       "scripts": [
-        "assets/plugins/jquery/jquery.js",
+        "assets/plugins/jquery/jquery.min.js",
         "assets/plugins/bootstrap/js/bootstrap.js",
         "assets/plugins/bootstrap-select/js/bootstrap-select.js",
-        "assets/js/admin.js"
+        "assets/plugins/jquery-slimscroll/jquery.slimscroll.js",
+        "assets/plugins/bootstrap-notify/bootstrap-notify.js",
+        "assets/plugins/node-waves/waves.js",
+        "assets/plugins/jquery-countto/jquery.countTo.js",
+        "assets/plugins/chartjs/Chart.bundle.js",
+        "assets/plugins/flot-charts/jquery.flot.js",
+        "assets/plugins/flot-charts/jquery.flot.resize.js",
+        "assets/plugins/flot-charts/jquery.flot.pie.js",
+        "assets/plugins/flot-charts/jquery.flot.categories.js",
+        "assets/plugins/flot-charts/jquery.flot.time.js",
+        "assets/plugins/jquery-sparkline/jquery.sparkline.js",
+        "assets/plugins/sweetalert/sweetalert.min.js",
+        "assets/js/adminEscuela.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
