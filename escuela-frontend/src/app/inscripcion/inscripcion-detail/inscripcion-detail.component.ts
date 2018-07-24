@@ -36,7 +36,8 @@ export class InscripcionDetailComponent implements OnInit {
   createForm() {
     this.form = this.fb.group({
       alumno: new FormControl('', [Validators.required]),
-      curso: new FormControl('', [Validators.required])
+      curso: new FormControl('', [Validators.required]),
+      anio: new FormControl('', [Validators.required])
     })
   }
     
@@ -85,6 +86,7 @@ export class InscripcionDetailComponent implements OnInit {
     const formModel = this.form.value;
     this.alumnoCurso.alumno = formModel.alumno;
     this.alumnoCurso.curso = formModel.curso;
+    this.alumnoCurso.anio = formModel.anio;
     this.service.saveInscripcion(this.alumnoCurso).subscribe(
       data => {
         console.log('ok');
@@ -98,7 +100,12 @@ export class InscripcionDetailComponent implements OnInit {
         }
 
         this.backendError = true;
-        this.backendErrorMessage = errorObj.errors[0];
+        console.log(errorObj);
+        if (errorObj !== null) {
+          this.backendErrorMessage = errorObj.errors[0];
+        } else {
+          this.backendErrorMessage = 'Se produjo un error inesperado. Consulte al administrador.';
+        }
       }
     );
   }
