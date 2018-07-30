@@ -54,7 +54,7 @@ public class AlumnoCursoController {
 			throw new EscuelaException(EscuelaRestErrorCode.REQUERIDO, "El año es requerido.");
 		}
 		
-		AlumnoCurso ac = cursadoService.getAlumnoCursoByIdAlumno(alumnoCurso.getAlumno().getId());
+		AlumnoCurso ac = cursadoService.getAlumnoCursoByAlumno(alumnoCurso.getAlumno());
 		
 		if (ac != null) {
 			// Valida que si el alumno ya está inscripto a un curso no se pueda inscribir a otro curso

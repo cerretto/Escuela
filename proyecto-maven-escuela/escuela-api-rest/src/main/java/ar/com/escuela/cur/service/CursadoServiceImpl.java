@@ -75,9 +75,9 @@ public class CursadoServiceImpl implements CursadoService {
 	}
 	
 	@Override
-	public AlumnoCurso getAlumnoCursoByIdAlumno(Long id) {
+	public AlumnoCurso getAlumnoCursoByAlumno(Alumno alumno) {
 		
-		AlumnoCurso alumnoCurso = alumnoCursoRepository.findByAlumno(id);
+		AlumnoCurso alumnoCurso = alumnoCursoRepository.findByAlumno(alumno);
 		
 		return alumnoCurso;
 	}
