@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { InscripcionService } from './inscripcion.service';
 import { AlumnoCurso } from './inscripcion-model';
+import {MatSelectModule} from '@angular/material/select';
 
 @Component({
   selector: 'app-inscripcion',

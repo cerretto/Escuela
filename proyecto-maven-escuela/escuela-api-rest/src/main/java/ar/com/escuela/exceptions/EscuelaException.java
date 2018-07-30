@@ -19,10 +19,10 @@ public class EscuelaException extends RuntimeException {
 		this.errors = Arrays.asList(error);
 	}
 	
-	public EscuelaException(EscuelaRestErrorCode code, List<String> erros){
+	public EscuelaException(EscuelaRestErrorCode code, List<String> errors){
 		super();
 		this.code = code;
-		this.errors = erros;
+		this.errors = errors;
 	}
 
 	public EscuelaRestErrorCode getCode() {
