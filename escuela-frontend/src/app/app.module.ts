@@ -45,6 +45,8 @@ import { AlumnoService } from './alumno/alumno.service';
 import { AlumnoDetailComponent } from './alumno/alumno-detail/alumno-detail.component';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ComisionComponent } from './comision/comision.component';
+import { ComisionService } from './comision/comision.service';
 // import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -76,7 +78,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RolComponent,
     RolDetailComponent,
     AlumnoComponent,
-    AlumnoDetailComponent
+    AlumnoDetailComponent,
+    ComisionComponent
   ],
   imports: [
     BrowserModule,
@@ -101,7 +104,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UsuarioService,
     PersonaService,
     RolService,
-    AlumnoService
+    AlumnoService,
+    ComisionService
   ],
   bootstrap: [AppComponent]
 })

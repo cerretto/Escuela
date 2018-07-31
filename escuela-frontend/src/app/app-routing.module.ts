@@ -28,6 +28,7 @@ import { RolDetailComponent } from './rol/rol-detail/rol-detail.component';
 import { RolComponent } from './rol/rol.component';
 import { AlumnoComponent } from './alumno/alumno.component';
 import { AlumnoDetailComponent } from './alumno/alumno-detail/alumno-detail.component';
+import { ComisionComponent } from './comision/comision.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/menu', pathMatch: 'full' },
@@ -69,7 +70,8 @@ const routes: Routes = [
           { path: 'rol-detail/:id', component: RolDetailComponent },
           { path: 'alumnos', component: AlumnoComponent },
           { path: 'alumno-detail', component: AlumnoDetailComponent },
-          { path: 'alumno-detail/:id', component: AlumnoDetailComponent }
+          { path: 'alumno-detail/:id', component: AlumnoDetailComponent },
+          { path: 'comisiones', component: ComisionComponent },
         ]
     },
     // redireccion (debe quedar al final de los routing)
