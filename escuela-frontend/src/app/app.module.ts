@@ -47,6 +47,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComisionComponent } from './comision/comision.component';
 import { ComisionService } from './comision/comision.service';
+import { ComisionDetailComponent } from './comision/comision-detail/comision-detail.component';
 // import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -79,7 +80,8 @@ import { ComisionService } from './comision/comision.service';
     RolDetailComponent,
     AlumnoComponent,
     AlumnoDetailComponent,
-    ComisionComponent
+    ComisionComponent,
+    ComisionDetailComponent
   ],
   imports: [
     BrowserModule,

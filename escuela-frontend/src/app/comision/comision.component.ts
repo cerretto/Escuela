@@ -15,11 +15,11 @@ export class ComisionComponent implements OnInit {
   constructor(private service: ComisionService,  private router: Router) { }
 
   ngOnInit() {
-    this.service.getCursos().subscribe(data => {this.cursoCombo = data; console.log(this.cursoCombo)});
+    this.service.getCursos().subscribe(data => {this.cursoCombo = data; });
   }
 
   goEdit(curso: Curso): void {
-    this.router.navigate(['/menu/comision-detail', curso.id]);
+    this.router.navigate(['/menu/comision-detail', curso]);
   }
 
   goMenu() {

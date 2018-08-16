@@ -17,6 +17,8 @@ import ar.com.escuela.cur.repository.AlumnoRepository;
 import ar.com.escuela.cur.repository.DocenteMateriaRepository;
 import ar.com.escuela.cur.repository.EvaluacionRepository;
 import ar.com.escuela.cur.repository.NotaRepository;
+import ar.com.escuela.def.bean.Curso;
+import ar.com.escuela.def.repository.CursoRepository;
 
 @Service
 public class CursadoServiceImpl implements CursadoService {
@@ -36,6 +38,9 @@ public class CursadoServiceImpl implements CursadoService {
 	
 	@Autowired
 	private AlumnoRepository alumnoRepository;
+	
+	@Autowired
+	private CursoRepository cursoRepository;
 	
 	//Servicios para Alumnocurso------------------------------------------------------------------------------------
 	@Override
@@ -80,6 +85,17 @@ public class CursadoServiceImpl implements CursadoService {
 		AlumnoCurso alumnoCurso = alumnoCursoRepository.findByAlumno(alumno);
 		
 		return alumnoCurso;
+	}
+	
+	@Override
+	public List<AlumnoCurso> getAlumnoCursoByCurso(Long idCurso) {
+		
+		// Recuperamos el curso
+		Curso curso = cursoRepository.findOne(idCurso);
+		
+		List<AlumnoCurso> listAlumnoCursos = alumnoCursoRepository.findAlumnoCursoByCurso(curso);
+		
+		return listAlumnoCursos;
 	}
 	
 	//Servicios para DocenteMateria----------------------------------------------------------------------------
