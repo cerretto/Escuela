@@ -17,6 +17,7 @@ public interface CursadoService {
 	public void updateAlumnoCurso(AlumnoCurso alumnoCurso, Long id);
 	public void deleteAlumnoCurso(Long id);
 	public AlumnoCurso getAlumnoCursoByAlumno(Alumno alumno);
+	public List<AlumnoCurso> getAlumnoCursoByCurso(Long idCurso);
 	
 	//DocenteMateria
 	public List<DocenteMateria> getAllDocenteMaterias();

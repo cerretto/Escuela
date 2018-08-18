@@ -12,6 +12,9 @@ import { AppComponent } from './app.component';
 import { AvisoDetailComponent } from './aviso/aviso-detail/aviso-detail.component';
 import { AvisoComponent } from './aviso/aviso.component';
 import { AvisoService } from './aviso/aviso.service';
+import { ComisionDetailComponent } from './comision/comision-detail/comision-detail.component';
+import { ComisionComponent } from './comision/comision.component';
+import { ComisionService } from './comision/comision.service';
 import { CursoDetailComponent } from './curso/curso-detail/curso-detail.component';
 import { CursoComponent } from './curso/curso.component';
 import { CursoService } from './curso/curso.service';
@@ -81,7 +84,9 @@ import { UsuarioService } from './usuario/usuario.service';
     RolDetailComponent,
     AlumnoComponent,
     AlumnoDetailComponent,
-    LoginComponent
+    LoginComponent,
+    ComisionComponent,
+    ComisionDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -118,6 +123,7 @@ import { UsuarioService } from './usuario/usuario.service';
       useClass: AuthInterceptor,
       multi: true,
     },
+    ComisionService
   ],
   bootstrap: [AppComponent]
 })

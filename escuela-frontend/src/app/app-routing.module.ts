@@ -4,6 +4,8 @@ import { AlumnoDetailComponent } from './alumno/alumno-detail/alumno-detail.comp
 import { AlumnoComponent } from './alumno/alumno.component';
 import { AvisoDetailComponent } from './aviso/aviso-detail/aviso-detail.component';
 import { AvisoComponent } from './aviso/aviso.component';
+import { ComisionDetailComponent } from './comision/comision-detail/comision-detail.component';
+import { ComisionComponent } from './comision/comision.component';
 import { CursoDetailComponent } from './curso/curso-detail/curso-detail.component';
 import { CursoComponent } from './curso/curso.component';
 import { InscripcionDetailComponent } from './inscripcion/inscripcion-detail/inscripcion-detail.component';
@@ -24,12 +26,11 @@ import { PlanDetailComponent } from './plan/plan-detail/plan-detail.component';
 import { PlanComponent } from './plan/plan.component';
 import { RolDetailComponent } from './rol/rol-detail/rol-detail.component';
 import { RolComponent } from './rol/rol.component';
+import { AuthGuardService as AuthGuard } from './security/auth-guard.service';
 import { TipoAvisoDetailComponent } from './tipo-aviso/tipo-aviso-detail/tipo-aviso-detail.component';
 import { TipoAvisoComponent } from './tipo-aviso/tipo-aviso.component';
 import { UsuarioDetailComponent } from './usuario/usuario-detail/usuario-detail.component';
 import { UsuarioComponent } from './usuario/usuario.component';
-import { AuthGuardService as AuthGuard } from './security/auth-guard.service';
-
 
 const routes: Routes = [
     { path: '', redirectTo: '/menu', pathMatch: 'full' },
@@ -72,7 +73,10 @@ const routes: Routes = [
           { path: 'rol-detail/:id', component: RolDetailComponent },
           { path: 'alumnos', component: AlumnoComponent },
           { path: 'alumno-detail', component: AlumnoDetailComponent },
-          { path: 'alumno-detail/:id', component: AlumnoDetailComponent }
+          { path: 'alumno-detail/:id', component: AlumnoDetailComponent },
+          { path: 'comisiones', component: ComisionComponent },
+          { path: 'comision-detail', component: ComisionDetailComponent },
+          { path: 'comision-detail/:id', component: ComisionDetailComponent }
         ]
     },
     // redireccion (debe quedar al final de los routing)

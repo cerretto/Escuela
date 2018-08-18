@@ -25,6 +25,7 @@ export class InscripcionDetailComponent implements OnInit {
   backendError: boolean = false;
   backendErrorMessage: string;
   anios: number[] = [2018,2019,2020,2021];
+  selected: Alumno;
 
   constructor(private service: InscripcionService,
     private route: ActivatedRoute,
@@ -45,21 +46,25 @@ export class InscripcionDetailComponent implements OnInit {
 
     this.route.params.subscribe(params => {
       if (+params['id']) {
-        // console.log(+params['id']);
+        console.log(+params['id']);
         this.updateFlag = true;
         this.service.getInscripcion(+params['id']).subscribe(
           inscripcion => {
             this.alumnoCurso = inscripcion;
-
+            console.log(this.alumnoCurso);
             this.service.getCurso().subscribe(
               data => {
                 this.cursoCombo = data;
                 this.alumnoCurso.curso = this.cursoCombo.filter(r => r.id === this.alumnoCurso.curso.id)[0];
+                console.log(this.alumnoCurso.curso);
               });
             this.service.getAlumno().subscribe(
               data => {
                 this.alumnoCombo = data;
                 this.alumnoCurso.alumno = this.alumnoCombo.filter(r => r.id === this.alumnoCurso.alumno.id)[0];
+                this.selected = this.alumnoCurso.alumno;
+                console.log(this.selected);
+                console.log(this.alumnoCurso.alumno);
               });
           });
 
