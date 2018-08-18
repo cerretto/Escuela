@@ -1,5 +1,4 @@
 export class RestError extends Error {
-    
     httpStatusCode: string;
     code: string;
     errorCode: string;
@@ -7,7 +6,7 @@ export class RestError extends Error {
     validationErrors: ValidationError[];
     exception: string;
     errors: string[];
-    //properties: Map̣<String,Object>;
+    // properties: Map̣<String,Object>;
 
     constructor(message?: string) {
         super(message);

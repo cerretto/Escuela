@@ -17,7 +17,6 @@ import ar.com.escuela.noti.service.NotificacionService;
 
 @RestController
 @RequestMapping("/avisos")
-@CrossOrigin(origins = "http://localhost:4200")
 public class AvisoController {
 	
 	@Autowired

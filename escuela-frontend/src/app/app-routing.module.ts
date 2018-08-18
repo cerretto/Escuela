@@ -1,37 +1,40 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { AvisoComponent } from './aviso/aviso.component';
-import { MenuComponent } from './menu/menu.component';
+import { AlumnoDetailComponent } from './alumno/alumno-detail/alumno-detail.component';
+import { AlumnoComponent } from './alumno/alumno.component';
 import { AvisoDetailComponent } from './aviso/aviso-detail/aviso-detail.component';
-import { PlanComponent } from './plan/plan.component';
-import { NivelComponent } from './nivel/nivel.component';
-import { MenuAvisoComponent } from './menu/menu-aviso/menu-aviso.component';
-import { PlanDetailComponent } from './plan/plan-detail/plan-detail.component';
-import { NivelDetailComponent } from './nivel/nivel-detail/nivel-detail.component';
-import { TipoAvisoComponent } from './tipo-aviso/tipo-aviso.component';
-import { CursoComponent } from './curso/curso.component';
+import { AvisoComponent } from './aviso/aviso.component';
 import { CursoDetailComponent } from './curso/curso-detail/curso-detail.component';
-import { TipoAvisoDetailComponent } from './tipo-aviso/tipo-aviso-detail/tipo-aviso-detail.component';
-import { MenuDefinicionComponent } from './menu/menu-definicion/menu-definicion.component';
-import { MateriaComponent } from './materia/materia.component';
-import { MateriaDetailComponent } from './materia/materia-detail/materia-detail.component';
-import { MenuCursadoComponent } from './menu/menu-cursado/menu-cursado.component';
-import { InscripcionComponent } from './inscripcion/inscripcion.component';
+import { CursoComponent } from './curso/curso.component';
 import { InscripcionDetailComponent } from './inscripcion/inscripcion-detail/inscripcion-detail.component';
+import { InscripcionComponent } from './inscripcion/inscripcion.component';
+import { LoginComponent } from './login/login.component';
+import { MateriaDetailComponent } from './materia/materia-detail/materia-detail.component';
+import { MateriaComponent } from './materia/materia.component';
 import { MenuAdministracionComponent } from './menu/menu-administracion/menu-administracion.component';
-import { UsuarioComponent } from './usuario/usuario.component';
-import { UsuarioDetailComponent } from './usuario/usuario-detail/usuario-detail.component';
-import { PersonaComponent } from './persona/persona.component';
+import { MenuAvisoComponent } from './menu/menu-aviso/menu-aviso.component';
+import { MenuCursadoComponent } from './menu/menu-cursado/menu-cursado.component';
+import { MenuDefinicionComponent } from './menu/menu-definicion/menu-definicion.component';
+import { MenuComponent } from './menu/menu.component';
+import { NivelDetailComponent } from './nivel/nivel-detail/nivel-detail.component';
+import { NivelComponent } from './nivel/nivel.component';
 import { PersonaDetailComponent } from './persona/persona-detail/persona-detail.component';
+import { PersonaComponent } from './persona/persona.component';
+import { PlanDetailComponent } from './plan/plan-detail/plan-detail.component';
+import { PlanComponent } from './plan/plan.component';
 import { RolDetailComponent } from './rol/rol-detail/rol-detail.component';
 import { RolComponent } from './rol/rol.component';
-import { AlumnoComponent } from './alumno/alumno.component';
-import { AlumnoDetailComponent } from './alumno/alumno-detail/alumno-detail.component';
+import { TipoAvisoDetailComponent } from './tipo-aviso/tipo-aviso-detail/tipo-aviso-detail.component';
+import { TipoAvisoComponent } from './tipo-aviso/tipo-aviso.component';
+import { UsuarioDetailComponent } from './usuario/usuario-detail/usuario-detail.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { AuthGuardService as AuthGuard } from './security/auth-guard.service';
+
 
 const routes: Routes = [
     { path: '', redirectTo: '/menu', pathMatch: 'full' },
-    { path: 'menu',     component: MenuComponent,
+    { path: 'login', component: LoginComponent },
+    { path: 'menu',     component: MenuComponent, canActivate: [AuthGuard],
         children: [
           { path: 'menu-aviso', component: MenuAvisoComponent},
           { path: 'avisos',  component: AvisoComponent },
