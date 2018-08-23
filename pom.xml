@@ -5,6 +5,7 @@
   <artifactId>proyecto-escuela</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+
   <name>Parent Escuela</name>
   <description>Proyecto padre de los modulos API Rest y Angular4</description>
 

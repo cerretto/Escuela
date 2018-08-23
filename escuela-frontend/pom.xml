@@ -1,28 +1,64 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
- 
-	<artifactId>escuela-frontend</artifactId>
-	<name>Escuela Angular Client</name>
-	<description>FrontEnd de la aplicacion</description>
-  	<packaging>jar</packaging>
+
+  <groupId>utn.electiva.java</groupId>
+  <artifactId>escuela-frontend</artifactId>
+  <packaging>jar</packaging>
+
+  <name>Escuela Angular Client</name>
+  <description>FrontEnd de la aplicacion</description>
+
+  <parent>
+    <groupId>utn.electiva.java</groupId>
+    <artifactId>proyecto-escuela</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
 
   <build>
+
+    <resources>
+      <resource>
+        <directory>target/frontend</directory>
+        <targetPath>static</targetPath>
+      </resource>
+    </resources>
+
     <plugins>
 
-      <plugin>
-        <artifactId>maven-clean-plugin</artifactId>
-        <version>2.5</version>
-        <configuration>
-          <filesets>
-            <fileset>
-              <directory>dist</directory>
-              <includes>
-                <include>*</include>
-              </includes>
-            </fileset>
-          </filesets>
-        </configuration>
-      </plugin>
+      <!--<plugin>-->
+        <!--<artifactId>maven-clean-plugin</artifactId>-->
+        <!--<version>2.5</version>-->
+        <!--<configuration>-->
+          <!--<filesets>-->
+            <!--<fileset>-->
+              <!--<directory>dist</directory>-->
+              <!--<includes>-->
+                <!--<include>*</include>-->
+              <!--</includes>-->
+            <!--</fileset>-->
+          <!--</filesets>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
+
+      <!--<plugin>-->
+        <!--<artifactId>maven-resources-plugin</artifactId>-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--<id>copy-resources</id>-->
+            <!--<phase>validate</phase>-->
+            <!--<goals><goal>copy-resources</goal></goals>-->
+            <!--<configuration>-->
+              <!--<outputDirectory>${build.directory}/classes/static/</outputDirectory >-->
+              <!--<resources>-->
+                <!--<resource>-->
+                  <!--<directory>../escuela-frontend/dist</directory>-->
+                <!--</resource>-->
+              <!--</resources>-->
+            <!--</configuration>-->
+          <!--</execution>-->
+        <!--</executions>-->
+      <!--</plugin>-->
 
       <plugin>
         <groupId>com.github.eirslett</groupId>
@@ -41,7 +77,7 @@
           </execution>
 
           <execution>
-             <id>npm run build</id>
+            <id>npm run build</id>
             <goals>
               <goal>npm</goal>
             </goals>
