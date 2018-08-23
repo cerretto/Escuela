@@ -52,6 +52,7 @@ import { TipoAvisoService } from './tipo-aviso/tipo-aviso.service';
 import { UsuarioDetailComponent } from './usuario/usuario-detail/usuario-detail.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioService } from './usuario/usuario.service';
+import { NotaDetailComponent } from './comision/nota-detail/nota-detail.component';
 // import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -86,7 +87,8 @@ import { UsuarioService } from './usuario/usuario.service';
     AlumnoDetailComponent,
     LoginComponent,
     ComisionComponent,
-    ComisionDetailComponent
+    ComisionDetailComponent,
+    NotaDetailComponent
   ],
   imports: [
     BrowserModule,

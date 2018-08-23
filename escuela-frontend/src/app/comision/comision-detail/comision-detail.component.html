@@ -13,16 +13,18 @@
                 <tr>
                   <th>#</th>
                   <th>ALUMNO</th>
-                  <!-- <th>NIVEL</th>
-                  <th>ACCIONES</th> -->
+                  <th>ACCIONES</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let alumnoCurso of comboAlumnoCurso">
                   <td>{{alumnoCurso.id}}</td>
-                  <td>{{alumnoCurso.alumno.id}}</td>
-                  <!-- <td>{{curso.descripcion}}</td>
-                  <td>{{curso.nivel.descripcion}}</td> -->
+                  <td>{{alumnoCurso.alumno.persona.nombre}} {{alumnoCurso.alumno.persona.apellido}}</td>
+                  <td>
+                    <button type="button" class="btn btn-default btn-circle waves-effect waves-circle waves-float" (click)="goEdit(alumnoCurso)">
+                      <i class="material-icons">search</i>
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>

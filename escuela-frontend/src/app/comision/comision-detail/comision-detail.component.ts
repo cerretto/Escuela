@@ -39,7 +39,6 @@ export class ComisionDetailComponent implements OnInit {
         this.service.getCurso(+params['id']).subscribe(
           data => {
             this.curso = data;
-            console.log(this.curso);
         });
 
       } else {
