@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
- 
-  <groupId>utn.electiva.java.proyecto</groupId>
-  <artifactId>proyecto-maven-escuela</artifactId>
+
+  <groupId>utn.electiva.java</groupId>
+  <artifactId>proyecto-escuela</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Parent - ${project.artifactId}</name>
+  <name>Parent Escuela</name>
   <description>Proyecto padre de los modulos API Rest y Angular4</description>
 
 	<parent>
@@ -22,6 +22,7 @@
 
 
 	<modules>
+		<module>escuela-frontend</module>
 		<module>escuela-api-rest</module>
 	</modules>
 </project>

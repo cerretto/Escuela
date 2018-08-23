@@ -3,13 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>utn.electiva.java.proyecto</groupId>
-		<artifactId>proyecto-maven-escuela</artifactId>
+		<groupId>utn.electiva.java</groupId>
+		<artifactId>proyecto-escuela</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>escuela-api-rest</artifactId>
-	<name>REST API - ${project.artifactId}</name>
+	<name>REST API</name>
 	<description>Backend de la aplicacion con API Rest</description>
 
 	<!-- Add typical dependencies for a web application -->
