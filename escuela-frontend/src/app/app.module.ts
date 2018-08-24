@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { AvisoDetailComponent } from './aviso/aviso-detail/aviso-detail.component';
 import { AvisoComponent } from './aviso/aviso.component';
 import { AvisoService } from './aviso/aviso.service';
-import { ComisionDetailComponent } from './comision/comision-detail/comision-detail.component';
+import { ComisionDetailComponent, DialogOverviewExampleDialog } from './comision/comision-detail/comision-detail.component';
 import { ComisionComponent } from './comision/comision.component';
 import { ComisionService } from './comision/comision.service';
 import { CursoDetailComponent } from './curso/curso-detail/curso-detail.component';
@@ -52,7 +52,7 @@ import { TipoAvisoService } from './tipo-aviso/tipo-aviso.service';
 import { UsuarioDetailComponent } from './usuario/usuario-detail/usuario-detail.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioService } from './usuario/usuario.service';
-import { NotaDetailComponent } from './comision/nota-detail/nota-detail.component';
+import { MatDialog, MatDialogModule, MatButtonModule, MatInputModule } from '@angular/material';
 // import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -88,7 +88,7 @@ import { NotaDetailComponent } from './comision/nota-detail/nota-detail.componen
     LoginComponent,
     ComisionComponent,
     ComisionDetailComponent,
-    NotaDetailComponent
+    DialogOverviewExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -99,8 +99,15 @@ import { NotaDetailComponent } from './comision/nota-detail/nota-detail.componen
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatInputModule,
     // SharedModule
   ],
+  entryComponents: [
+    DialogOverviewExampleDialog
+  ],
+  exports: [ ],
   // exports: [ SharedModule ],
   providers: [
     AvisoService,
@@ -125,7 +132,8 @@ import { NotaDetailComponent } from './comision/nota-detail/nota-detail.componen
       useClass: AuthInterceptor,
       multi: true,
     },
-    ComisionService
+    ComisionService,
+    MatDialog
   ],
   bootstrap: [AppComponent]
 })
