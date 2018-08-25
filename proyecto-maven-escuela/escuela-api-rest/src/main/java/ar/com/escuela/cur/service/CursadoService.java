@@ -32,6 +32,7 @@ public interface CursadoService {
 	public void addNota(Nota nota);
 	public void updateNota(Nota nota, Long id);
 	public void deleteNota(Long id);
+	public List<Nota> getNotasByAlumnoCurso(Long idAlumnoCurso);
 	
 	//Evaluacion
 	public List<Evaluacion> getAllEvaluaciones();

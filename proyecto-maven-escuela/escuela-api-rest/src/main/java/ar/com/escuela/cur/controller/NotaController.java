@@ -3,6 +3,9 @@ package ar.com.escuela.cur.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,12 +19,9 @@ import ar.com.escuela.cur.service.CursadoService;
 @RequestMapping("/notas")
 public class NotaController {
 
-
 	@Autowired
 	private CursadoService cursadoService;
-	
-	
-	
+		
 	@RequestMapping("/")
 	public List<Nota> getAllNotas(){
 		return cursadoService.getAllNotas();
@@ -47,12 +47,14 @@ public class NotaController {
 	public void deleteNota(@PathVariable Long id){
 		cursadoService.deleteNota(id);
 	}
+	
+	@GetMapping("/getNotasByAlumnoCurso/{idAlumnoCurso}")
+    public ResponseEntity<List<Nota>> getNotasByAlumnoCurso(@PathVariable Long idAlumnoCurso) {
 
+        List<Nota> listAlumnoCurso = cursadoService.getNotasByAlumnoCurso(idAlumnoCurso);
 
-
-
-
-
-
+        return new ResponseEntity<List<Nota>>(listAlumnoCurso, HttpStatus.OK);
+    }
+	
 
 }

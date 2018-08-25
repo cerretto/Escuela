@@ -8,21 +8,17 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>CURSO</th>
-                <th>NIVEL</th>
-                <th>ACCIONES</th>
+                <th>EVALUACIÓN</th>
+                <th>MATERIA</th>
+                <th>CALIFICACION</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let curso of cursoCombo">
-                <td>hola</td>
-                <td>hola</td>
-                <td>hola</td>
-                <td>
-                  <!-- <button type="button" class="btn btn-default btn-circle waves-effect waves-circle waves-float" (click)="goEdit(curso)">
-                    <i class="material-icons">search</i>
-                  </button> -->
-                </td>
+              <tr *ngFor="let nota of data.notas">
+                <td>{{ nota.id }}</td>
+                <td>{{ nota.evaluacion.descripcion }}</td>
+                <td>{{ nota.evaluacion.materia.descripcion }}</td>
+                <td>{{ nota.calificacion }}</td>
               </tr>
             </tbody>
           </table>

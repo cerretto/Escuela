@@ -22,7 +22,6 @@ import ar.com.escuela.def.repository.CursoRepository;
 
 @Service
 public class CursadoServiceImpl implements CursadoService {
-
 	
 	@Autowired
 	private DocenteMateriaRepository docenteMateriaRepository;
@@ -189,6 +188,16 @@ public class CursadoServiceImpl implements CursadoService {
 	@Override
 	public void deleteNota(Long id) {
 		notaRepository.delete(id);
+	}
+	
+	@Override
+	public List<Nota> getNotasByAlumnoCurso(Long idAlumnoCurso) {
+		// Recuperamos el AlumnoCurso
+		AlumnoCurso alumnoCurso = alumnoCursoRepository.findOne(idAlumnoCurso);
+		
+		List<Nota> listNotas = notaRepository.findNotasByAlumnoCurso(alumnoCurso);
+		
+		return listNotas;
 	}
 	
 	//-----------------------------------------------------------------------------

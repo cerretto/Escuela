@@ -7,13 +7,13 @@ import { FormControl, Validators, FormGroup, FormBuilder} from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import { RestError } from '../../shared/components/global-error-handler/rest-error';
 import { ComisionService } from '../comision.service';
-import { AlumnoCurso } from '../../inscripcion/inscripcion-model';
+import { AlumnoCurso, Nota } from '../../inscripcion/inscripcion-model';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 export interface DialogData {
-  animal: string;
   nombreAlumno: string;
   apellidoAlumno: string;
+  notas: Nota[];
 }
 
 @Component({
@@ -64,14 +64,16 @@ export class ComisionDetailComponent implements OnInit {
   }
 
   onView(row: AlumnoCurso): void {
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      width: '75%',
-      data: {nombreAlumno: row.alumno.persona.nombre, apellidoAlumno: row.alumno.persona.apellido }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      
+    this.service.getNotas(row.id).subscribe(
+      data => {
+        const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+          width: '75%',
+          data: {nombreAlumno: row.alumno.persona.nombre, apellidoAlumno: row.alumno.persona.apellido, notas: data }
+        });
+    
+        dialogRef.afterClosed().subscribe(result => {
+          
+        });
     });
   }
 
@@ -82,7 +84,7 @@ export class ComisionDetailComponent implements OnInit {
   templateUrl: 'notas.html',
 })
 export class DialogOverviewExampleDialog {
-
+  
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
