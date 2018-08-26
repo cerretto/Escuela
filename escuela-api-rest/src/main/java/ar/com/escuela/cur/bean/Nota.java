@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -23,9 +24,8 @@ public class Nota extends BaseBO{
 	private Evaluacion evaluacion;
 	
 	@ManyToOne
+	@JoinColumn(name = "alumno_curso_id")
 	private AlumnoCurso alumnoCurso;
-
-	
 	
 	public String getCalificacion() {
 		return calificacion;

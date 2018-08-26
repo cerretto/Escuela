@@ -91,9 +91,56 @@ INSERT INTO docente (id,persona_id) VALUES (2,3);
 INSERT INTO rol (id,codigo,descripcion) VALUES (1,'ADMIN','Administrador');
 INSERT INTO rol (id,codigo,descripcion) VALUES (2,'DOCENTE','Administrador');
 --USUARIO/ROL
-INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (1, '2018-01-01 00:00:00', '2019-01-01 00:00:00', 1, 1);
-INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (2, '2018-01-01 00:00:00', '2019-01-01 00:00:00', 1, 2);
-INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (3, '2018-01-01 00:00:00', '2019-01-01 00:00:00', 1, 3);
-
+INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (1,'2018-01-01 00:00:00','2019-01-01 00:00:00', 1, 1);
+INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (2,'2018-01-01 00:00:00','2019-01-01 00:00:00', 1, 2);
+INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (3,'2018-01-01 00:00:00','2019-01-01 00:00:00', 1, 3);
+--ALUMNO/CURSO
+INSERT INTO alumno_curso (id,anio,fecha_inscripcion,alumno_id,curso_id) VALUES (1,2018,'2018-08-08 00:00:00',1,1);
+INSERT INTO alumno_curso (id,anio,fecha_inscripcion,alumno_id,curso_id) VALUES (2,2018,'2018-08-08 00:00:00',2,1);
+INSERT INTO alumno_curso (id,anio,fecha_inscripcion,alumno_id,curso_id) VALUES (3,2018,'2018-08-08 00:00:00',3,1);
+INSERT INTO alumno_curso (id,anio,fecha_inscripcion,alumno_id,curso_id) VALUES (4,2018,'2018-08-08 00:00:00',4,2);
+INSERT INTO alumno_curso (id,anio,fecha_inscripcion,alumno_id,curso_id) VALUES (5,2018,'2018-08-08 00:00:00',5,2);
+INSERT INTO alumno_curso (id,anio,fecha_inscripcion,alumno_id,curso_id) VALUES (6,2018,'2018-08-08 00:00:00',6,2);
+--EVALUACION
+INSERT INTO evaluacion (id,descripcion,materia_id) VALUES (1,'Evaluación 1',1);
+INSERT INTO evaluacion (id,descripcion,materia_id) VALUES (2,'Evaluación 2',1);
+INSERT INTO evaluacion (id,descripcion,materia_id) VALUES (3,'Evaluación 3',1);
+INSERT INTO evaluacion (id,descripcion,materia_id) VALUES (4,'Evaluación 1',5);
+INSERT INTO evaluacion (id,descripcion,materia_id) VALUES (5,'Evaluación 2',5);
+INSERT INTO evaluacion (id,descripcion,materia_id) VALUES (6,'Evaluación 1',9);
+INSERT INTO evaluacion (id,descripcion,materia_id) VALUES (7,'Evaluación 1',13);
+INSERT INTO evaluacion (id,descripcion,materia_id) VALUES (8,'Evaluación 1',17);
+INSERT INTO evaluacion (id,descripcion,materia_id) VALUES (9,'Evaluación 2',17);
+--NOTA
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (1,'8','2018-05-15 00:00:00',1,1);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (2,'6','2018-08-08 00:00:00',1,2);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (3,'3','2018-05-15 00:00:00',2,1);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (4,'6','2018-08-08 00:00:00',2,2);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (5,'9','2018-05-15 00:00:00',3,1);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (6,'8','2018-08-08 00:00:00',3,2);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (7,'10','2018-06-02 00:00:00',1,4);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (8,'7','2018-06-02 00:00:00',2,4);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (9,'9','2018-06-02 00:00:00',3,4);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (10,'5','2018-06-20 00:00:00',1,8);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (11,'6','2018-06-20 00:00:00',2,8);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (12,'5.5','2018-06-20 00:00:00',3,8);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (13,'10','2018-08-15 00:00:00',1,6);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (14,'9','2018-08-15 00:00:00',2,6);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (15,'8.5','2018-08-15 00:00:00',3,6);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (16,'8','2018-05-17 00:00:00',4,1);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (17,'6','2018-08-10 00:00:00',5,2);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (18,'3','2018-05-17 00:00:00',6,1);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (19,'6','2018-08-10 00:00:00',4,2);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (20,'9','2018-05-17 00:00:00',5,1);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (21,'8','2018-08-10 00:00:00',6,2);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (22,'10','2018-06-06 00:00:00',4,4);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (23,'7','2018-06-06 00:00:00',5,4);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (24,'9','2018-06-06 00:00:00',6,4);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (25,'5','2018-06-24 00:00:00',4,8);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (26,'6','2018-06-24 00:00:00',5,8);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (27,'5.5','2018-06-24 00:00:00',6,8);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (28,'10','2018-08-10 00:00:00',4,6);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (29,'9','2018-08-10 00:00:00',5,6);
+INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (30,'8.5','2018-08-10 00:00:00',6,6);
 
 
