@@ -1,7 +1,7 @@
 package ar.com.escuela.seg.bean;
 
-import java.util.Date;
-import java.util.List;
+import ar.com.escuela.base.bean.BaseBO;
+import ar.com.escuela.pad.bean.Persona;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,9 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import ar.com.escuela.base.bean.BaseBO;
-import ar.com.escuela.pad.bean.Persona;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "usuario")

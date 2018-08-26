@@ -1,6 +1,7 @@
 package ar.com.escuela.seg.bean;
 
-import java.util.Date;
+import ar.com.escuela.base.bean.BaseBO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,13 +9,13 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import ar.com.escuela.base.bean.BaseBO;
+import java.util.Date;
 
 @Entity
 @Table(name = "usuRol")
 public class UsuarioRol extends BaseBO {
 
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;

@@ -12,10 +12,12 @@ export class UsuarioComponent implements OnInit {
 
   usuarios: Usuario[];
 
-  constructor(private service: UsuarioService,  private router: Router) { }
+  constructor(private service: UsuarioService, private router: Router) { }
 
   ngOnInit() {
-    this.service.getUsuarios().subscribe( data => this.usuarios = data);
+    this.service.getUsuarios().subscribe(data => {
+      this.usuarios = data;
+    });
   }
 
   goCreate(): void {

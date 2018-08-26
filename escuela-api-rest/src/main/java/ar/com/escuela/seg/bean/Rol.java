@@ -1,14 +1,14 @@
 package ar.com.escuela.seg.bean;
 
-import java.util.List;
+import ar.com.escuela.base.bean.BaseBO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import ar.com.escuela.base.bean.BaseBO;
+import java.util.List;
 
 @Entity
 @Table(name = "rol")
@@ -19,7 +19,8 @@ public class Rol extends BaseBO {
 	
 	@Column
 	private String descripcion;
-	
+
+	@JsonIgnore
 	@OneToMany(mappedBy = "rol",fetch = FetchType.LAZY)
 	private List<UsuarioRol> usuarioRoles;
 	

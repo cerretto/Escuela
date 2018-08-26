@@ -21,7 +21,7 @@
                 <td>{{usuario.id}}</td>
                 <td>{{usuario.usr}}</td>
                 <td>{{usuario.fechaInscripcion}}</td>
-                <td>{{usuario.persona.nombre}} {{usario.persona.apellido}}</td>
+                <td>{{usuario?.persona?.nombre}} {{usario?.persona?.apellido}}</td>
                 <td>
                   <button type="button" class="btn btn-default btn-circle waves-effect waves-circle waves-float" (click)="goEdit(usuario)">
                     <i class="material-icons">search</i>
