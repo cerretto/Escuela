@@ -1,3 +1,5 @@
+import { Persona } from "../persona/persona-models";
+
 //  import { Persona } from '../persona/persona-models';
 
 export class Usuario {
@@ -5,5 +7,5 @@ export class Usuario {
     usr: String;
     password: String;
     fechaInscripcion: Date;
-    //persona: Persona;
+    persona: Persona;
 }

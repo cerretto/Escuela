@@ -22,21 +22,21 @@
                   </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                   <mat-form-field>
-                    <mat-select placeholder="Alumno" [(ngModel)]="alumno" formControlName="alumno" required>
+                    <mat-select placeholder="Alumno" formControlName="alumno" required>
                       <mat-option *ngFor="let alumno of alumnoCombo" [value]="alumno">{{alumno.persona.nombre}} {{alumno.persona.apellido}}</mat-option>
                     </mat-select>
                   </mat-form-field>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                   <mat-form-field>
-                    <mat-select placeholder="Curso" [(ngModel)]="curso" formControlName="curso" required>
+                    <mat-select placeholder="Curso" formControlName="curso" required>
                       <mat-option *ngFor="let curso of cursoCombo" [value]="curso">{{curso.descripcion}} {{curso.nivel.descripcion}}</mat-option>
                     </mat-select>
                   </mat-form-field>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                   <mat-form-field>
-                    <mat-select placeholder="Año" [(ngModel)]="anio" formControlName="anio" required>
+                    <mat-select placeholder="Año" formControlName="anio" required>
                       <mat-option *ngFor="let anio of anios" [value]="anio">{{anio}}</mat-option>
                     </mat-select>
                   </mat-form-field>

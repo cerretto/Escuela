@@ -4,6 +4,7 @@ import { UsuarioService } from '../usuario.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
+import { Persona } from '../../persona/persona-models';
 //import { Persona } from '../../persona/persona-models';
 
 @Component({
@@ -15,7 +16,7 @@ export class UsuarioDetailComponent implements OnInit {
   
   updateFlag: Boolean = false;
   usuario: Usuario = new Usuario();
- // personaCombo: Persona[];
+  personaCombo: Persona[];
 
   constructor(private service: UsuarioService,
               private route: ActivatedRoute,

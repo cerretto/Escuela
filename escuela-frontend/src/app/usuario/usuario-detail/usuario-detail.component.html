@@ -32,7 +32,7 @@
             </div>
             <div class="col-sm-6">
               <h2 class="card-inside-title">Persona</h2>
-              <select class="form-control show-tick" data-live-search="true" name="persona" required [(ngModel)]="usuario.persona" #curso="ngModel">
+              <select class="form-control show-tick" data-live-search="true" name="persona" required [(ngModel)]="usuario.persona" #persona="ngModel">
                 <option [ngValue]=undefined disabled> Seleccionar</option>
                 <option *ngFor="let persona of personaCombo" [ngValue]="persona">{{persona.nombre}} {{persona.apellido}}</option>
               </select>

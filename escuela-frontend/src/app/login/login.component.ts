@@ -9,7 +9,7 @@ import { AuthService } from '../security/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  private login: UserSession = new UserSession();
+  login: UserSession = new UserSession();
 
   constructor(private authService: AuthService) { }
 
