@@ -51,7 +51,8 @@
             </goals>
             <configuration>
               <!--<outputDirectory>${project.build.directory}/classes/static</outputDirectory >-->
-              <outputDirectory>${project.basedir}/target/classes/public</outputDirectory>
+              <!--<outputDirectory>${project.basedir}/target/classes/public</outputDirectory>-->
+              <outputDirectory>${project.basedir}/target/META-INF/resources</outputDirectory>
               <resources>
                 <resource>
                   <directory>${project.basedir}/dist</directory>
@@ -124,7 +125,7 @@
             <!-- optional: default phase is "generate-resources" -->
             <phase>generate-resources</phase>
             <configuration>
-              <arguments>run build</arguments>
+              <arguments>run build-prod</arguments>
             </configuration>
           </execution>
 
