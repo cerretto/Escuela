@@ -17,12 +17,6 @@
 
   <build>
 
-    <!--<resources>-->
-    <!--<resource>-->
-    <!--<directory>dist/resources/static</directory>-->
-    <!--</resource>-->
-    <!--</resources>-->
-
     <plugins>
 
       <plugin>
@@ -38,53 +32,6 @@
           </filesets>
         </configuration>
       </plugin>
-
-      <plugin>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>3.1.0</version>
-        <executions>
-          <execution>
-            <id>prepare-package</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <!--<outputDirectory>${project.build.directory}/classes/static</outputDirectory >-->
-              <!--<outputDirectory>${project.basedir}/target/classes/public</outputDirectory>-->
-              <outputDirectory>${project.basedir}/target/META-INF/resources</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${project.basedir}/dist</directory>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!--<plugin>-->
-      <!--<artifactId>maven-resources-plugin</artifactId>-->
-      <!--<version>3.1.0</version>-->
-      <!--<executions>-->
-      <!--<execution>-->
-      <!--<id>prepare-package</id>-->
-      <!--<phase>prepare-package</phase>-->
-      <!--<goals>-->
-      <!--<goal>copy-resources</goal>-->
-      <!--</goals>-->
-      <!--<configuration>-->
-      <!--<outputDirectory>${project.build.directory}/classes/static</outputDirectory>-->
-      <!--<resources>-->
-      <!--<resource>-->
-      <!--<directory>${project.basedir}/dist</directory>-->
-      <!--</resource>-->
-      <!--</resources>-->
-      <!--</configuration>-->
-      <!--</execution>-->
-      <!--</executions>-->
-      <!--</plugin>-->
-
 
       <plugin>
         <groupId>com.github.eirslett</groupId>
@@ -132,7 +79,15 @@
         </executions>
       </plugin>
 
-
     </plugins>
+
+    <resources>
+      <resource>
+        <directory>dist</directory>
+        <targetPath>static</targetPath>
+      </resource>
+    </resources>
+
   </build>
+
 </project>
