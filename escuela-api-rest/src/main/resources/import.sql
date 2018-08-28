@@ -75,6 +75,7 @@ INSERT INTO persona(id,nombre,apellido,nro_documento,fecha_nacimiento,telefono,p
 INSERT INTO usuario (id,usr,password,fecha_inscripcion,persona_id) VALUES (1,'pablo','pablo',CURRENT_TIMESTAMP,1);
 INSERT INTO usuario (id,usr,password,fecha_inscripcion,persona_id) VALUES (2,'mati','mati',CURRENT_TIMESTAMP,2);
 INSERT INTO usuario (id,usr,password,fecha_inscripcion,persona_id) VALUES (3,'ado','ado',CURRENT_TIMESTAMP,3);
+INSERT INTO usuario (id,usr,password,fecha_inscripcion,persona_id) VALUES (4,'admin','admin',CURRENT_TIMESTAMP,3);
 --ALUMNO
 INSERT INTO alumno (id,persona_id) VALUES (1,4);
 INSERT INTO alumno (id,persona_id) VALUES (2,5);
@@ -91,9 +92,10 @@ INSERT INTO docente (id,persona_id) VALUES (2,3);
 INSERT INTO rol (id,codigo,descripcion) VALUES (1,'ADMIN','Administrador');
 INSERT INTO rol (id,codigo,descripcion) VALUES (2,'DOCENTE','Administrador');
 --USUARIO/ROL
-INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (1,'2018-01-01 00:00:00','2019-01-01 00:00:00', 1, 1);
-INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (2,'2018-01-01 00:00:00','2019-01-01 00:00:00', 1, 2);
-INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (3,'2018-01-01 00:00:00','2019-01-01 00:00:00', 1, 3);
+INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (1,'2018-01-01 00:00:00','2019-01-01 00:00:00', 1, 4);
+INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (2,'2018-01-01 00:00:00','2019-01-01 00:00:00', 2, 1);
+INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (3,'2018-01-01 00:00:00','2019-01-01 00:00:00', 2, 2);
+INSERT INTO usu_rol (id, fecha_desde, fecha_hasta, rol_id, usuario_id) VALUES (4,'2018-01-01 00:00:00','2019-01-01 00:00:00', 2, 3);
 --ALUMNO/CURSO
 INSERT INTO alumno_curso (id,anio,fecha_inscripcion,alumno_id,curso_id) VALUES (1,2018,'2018-08-08 00:00:00',1,1);
 INSERT INTO alumno_curso (id,anio,fecha_inscripcion,alumno_id,curso_id) VALUES (2,2018,'2018-08-08 00:00:00',2,1);

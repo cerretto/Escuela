@@ -65,18 +65,11 @@
                     <img src="../assets/images/user.png" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                    <div class="email">john.doe@example.com</div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Username: {{ user.username }}</div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
-                            <li><i class="material-icons">person</i>Profile</li>
-                            <li role="seperator" class="divider"></li>
-                            <li><i class="material-icons">group</i>Followers</li>
-                            <li><i class="material-icons">shopping_cart</i>Sales</li>
-                            <li><i class="material-icons">favorite</i>Likes</li>
-                            <li role="seperator" class="divider"></li>
-                            <li><i class="material-icons">input</i>Sign Out</li>
+                            <li><a (click)="salir()"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -96,19 +89,19 @@
                             <span>AVISOS</span>
                         </a>
                     </li>
-                    <li>
+                    <li *ngIf="isAdmin()">
                         <a [routerLink]="['menu-cursado']" routerLinkActive="active">
                             <i class="material-icons">school</i>
                             <span>CURSADO</span>
                         </a>
                     </li>
-                    <li>
+                    <li *ngIf="isAdmin()">
                         <a [routerLink]="['menu-administracion']" routerLinkActive="active">
                             <i class="material-icons">security</i>
                             <span>ADMINISTRACIÓN</span>
                         </a>
                     </li>
-                    <li>
+                    <li *ngIf="isAdmin()">
                         <a [routerLink]="['menu-definicion']" routerLinkActive="active">
                             <i class="material-icons">settings</i>
                             <span>DEFINICIÓN</span>
