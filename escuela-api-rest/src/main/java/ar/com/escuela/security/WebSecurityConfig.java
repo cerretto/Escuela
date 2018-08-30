@@ -45,6 +45,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
+    public void configure(WebSecurity web) throws Exception {
+        // Filters will not get executed for the resources
+        web
+            .ignoring()
+            .antMatchers(
+    "/",
+                "/resources/**", "/static/**", "/public/**",
+                "/escuela/**", "/h2-console/**",
+                "/configuration/**",
+                "/swagger-ui/**", "/swagger-resources/**", "/api-docs", "/api-docs/**", "/v2/api-docs/**",
+                "/*.html", "/**/*.html" ,"/**/*.css","/**/*.js","/**/*.png","/**/*.jpg", "/**/*.gif",
+                "/**/*.svg", "/**/*.ico", "/**/*.ttf","/**/*.woff","/**/*.otf");
+    }
+
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
 
         // Disable CSRF (cross site request forgery)
@@ -74,19 +89,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         // Optional, if you want to test the API from a browser
         // http.httpBasic();
-    }
-
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        // Allow swagger to be accessed without authentication
-        web.ignoring().antMatchers("/v2/api-docs")//
-                .antMatchers("/swagger-resources/**")//
-                .antMatchers("/swagger-ui.html")//
-                .antMatchers("/configuration/**")//
-                .antMatchers("/webjars/**")//
-                .antMatchers("/public/**")
-                .antMatchers("/resources/**")
-                .antMatchers("/static/**");
     }
 
 //	@Bean
