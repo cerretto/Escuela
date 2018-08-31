@@ -42,9 +42,7 @@ import { PlanService } from './plan/plan.service';
 import { RolDetailComponent } from './rol/rol-detail/rol-detail.component';
 import { RolComponent } from './rol/rol.component';
 import { RolService } from './rol/rol.service';
-import { AuthGuardService } from './security/auth-guard.service';
 import { AuthInterceptor } from './security/auth-interceptor';
-import { AuthService } from './security/auth.service';
 import { MyErrorHandler } from './shared/components/global-error-handler/my-error-handler';
 import { TipoAvisoDetailComponent } from './tipo-aviso/tipo-aviso-detail/tipo-aviso-detail.component';
 import { TipoAvisoComponent } from './tipo-aviso/tipo-aviso.component';
@@ -53,6 +51,8 @@ import { UsuarioDetailComponent } from './usuario/usuario-detail/usuario-detail.
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioService } from './usuario/usuario.service';
 import { MatDialog, MatDialogModule, MatButtonModule, MatInputModule } from '@angular/material';
+import { AuthGuard } from './security/auth-guard.service';
+import { AuthService } from './security/auth.service';
 // import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -122,7 +122,7 @@ import { MatDialog, MatDialogModule, MatButtonModule, MatInputModule } from '@an
     RolService,
     AlumnoService,
     AuthService,
-    AuthGuardService,
+    AuthGuard,
     {
       provide: ErrorHandler,
       useClass: MyErrorHandler,
