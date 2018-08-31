@@ -95,6 +95,9 @@
           "configurations": {
             "production": {
               "browserTarget": "escuela-frontend:build:production"
+            },
+            "uat": {
+              "browserTarget": "escuela-frontend:build:uat"
             }
           }
         },
