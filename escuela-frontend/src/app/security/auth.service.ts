@@ -3,16 +3,19 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { UserSession } from './auth-model';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthService {
+
+  endpoint = environment.apiurl;
 
   constructor(private http: HttpClient,
     private router: Router) { }
 
   login(userSession: UserSession) {
     this.logout();
-    this.http.post('http://localhost:8081/login', userSession, { responseType: 'text' })
+    this.http.post(this.endpoint + '/login', userSession, { responseType: 'text' })
       .subscribe(
         res => {
           this.setSession(res);
