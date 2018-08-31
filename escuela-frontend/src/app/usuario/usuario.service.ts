@@ -1,30 +1,33 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from './usuario-models';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class UsuarioService {
 
+  endpoint = environment.apiurl;
+
   constructor(private http: HttpClient) { }
 
   getUsuarios() {
-    return this.http.get<Usuario[]>("http://localhost:8081/usuarios");
+    return this.http.get<Usuario[]>(this.endpoint + "/usuarios");
   }
 
   getUsuario(id: Number) {
-    return this.http.get<Usuario>("http://localhost:8081/usuarios/" + id);
+    return this.http.get<Usuario>(this.endpoint + "/usuarios/" + id);
   }
 
   deleteUsuario(id: Number) {
-    return this.http.delete("http://localhost:8081/usuarios/" + id);
+    return this.http.delete(this.endpoint + "/usuarios/" + id);
   }
 
   saveUsuario(usuario: Usuario) {
-    return this.http.post<Usuario>("http://localhost:8081/usuarios", usuario);
+    return this.http.post<Usuario>(this.endpoint + "/usuarios", usuario);
   }
 
   updateUsuario(usuario: Usuario) {
-    return this.http.put<Usuario>("http://localhost:8081/usuarios/"+ usuario.id, usuario);
+    return this.http.put<Usuario>(this.endpoint + "/usuarios"+ usuario.id, usuario);
   }
 
 
