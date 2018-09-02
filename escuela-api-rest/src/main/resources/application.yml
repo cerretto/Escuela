@@ -10,7 +10,9 @@ spring:
         hbm2ddl.auto: create-drop # validate, update, create, create-drop
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
-  application.name: escuela
+  application.name: escuela-api-rest
+  resources:
+    static-locations: classpath:/static/ # Locations of static resources.
 
 security:
   jwt:
