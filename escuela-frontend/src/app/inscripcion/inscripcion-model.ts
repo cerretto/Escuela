@@ -1,6 +1,7 @@
 import { Curso } from "../curso/curso-models";
 import { Alumno } from "../alumno/alumno.model";
 import { Materia } from "../materia/materia-models";
+import { Evaluacion } from "../evaluacion/evaluacion-model";
 
 export class AlumnoCurso {
     id: number;
@@ -15,10 +16,4 @@ export class Nota {
     calificacion: string;
     fecha: Date;
     evaluacion: Evaluacion;
-}
-
-export class Evaluacion {
-    id: number;
-    descripcion: string;
-    materia: Materia;
 }

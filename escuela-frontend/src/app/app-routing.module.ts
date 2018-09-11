@@ -31,6 +31,8 @@ import { TipoAvisoComponent } from './tipo-aviso/tipo-aviso.component';
 import { UsuarioDetailComponent } from './usuario/usuario-detail/usuario-detail.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { AuthGuard } from './security/auth-guard.service';
+import { EvaluacionComponent } from './evaluacion/evaluacion.component';
+import { EvaluacionDetailComponent } from './evaluacion/evaluacion-detail/evaluacion-detail.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/menu', pathMatch: 'full' },
@@ -50,17 +52,17 @@ const routes: Routes = [
           { path: 'tipo-aviso', component: TipoAvisoComponent },
           { path: 'tipo-aviso-detail', component: TipoAvisoDetailComponent },
           { path: 'tipo-aviso-detail/:id', component: TipoAvisoDetailComponent },
-          { path: 'cursos',  component: CursoComponent, canActivate: [AuthGuard] },
+          { path: 'cursos',  component: CursoComponent },
           { path: 'curso-detail', component: CursoDetailComponent, canActivate: [AuthGuard] },
           { path: 'curso-detail/:id', component: CursoDetailComponent, canActivate: [AuthGuard] },
           { path: 'menu-definicion', component: MenuDefinicionComponent, canActivate: [AuthGuard] },
           { path: 'materias', component: MateriaComponent, canActivate: [AuthGuard] },
           { path: 'materia-detail', component: MateriaDetailComponent, canActivate: [AuthGuard] },
           { path: 'materia-detail/:id', component: MateriaDetailComponent, canActivate: [AuthGuard] },
-          { path: 'menu-cursado', component: MenuCursadoComponent, canActivate: [AuthGuard] },
-          { path: 'inscripciones', component: InscripcionComponent, canActivate: [AuthGuard] },
-          { path: 'inscripcion-detail', component: InscripcionDetailComponent, canActivate: [AuthGuard] },
-          { path: 'inscripcion-detail/:id', component: InscripcionDetailComponent, canActivate: [AuthGuard] },
+          { path: 'menu-cursado', component: MenuCursadoComponent },
+          { path: 'inscripciones', component: InscripcionComponent },
+          { path: 'inscripcion-detail', component: InscripcionDetailComponent },
+          { path: 'inscripcion-detail/:id', component: InscripcionDetailComponent },
           { path: 'menu-administracion', component: MenuAdministracionComponent, canActivate: [AuthGuard] },
           { path: 'usuarios', component: UsuarioComponent,canActivate: [AuthGuard] },
           { path: 'usuario-detail', component: UsuarioDetailComponent, canActivate: [AuthGuard] },
@@ -74,9 +76,12 @@ const routes: Routes = [
           { path: 'alumnos', component: AlumnoComponent, canActivate: [AuthGuard] },
           { path: 'alumno-detail', component: AlumnoDetailComponent, canActivate: [AuthGuard] },
           { path: 'alumno-detail/:id', component: AlumnoDetailComponent, canActivate: [AuthGuard] },
-          { path: 'comisiones', component: ComisionComponent, canLoad: [AuthGuard], canActivate: [AuthGuard] },
-          { path: 'comision-detail', component: ComisionDetailComponent, canActivate: [AuthGuard] },
-          { path: 'comision-detail/:id', component: ComisionDetailComponent, canActivate: [AuthGuard] }
+          { path: 'comisiones', component: ComisionComponent },
+          { path: 'comision-detail', component: ComisionDetailComponent },
+          { path: 'comision-detail/:id', component: ComisionDetailComponent },
+          { path: 'evaluaciones', component: EvaluacionComponent },
+          { path: 'evaluacion-detail', component: EvaluacionDetailComponent },
+          { path: 'evaluacion-detail/:id', component: EvaluacionDetailComponent }
         ]
     },
     // redireccion (debe quedar al final de los routing)

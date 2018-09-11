@@ -10,11 +10,16 @@
         </div>
         <div class="body">
           <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3">
-              <button type="button" class="btn btn-block btn-lg btn-primary waves-effect" [routerLink]="['/menu/inscripciones']">INSCRIPCIÓN A CURSADO</button>
+            <div *ngIf="isAdmin()">
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3">
+                <button type="button" class="btn btn-block btn-lg btn-primary waves-effect" [routerLink]="['/menu/inscripciones']">INSCRIPCIÓN A CURSADO</button>
+              </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3">
               <button type="button" class="btn btn-block btn-lg btn-primary waves-effect" [routerLink]="['/menu/comisiones']">COMISIONES</button>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3">
+              <button type="button" class="btn btn-block btn-lg btn-primary waves-effect" [routerLink]="['/menu/evaluaciones']">EVALUACIONES</button>
             </div>
           </div>
         </div>

@@ -53,6 +53,9 @@ import { UsuarioService } from './usuario/usuario.service';
 import { MatDialog, MatDialogModule, MatButtonModule, MatInputModule } from '@angular/material';
 import { AuthGuard } from './security/auth-guard.service';
 import { AuthService } from './security/auth.service';
+import { EvaluacionComponent } from './evaluacion/evaluacion.component';
+import { EvaluacionDetailComponent } from './evaluacion/evaluacion-detail/evaluacion-detail.component';
+import { EvaluacionService } from './evaluacion/evaluacion.service';
 // import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -88,7 +91,9 @@ import { AuthService } from './security/auth.service';
     LoginComponent,
     ComisionComponent,
     ComisionDetailComponent,
-    DialogOverviewExampleDialog
+    DialogOverviewExampleDialog,
+    EvaluacionComponent,
+    EvaluacionDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -121,6 +126,7 @@ import { AuthService } from './security/auth.service';
     PersonaService,
     RolService,
     AlumnoService,
+    EvaluacionService,
     AuthService,
     AuthGuard,
     {
