@@ -72,7 +72,8 @@
             <!-- optional: default phase is "generate-resources" -->
             <phase>generate-resources</phase>
             <configuration>
-              <arguments>run build-prod</arguments>
+              <!--<arguments>run build-prod</arguments>-->
+              <arguments>run build</arguments>
             </configuration>
           </execution>
 
