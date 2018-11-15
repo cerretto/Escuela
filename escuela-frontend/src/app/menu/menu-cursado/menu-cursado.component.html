@@ -21,6 +21,11 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3">
               <button type="button" class="btn btn-block btn-lg btn-primary waves-effect" [routerLink]="['/menu/evaluaciones']">EVALUACIONES</button>
             </div>
+            <div *ngIf="!isAdmin()">
+              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-lg-offset-3 col-md-offset-3">
+                <button type="button" class="btn btn-block btn-lg btn-primary waves-effect" [routerLink]="['/menu/cargar-notas']">CARGAR NOTAS</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

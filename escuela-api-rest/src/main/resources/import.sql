@@ -145,4 +145,12 @@ INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (2
 INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (29,'9','2018-08-10 00:00:00',5,6);
 INSERT INTO nota (id,calificacion,fecha,alumno_curso_id,evaluacion_id) VALUES (30,'8.5','2018-08-10 00:00:00',6,6);
 
+--DOCENTE_MATERIA
+INSERT INTO docente_materia (id,anio,docente_id,materia_id) VALUES (1,2018,2,1);
+INSERT INTO docente_materia (id,anio,docente_id,materia_id) VALUES (2,2018,2,5);
+INSERT INTO docente_materia (id,anio,docente_id,materia_id) VALUES (3,2018,2,9);
+INSERT INTO docente_materia (id,anio,docente_id,materia_id) VALUES (4,2018,2,13);
+INSERT INTO docente_materia (id,anio,docente_id,materia_id) VALUES (5,2018,2,17);
+
+
 

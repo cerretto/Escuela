@@ -66,6 +66,11 @@ public class EvaluacionController {
 
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
-
+    
+    @RequestMapping(method=RequestMethod.GET, value="/{idMateria}")
+	public ResponseEntity<List<Evaluacion>> getEvaluacionesByMateria(@PathVariable Long idMateria){
+		List<Evaluacion> evaluaciones = cursadoService.getEvaluacionesByMateria(idMateria);
+		return new ResponseEntity<List<Evaluacion>>(evaluaciones, HttpStatus.OK);
+	}
 
 }

@@ -22,6 +22,7 @@ public interface DefinicionService {
 	public void addMateria(Materia materia);
 	public void updateMateria(Materia materia, Long id);
 	public void deleteMateria(Long id);
+	public List<Materia> getMateriasByUser(String username);
 	
 	//Nivel
 	public List<Nivel> getAllNiveles();

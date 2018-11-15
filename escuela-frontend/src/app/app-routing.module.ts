@@ -33,6 +33,8 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { AuthGuard } from './security/auth-guard.service';
 import { EvaluacionComponent } from './evaluacion/evaluacion.component';
 import { EvaluacionDetailComponent } from './evaluacion/evaluacion-detail/evaluacion-detail.component';
+import { CargarNotasComponent } from './cargar-notas/cargar-notas.component';
+import { CargarNotasDetailComponent } from './cargar-notas/cargar-notas-detail/cargar-notas-detail.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/menu', pathMatch: 'full' },
@@ -81,7 +83,9 @@ const routes: Routes = [
           { path: 'comision-detail/:id', component: ComisionDetailComponent },
           { path: 'evaluaciones', component: EvaluacionComponent },
           { path: 'evaluacion-detail', component: EvaluacionDetailComponent },
-          { path: 'evaluacion-detail/:id', component: EvaluacionDetailComponent }
+          { path: 'evaluacion-detail/:id', component: EvaluacionDetailComponent },
+          { path: 'cargar-notas', component: CargarNotasComponent },
+          { path: 'cargar-notas-detail/:id', component: CargarNotasDetailComponent }
         ]
     },
     // redireccion (debe quedar al final de los routing)

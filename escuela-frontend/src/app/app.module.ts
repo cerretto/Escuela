@@ -50,12 +50,15 @@ import { TipoAvisoService } from './tipo-aviso/tipo-aviso.service';
 import { UsuarioDetailComponent } from './usuario/usuario-detail/usuario-detail.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { UsuarioService } from './usuario/usuario.service';
-import { MatDialog, MatDialogModule, MatButtonModule, MatInputModule } from '@angular/material';
+import { MatDialog, MatDialogModule, MatButtonModule, MatInputModule, MatExpansionModule } from '@angular/material';
 import { AuthGuard } from './security/auth-guard.service';
 import { AuthService } from './security/auth.service';
 import { EvaluacionComponent } from './evaluacion/evaluacion.component';
 import { EvaluacionDetailComponent } from './evaluacion/evaluacion-detail/evaluacion-detail.component';
 import { EvaluacionService } from './evaluacion/evaluacion.service';
+import { CargarNotasComponent, DialogPruebaDialog } from './cargar-notas/cargar-notas.component';
+import { CargarNotasService } from './cargar-notas/cargar-notas-service';
+import { CargarNotasDetailComponent } from './cargar-notas/cargar-notas-detail/cargar-notas-detail.component';
 // import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -93,7 +96,10 @@ import { EvaluacionService } from './evaluacion/evaluacion.service';
     ComisionDetailComponent,
     DialogOverviewExampleDialog,
     EvaluacionComponent,
-    EvaluacionDetailComponent
+    EvaluacionDetailComponent,
+    CargarNotasComponent,
+    CargarNotasDetailComponent,
+    DialogPruebaDialog
   ],
   imports: [
     BrowserModule,
@@ -107,10 +113,12 @@ import { EvaluacionService } from './evaluacion/evaluacion.service';
     MatDialogModule,
     MatButtonModule,
     MatInputModule,
+    MatExpansionModule
     // SharedModule
   ],
   entryComponents: [
-    DialogOverviewExampleDialog
+    DialogOverviewExampleDialog,
+    DialogPruebaDialog
   ],
   exports: [ ],
   // exports: [ SharedModule ],
@@ -127,6 +135,7 @@ import { EvaluacionService } from './evaluacion/evaluacion.service';
     RolService,
     AlumnoService,
     EvaluacionService,
+    CargarNotasService,
     AuthService,
     AuthGuard,
     {
