@@ -214,6 +214,16 @@ public class CursadoServiceImpl implements CursadoService {
 		return listNotas;
 	}
 	
+	@Override
+	public List<Nota> getNotasByEvaluacion(Long idEvaluacion) {
+		// Recuperamos la Evaluacion
+		Evaluacion evaluacion = evaluacionRepository.findOne(idEvaluacion);
+		
+		List<Nota> listNotas = notaRepository.findNotasByEvaluacion(evaluacion);
+		
+		return listNotas;
+	}
+	
 	//-----------------------------------------------------------------------------
 	// Servicios para Alumno
 	//------------------------------------------------------------------------------

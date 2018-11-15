@@ -56,5 +56,13 @@ public class NotaController {
         return new ResponseEntity<List<Nota>>(listAlumnoCurso, HttpStatus.OK);
     }
 	
+	@GetMapping("/getNotasByEvaluacion/{idEvaluacion}")
+    public ResponseEntity<List<Nota>> getNotasByEvaluacion(@PathVariable Long idEvaluacion) {
+
+        List<Nota> listNotas = cursadoService.getNotasByEvaluacion(idEvaluacion);
+
+        return new ResponseEntity<List<Nota>>(listNotas, HttpStatus.OK);
+    }
+	
 
 }
