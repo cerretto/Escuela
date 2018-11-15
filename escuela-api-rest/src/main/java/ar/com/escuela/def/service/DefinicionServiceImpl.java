@@ -125,6 +125,13 @@ public class DefinicionServiceImpl implements DefinicionService{
 		materiaRepository.delete(id);
 	}
 	
+
+	@Override
+	public List<Materia> getMateriasByUser(String username) {
+		List<Materia> materias = materiaRepository.findMateriasByUsername(username);
+		return materias;
+	}
+	
 	//Servicios para Plan--------------------------------------------------------------------------------
 	@Override
 	public List<Plan> getAllPlanes(){

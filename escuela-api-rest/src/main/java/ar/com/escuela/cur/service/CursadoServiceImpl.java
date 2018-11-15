@@ -18,7 +18,9 @@ import ar.com.escuela.cur.repository.DocenteMateriaRepository;
 import ar.com.escuela.cur.repository.EvaluacionRepository;
 import ar.com.escuela.cur.repository.NotaRepository;
 import ar.com.escuela.def.bean.Curso;
+import ar.com.escuela.def.bean.Materia;
 import ar.com.escuela.def.repository.CursoRepository;
+import ar.com.escuela.def.repository.MateriaRepository;
 
 @Service
 public class CursadoServiceImpl implements CursadoService {
@@ -40,6 +42,9 @@ public class CursadoServiceImpl implements CursadoService {
 	
 	@Autowired
 	private CursoRepository cursoRepository;
+	
+	@Autowired
+	private MateriaRepository materiaRepository;
 	
 	//Servicios para Alumnocurso------------------------------------------------------------------------------------
 	@Override
@@ -157,6 +162,15 @@ public class CursadoServiceImpl implements CursadoService {
 	@Override
 	public void deleteEvaluacion(Long id) {
 		evaluacionRepository.delete(id);
+	}
+	
+	@Override
+	public List<Evaluacion> getEvaluacionesByMateria(Long idMateria) {
+		Materia materia = materiaRepository.findOne(idMateria);
+		
+		List<Evaluacion> evaluaciones = evaluacionRepository.findByMateria(materia);
+		
+		return evaluaciones;
 	}
 	
 	//Servicios para Nota--------------------------------------------------------------------------------

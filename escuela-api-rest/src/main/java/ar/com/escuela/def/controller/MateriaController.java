@@ -49,4 +49,10 @@ public class MateriaController {
 		materiaService.deleteMateria(id);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/{username}")
+	public ResponseEntity<List<Materia>> getMateriasByUser(@PathVariable String username){
+		List<Materia> materias = materiaService.getMateriasByUser(username);
+		return new ResponseEntity<List<Materia>>(materias, HttpStatus.OK);
+	}
 }

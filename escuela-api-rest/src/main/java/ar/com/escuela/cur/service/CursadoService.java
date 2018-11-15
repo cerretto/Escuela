@@ -40,6 +40,7 @@ public interface CursadoService {
 	public void addEvaluacion(Evaluacion evaluacion);
 	public void updateEvaluacion(Evaluacion evaluacion, Long id);
 	public void deleteEvaluacion(Long id);
+	public List<Evaluacion> getEvaluacionesByMateria(Long idMateria);
 	
 	//Alumno
 	public List<Alumno> getAllAlumnos();
