@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ar.com.escuela.cur.bean.Nota;
 import ar.com.escuela.cur.service.CursadoService;
+import ar.com.escuela.exceptions.EscuelaException;
+import ar.com.escuela.exceptions.EscuelaRestErrorCode;
 
 @RestController
 @RequestMapping("/notas")
@@ -39,8 +41,10 @@ public class NotaController {
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/{id}")
 	public void updateNota(@RequestBody Nota nota, @PathVariable Long id){
+		if (!nota.getCalificacion().matches("^\\d+(\\.\\d+)*$")) {
+			throw new EscuelaException(EscuelaRestErrorCode.INVALID_NOTA, "La nota tiene formato incorrecto.");
+		}
 		cursadoService.updateNota(nota, id);
-		
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/{id}")
@@ -63,6 +67,5 @@ public class NotaController {
 
         return new ResponseEntity<List<Nota>>(listNotas, HttpStatus.OK);
     }
-	
 
 }
