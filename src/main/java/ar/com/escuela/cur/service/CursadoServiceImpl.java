@@ -147,6 +147,18 @@ public class CursadoServiceImpl implements CursadoService {
 	@Override
 	public void addEvaluacion(Evaluacion evaluacion){
 		evaluacionRepository.save(evaluacion);
+		
+		List<AlumnoCurso> listAlumnoCurso = alumnoCursoRepository.getListAlumnoCursoByEvaluacion(evaluacion.getId());
+		
+		for (AlumnoCurso alumnoCurso : listAlumnoCurso) {
+			Nota nota = new Nota();
+			
+			nota.setFecha(new Date());
+			nota.setAlumnoCurso(alumnoCurso);
+			nota.setEvaluacion(evaluacion);
+			
+			notaRepository.save(nota);
+		}
 	}
 	
 	@Override
